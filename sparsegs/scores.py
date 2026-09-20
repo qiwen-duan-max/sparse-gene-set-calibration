@@ -156,6 +156,15 @@ def score_genes(X, genes, gene_set, ctrl_size=50, n_bins=25, seed=0):
         Number of expression bins.
     seed : int
 
+    Notes
+    -----
+    When ``ctrl_size`` is at least the number of non-set genes in a target's
+    bin, ``take`` below is the whole bin: the control composition is then fully
+    determined by the bin edges and cannot depend on ``seed`` at all.  A seed
+    that seems ignored is usually this window rather than a seeding bug; pass a
+    ``ctrl_size`` comfortably below the bin size when a test needs the draw to
+    matter.
+
     Returns
     -------
     numpy.ndarray
@@ -193,6 +202,10 @@ def module_score(X, genes, gene_set, ctrl_size=100, n_bins=24, seed=0):
     The difference from :func:`score_genes` is that controls are averaged within
     each expression bin and each target gene has its own bin's control mean
     subtracted, rather than pooling every control gene into one average.
+
+    Like there, when ``ctrl_size`` is at least the number of non-set genes in a
+    bin the whole bin is taken and the draw cannot depend on ``seed``; pass a
+    ``ctrl_size`` comfortably below the bin size when the seed has to matter.
     """
     X = sp.csr_matrix(X)
     genes = np.asarray(genes)
@@ -265,7 +278,8 @@ def ssgsea(X, genes, gene_set):
 # ----------------------------------------------------------------------
 # convenience
 # ----------------------------------------------------------------------
-def score_all(cache, X, genes, gene_set, ucell_r_max=1500, seed=0):
+def score_all(cache, X, genes, gene_set, ucell_r_max=1500, seed=0,
+              ctrl_size=None):
     """Evaluate every method on one gene set, returning a tidy frame.
 
     Parameters
@@ -277,6 +291,12 @@ def score_all(cache, X, genes, gene_set, ucell_r_max=1500, seed=0):
     gene_set : sequence of str
     ucell_r_max : int
     seed : int
+    ctrl_size : int, optional
+        Forwarded to the expression-based methods, overriding both defaults.
+        Leave it at ``None`` for :func:`score_genes`' and
+        :func:`module_score`'s own defaults; set it below the per-bin
+        non-set gene count when the seed has to reach the draw (see the
+        notes on :func:`score_genes`).
 
     Returns
     -------
@@ -293,7 +313,10 @@ def score_all(cache, X, genes, gene_set, ucell_r_max=1500, seed=0):
     if X is not None:
         for name, fn in (("score_genes", score_genes),
                          ("module_score", module_score)):
-            values = fn(X, genes, gene_set, seed=seed)
+            if ctrl_size is None:
+                values = fn(X, genes, gene_set, seed=seed)
+            else:
+                values = fn(X, genes, gene_set, ctrl_size=ctrl_size, seed=seed)
             frames.append(pd.DataFrame({"method": name,
                                         "cell": np.arange(len(values)),
                                         "score": values}))

@@ -1877,13 +1877,20 @@ def _seeded_entry_points(data, cache, builder):
     score = np.asarray(sg.aucell(cache, members), dtype=float)
     programme = score + np.linspace(0.0, 1.0, score.size)
     outcome = programme > np.median(programme)
+    # The fixture's 25 bins of 1200 genes leave ~45-48 non-set genes per bin,
+    # which sits inside the degenerate window of the default control sizes
+    # (50 and 100): the whole bin would be taken and the control composition
+    # could not depend on the seed -- any apparent seed sensitivity would be
+    # floating-point summation order, not the generator.  ctrl_size=10 keeps
+    # the draw genuinely random on every numpy and pandas.
     return {
         "score_genes":
-            lambda s: sg.score_genes(X, genes, members, seed=s),
+            lambda s: sg.score_genes(X, genes, members, ctrl_size=10, seed=s),
         "module_score":
-            lambda s: sg.module_score(X, genes, members, seed=s),
+            lambda s: sg.module_score(X, genes, members, ctrl_size=10, seed=s),
         "score_all":
-            lambda s: sg.score_all(cache, X, genes, members, ucell_r_max=60, seed=s),
+            lambda s: sg.score_all(cache, X, genes, members, ucell_r_max=60,
+                                   ctrl_size=10, seed=s),
         "permutation_test":
             lambda s: sg.permutation_test(score, programme, n_perm=40, seed=s),
         "all_conventional":
@@ -2733,3 +2740,41 @@ def test_the_manuscript_cites_just_what_the_bibliography_holds():
         f"cited but absent from the .bib: {sorted(used - defined)}")
     assert not defined - used, (
         f"present in the .bib and never cited: {sorted(defined - used)}")
+
+
+# ----------------------------------------------------------------------
+# the rank cache refuses inputs its ranking cannot represent
+# ----------------------------------------------------------------------
+def test_the_rank_cache_rejects_nan_and_infinite_values():
+    """A NaN would take rank 1 and poison the score instead of failing.
+
+    The composite order is the bit pattern of a non-negative ``float32``; the
+    bit pattern of a NaN sorts above almost every positive value, so an
+    undetected-looking NaN gene would be ranked first and contribute the
+    largest weight a single gene can contribute -- a plausible-looking,
+    systematically inflated score rather than an error.  Refusing the matrix
+    at the entrance is the only safe answer.
+    """
+    rng = np.random.default_rng(0)
+    X = sp.csr_matrix(rng.random((6, 10)).astype(np.float32))
+    X[2, 3] = np.nan
+    genes = [f"G{i}" for i in range(10)]
+    with pytest.raises(ValueError, match="NaN or infinite"):
+        sg.RankCache.build(X, genes, ceiling=4)
+
+
+def test_the_rank_cache_rejects_negative_values():
+    """A negative float32 sorts below every positive one -- silently.
+
+    The bit-complement order is defined for non-negative values; a negative
+    value has its sign bit set, so its complement lands below every detected
+    gene and the value is treated as less-than-undetected.  Scaled or
+    z-scored matrices -- a common thing to pass -- contain negatives, and the
+    failure mode would be a wrong ranking with no warning anywhere.
+    """
+    rng = np.random.default_rng(0)
+    X = sp.csr_matrix(rng.random((6, 10)).astype(np.float32))
+    X[4, 7] = -0.5
+    genes = [f"G{i}" for i in range(10)]
+    with pytest.raises(ValueError, match="negative values"):
+        sg.RankCache.build(X, genes, ceiling=4)

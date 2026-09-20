@@ -96,7 +96,12 @@ class RankCache:
         Parameters
         ----------
         X : scipy.sparse matrix or array-like
-            Cells x genes expression matrix (log-normalised values, not counts).
+            Cells x genes expression matrix (log-normalised values, not
+            counts).  Entries must be finite and non-negative: the rank order
+            is defined on the bit pattern of a non-negative ``float32``, so
+            NaN, infinite or negative values would sort on the wrong side of
+            every detected gene, and they are rejected here rather than
+            silently mis-ranked.
         genes : sequence of str
             Gene names aligned with the columns of ``X``.
         ceiling : int
@@ -125,6 +130,15 @@ class RankCache:
         if len(genes) != n_genes:
             raise ValueError(
                 f"genes has length {len(genes)} but X has {n_genes} columns")
+        if X.data.size:
+            if not np.isfinite(X.data).all():
+                raise ValueError(
+                    "X contains NaN or infinite values; the rank cache needs "
+                    "finite, non-negative expression values")
+            if X.data.min() < 0:
+                raise ValueError(
+                    "X contains negative values; the rank order is defined "
+                    "for non-negative values only -- pass log-normalised data")
 
         if genes_of_interest is None:
             keep = np.arange(n_genes)
@@ -247,6 +261,16 @@ class RankCache:
 
             if depth_counts is not None:
                 depth_counts[lo:hi] = np.asarray(binary.sum(axis=1)).ravel()
+
+            # The entry checks of `build` cannot see a matrix that arrives as a
+            # block iterator, so every block is checked as it streams instead.
+            # A NaN would take rank 1 and a negative value would sort below
+            # every detected gene -- both silently -- so they are refused here.
+            if not np.isfinite(block).all() or block.min() < 0:
+                raise ValueError(
+                    f"block {lo}:{hi} contains NaN, infinite or negative "
+                    "values; the rank cache needs finite, non-negative "
+                    "expression values")
 
             # Ties are settled by a key that depends on the cell's index in the
             # original matrix rather than on its position in this block, so the

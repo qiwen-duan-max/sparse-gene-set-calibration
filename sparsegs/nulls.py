@@ -276,9 +276,14 @@ class MatchedNullBuilder:
     def codetection(self, gene_set):
         """Mean pairwise co-detection similarity within a gene set.
 
-        Values near zero mean the genes are detected independently; positive
-        values mean they tend to be detected in the same cells.  This is the
-        structure an expression-matched null does not preserve.
+        The similarity is the mean pairwise cosine between the genes' binary
+        detection columns: values near zero mean the genes are detected
+        independently, positive values mean they tend to be detected in the
+        same cells.  This is the structure an expression-matched null does not
+        preserve.  The R implementation of the same builder uses the mean
+        pairwise Jaccard overlap instead -- a correlated but different
+        statistic -- so co-detection values are comparable within one
+        language, not across the two.
 
         The similarity block is computed from the detection matrix each call,
         restricted to the set's own genes.  The alternative -- one

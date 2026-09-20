@@ -118,7 +118,12 @@ def ranked_columns(block, keys, ceiling, row_budget=1 << 28):
     ----------
     block : numpy.ndarray
         Dense ``(n_cells, n_genes)`` block of expression values.  Values at or
-        below zero count as undetected; NaN is not supported.
+        below zero count as undetected.  Only finite, non-negative values are
+        supported: the composite order is built on the bit pattern of a
+        non-negative ``float32``, so a negative value or a NaN would sort on
+        the wrong side of every detected gene, silently;
+        :meth:`sparsegs.rankcache.RankCache.build` rejects them at the
+        entrance.
     keys : numpy.ndarray
         ``uint32`` array of the same shape, from :func:`tie_break_keys`.
     ceiling : int

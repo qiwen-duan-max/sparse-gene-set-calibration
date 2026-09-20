@@ -563,7 +563,12 @@ Parameters
 ----------
 block : numpy.ndarray
     Dense ``(n_cells, n_genes)`` block of expression values.  Values at or
-    below zero count as undetected; NaN is not supported.
+    below zero count as undetected.  Only finite, non-negative values are
+    supported: the composite order is built on the bit pattern of a
+    non-negative ``float32``, so a negative value or a NaN would sort on
+    the wrong side of every detected gene, silently;
+    :meth:`sparsegs.rankcache.RankCache.build` rejects them at the
+    entrance.
 keys : numpy.ndarray
     ``uint32`` array of the same shape, from :func:`tie_break_keys`.
 ceiling : int
@@ -690,6 +695,15 @@ n_bins : int
     Number of expression bins.
 seed : int
 
+Notes
+-----
+When ``ctrl_size`` is at least the number of non-set genes in a target's
+bin, ``take`` below is the whole bin: the control composition is then fully
+determined by the bin edges and cannot depend on ``seed`` at all.  A seed
+that seems ignored is usually this window rather than a seeding bug; pass a
+``ctrl_size`` comfortably below the bin size when a test needs the draw to
+matter.
+
 Returns
 -------
 numpy.ndarray
@@ -708,6 +722,10 @@ The difference from :func:`score_genes` is that controls are averaged within
 each expression bin and each target gene has its own bin's control mean
 subtracted, rather than pooling every control gene into one average.
 
+Like there, when ``ctrl_size`` is at least the number of non-set genes in a
+bin the whole bin is taken and the draw cannot depend on ``seed``; pass a
+``ctrl_size`` comfortably below the bin size when the seed has to matter.
+
 ### ssgsea
 
 ```python
@@ -722,7 +740,7 @@ that a full ranking pass is affordable.
 ### score_all
 
 ```python
-score_all(cache, X, genes, gene_set, ucell_r_max=1500, seed=0)
+score_all(cache, X, genes, gene_set, ucell_r_max=1500, seed=0, ctrl_size=None)
 ```
 
 Evaluate every method on one gene set, returning a tidy frame.
@@ -736,6 +754,12 @@ genes : sequence of str
 gene_set : sequence of str
 ucell_r_max : int
 seed : int
+ctrl_size : int, optional
+    Forwarded to the expression-based methods, overriding both defaults.
+    Leave it at ``None`` for :func:`score_genes`' and
+    :func:`module_score`'s own defaults; set it below the per-bin
+    non-set gene count when the seed has to reach the draw (see the
+    notes on :func:`score_genes`).
 
 Returns
 -------
@@ -857,9 +881,14 @@ codetection(self, gene_set)
 
 Mean pairwise co-detection similarity within a gene set.
 
-Values near zero mean the genes are detected independently; positive
-values mean they tend to be detected in the same cells.  This is the
-structure an expression-matched null does not preserve.
+The similarity is the mean pairwise cosine between the genes' binary
+detection columns: values near zero mean the genes are detected
+independently, positive values mean they tend to be detected in the
+same cells.  This is the structure an expression-matched null does not
+preserve.  The R implementation of the same builder uses the mean
+pairwise Jaccard overlap instead -- a correlated but different
+statistic -- so co-detection values are comparable within one
+language, not across the two.
 
 The similarity block is computed from the detection matrix each call,
 restricted to the set's own genes.  The alternative -- one
