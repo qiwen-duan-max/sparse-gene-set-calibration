@@ -25,7 +25,12 @@ jobs:
         with:
           r-version: '4.3.3'
       - name: Install R packages the cross-language check drives
-        run: Rscript -e 'install.packages(c("Matrix", "R6", "jsonlite"))'
+        # The check's R drivers load this package from source through
+        # pkgload and carry the job records through jsonlite.  Matrix itself
+        # ships with R as a recommended package -- the r-package job below
+        # runs on exactly that copy -- so asking CRAN for it only buys a
+        # version-conflict warning on R 4.3.3.
+        run: Rscript -e 'install.packages(c("R6", "jsonlite", "pkgload"))'
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
