@@ -1067,16 +1067,17 @@ generation chain was re-run over the archived records and reproduced
 \code{numbers.tex} and all six generated tables byte-for-byte, and
 Supplementary Table~\ref{tab:verification} recomputes the headline rates
 from the records independently of the generated macros, with exact
-agreement. The test suites passed in full on the same day --- 127 pytest
-tests and 51 R test blocks, none skipped --- together with the
-cross-language check described in Methods. The continuous-integration
-workflow (\code{.github/workflows/ci.yml}) runs both test suites, the
-cross-language check and the offline reference check on every push, and the
-run accompanying this submission is green: 124 of the 127 pytest tests
-execute on a bare checkout --- the three that read the archived records skip
-there by design, because the records travel with the release --- and the R
-suite reports zero failures. The archived release carries a
-DOI: \code{10.5281/zenodo.22854132}.
+agreement. The test suites passed in full on the same day --- 129 pytest
+tests, the four application checks and 53 R test blocks, none skipped ---
+together with the cross-language check described in Methods. The
+continuous-integration workflow (\code{.github/workflows/ci.yml}) runs both
+test suites, the application checks, the cross-language check and the offline
+reference check on every push, with the Python suite repeated on 3.10 next to
+the declared floor, and the run accompanying this submission is green: 126 of
+the 129 pytest tests execute on a bare checkout --- the three that read the
+archived records skip there by design, because the records travel with the
+release --- and the R suite reports zero failures. The archived release
+carries a DOI: \code{10.5281/zenodo.22854132}.
 
 \section*{Author contributions}
 M.T., X.C. and Q.D. designed the study and directed the analysis; all authors
@@ -1304,7 +1305,8 @@ exact analysed versions are verifiable against an independent download.
 
 \paragraph{Code.} \code{sparsegs} 0.1.0 (Python) and \code{sparseGenSetCal}
 0.1.0 (R) ship with full test suites. On 2026-09-20 the Python suite passed
-127 tests and the R suite passed 51 test blocks with none skipped; the
+129 tests, the application checks 4, and the R suite passed 53 test blocks
+with none skipped; the
 cross-language check of Methods ran clean the same day --- 216 diagnostic
 reports with agreeing verdicts, 30 fixed null vectors at three tail
 conventions with P values agreeing to one part in $10^{9}$, 15 pre-flights,
