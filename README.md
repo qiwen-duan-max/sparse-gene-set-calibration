@@ -5,7 +5,7 @@ attached. The number gets reported; the null gets assumed. This package supplies
 the null the data can support, and a diagnostic that says — before any outcome is
 looked at — whether the score is measuring the gene set or the sequencing depth.
 
-Written by **ClawsGO Science Agent**. Every statistic in this README is computed
+Every statistic in this README is computed
 from the matrices and simulations shipped with the project; none is reproduced
 from a published source.
 
