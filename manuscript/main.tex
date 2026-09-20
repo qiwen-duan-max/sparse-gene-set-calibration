@@ -1053,11 +1053,14 @@ Supplementary Table~\ref{tab:verification} shows the most recent such check.
 
 \section*{Code availability}
 The Python package \code{sparsegs}, the R package \code{sparseGenSetCal}, the
-interactive application, the tutorial notebook, the simulation grids and the
-scripts that produce every number and figure in this paper are in the project
-repository, and both packages travel with the submission as source archives
+interactive application, the tutorial notebook and the scripts that produce
+every number and figure in this paper are in the project repository, and both
+packages travel with the submission as source archives
 (\code{sparse\_gene\_set\_calibration-0.1.0.tar.gz} and
-\code{sparseGenSetCal\_0.1.0.tar.gz}). The claim that every table regenerates
+\code{sparseGenSetCal\_0.1.0.tar.gz}). The simulation grids' records travel
+as a compressed archive attached to the repository's release record;
+\code{results\_md5.txt}, kept in the repository, checksums every file of that
+archive. The claim that every table regenerates
 from the raw records was executed rather than assumed: on 2026-09-20 the
 generation chain was re-run over the archived records and reproduced
 \code{numbers.tex} and all six generated tables byte-for-byte, and
