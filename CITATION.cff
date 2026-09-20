@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or the calibration framework it implements,
+  please cite both the software and the manuscript below.
+title: >-
+  sparsegs / sparseGenSetCal: calibration for sparse gene-set scores
+authors:
+  - family-names: Tang
+    given-names: Ming
+    affiliation: >-
+      Department of Radiation Oncology, Shenzhen Bao'an People's Hospital,
+      The Second Affiliated Hospital of Shenzhen University, Shenzhen, China
+  - family-names: Chen
+    given-names: Xin
+    affiliation: >-
+      Department of Radiation Oncology, Shenzhen Bao'an People's Hospital,
+      The Second Affiliated Hospital of Shenzhen University, Shenzhen, China
+  - family-names: Duan
+    given-names: Qiwen
+    email: duanqiwen603@gmail.com
+    orcid: "https://orcid.org/0009-0007-2231-6718"
+    affiliation: >-
+      Department of Radiation Oncology, Shenzhen Bao'an People's Hospital,
+      The Second Affiliated Hospital of Shenzhen University, Shenzhen, China
+    corresponding-indicator: true
+version: 0.1.0
+date-released: "2026-09-18"
+license: MIT
+repository-code: >-
+  https://example.invalid/sparse-gene-set-calibration
+abstract: >-
+  Python and R packages implementing a four-step calibration framework for
+  sparse gene-set scores: the closed form for the tie-break level, three
+  nested null families, the pre-flight check on the depth channel, and the
+  decision table that selects a null method or refuses the analysis.
+keywords:
+  - single-cell RNA-seq
+  - gene-set scoring
+  - AUCell
+  - tie-breaking
+  - null calibration
+  - sparsity

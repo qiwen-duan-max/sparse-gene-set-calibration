@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sparse-gene-set-calibration"
+version = "0.1.0"
+description = "Expression-matched nulls and pre-flight diagnostics for gene-set scores on sparse single-cell data"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Ming Tang" },
+    { name = "Xin Chen" },
+    { name = "Qiwen Duan", email = "duanqiwen603@gmail.com" },
+]
+keywords = [
+    "single-cell", "gene-set", "AUCell", "UCell", "enrichment",
+    "null-model", "calibration", "sparsity", "reproducibility",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+
+# The project URL is deliberately absent until the repository is public: the
+# real GitHub address replaces it (and CITATION.cff's repository-code) at
+# release time.  The licence is MIT, matching CITATION.cff, the R package's
+# DESCRIPTION, and the LICENSE file at the repository root.
+
+# numpy and scipy carry the rank cache and the sparse matrix; pandas carries the
+# report frames.  Nothing else is required -- the framework is deliberately
+# dependency-light, because the diagnostics have to be runnable in the
+# environment the user already has.
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.9",
+    "pandas>=1.5",
+]
+
+[project.optional-dependencies]
+# The head-to-head comparison against other implementations is the only part
+# that needs anything beyond the three above, and it is optional because it
+# exists to be run once, by us.
+comparators = ["decoupler>=1.4"]
+app = ["streamlit>=1.30", "matplotlib>=3.6"]
+test = ["pytest>=7"]
+tutorial = ["nbformat>=5", "nbconvert>=7", "jupyter-client"]
+
+[tool.setuptools]
+packages = ["sparsegs"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# A RuntimeWarning in this package has twice meant a real defect -- an integer
+# overflow in the R counterpart and a division by an undetected set's zero
+# detection rate here -- so the test suite refuses to let one through as noise.
+filterwarnings = ["error::RuntimeWarning"]

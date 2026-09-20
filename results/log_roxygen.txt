@@ -1,0 +1,2 @@
+also installing the dependencies ‘brew’, ‘pkgload’, ‘rdtools’
+

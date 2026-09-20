@@ -1,0 +1,5 @@
+Duplicate key in file PosixPath('/usr/local/lib/python3.12/dist-packages/matplotlib/mpl-data/matplotlibrc'), line 850 ('font.sans-serif: Noto Sans CJK SC, DejaVu Sans, Bitstream Vera Sans, sans-serif')
+Duplicate key in file PosixPath('/usr/local/lib/python3.12/dist-packages/matplotlib/mpl-data/matplotlibrc'), line 851 ('axes.unicode_minus: False')
+读入 (33061, 33538)
+HVG 3000
+写出 ../work/gse161529_hvg.h5ad

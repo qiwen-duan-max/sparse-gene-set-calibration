@@ -1,0 +1,11 @@
+quantity,value
+observed_zero_rate,0.7240000000
+structural_zero_rate,0.5403600877
+zero_rate_excess,0.1836399123
+mean_detection,0.1716666667
+median_detection,0.1120000000
+min_detection,0.0480000000
+max_detection,0.6600000000
+tie_break_share,0.0000000000
+mean_inclusion,0.1716666667
+median_depth,180.0000000000

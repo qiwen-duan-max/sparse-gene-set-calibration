@@ -1,0 +1,29 @@
+Package: sparseGenSetCal
+Type: Package
+Title: Calibration for Sparse Gene-Set Scores
+Version: 0.1.0
+Authors@R: c(
+    person("Author", "names to be completed", role = c("aut", "cre"),
+           email = "corresponding.author@institution.ac.in"),
+    person("ClawsGO", "Science Agent", role = "ctb",
+           comment = "AI assistance with the code; reviewed by the author, who is responsible for it"))
+Description: Rank-based gene-set scores such as AUCell and UCell are sums over
+    the top ranks of each cell.  In a shallow cell far fewer genes are detected
+    than the rank ceiling admits, so the unused slots are filled by genes with a
+    zero count, ordered by an arbitrary tie-break.  A gene that is never
+    expressed therefore still contributes to the score, with a probability that
+    depends on how many genes the cell detected, and sequencing depth tracks
+    almost every biological axis of interest.  This package writes that
+    contribution down in closed form, measures it in a given dataset before any
+    association is tested, draws null gene sets matched to the observation on
+    detection rate, expression and co-detection, and reports the false-positive
+    rate of the cutpoint rules an analyst would otherwise apply without
+    checking.  It is the companion package to the manuscript of the same name.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1.0)
+Imports: Matrix, methods, R6, stats, utils
+Suggests: testthat (>= 3.0.0), knitr, rmarkdown, jsonlite
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+Config/roxygen2/version: 8.1.0

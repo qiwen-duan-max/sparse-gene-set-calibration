@@ -1,0 +1,273 @@
+\begin{thebibliography}{38}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Aibar et~al.(2017)Aibar, Gonz{\'a}lez-Blas, Moerman,
+  et~al.]{aibar2017}
+Sara Aibar, Carmen~B. Gonz{\'a}lez-Blas, Thomas Moerman, et~al.
+\newblock {SCENIC}: single-cell regulatory network inference and clustering.
+\newblock \emph{Nature Methods}, 14:\penalty0 1083--1086, 2017.
+\newblock \doi{10.1038/nmeth.4463}.
+
+\bibitem[Andreatta and Carmona(2021)]{andreatta2021}
+Massimo Andreatta and Santiago~J. Carmona.
+\newblock {UCell}: robust and scalable single-cell gene signature scoring.
+\newblock \emph{Computational and Structural Biotechnology Journal},
+  19:\penalty0 3796--3798, 2021.
+\newblock \doi{10.1016/j.csbj.2021.06.043}.
+
+\bibitem[H{\"a}nzelmann et~al.(2013)H{\"a}nzelmann, Castelo, and
+  Guinney]{hanzelmann2013}
+Sonja H{\"a}nzelmann, Robert Castelo, and Justin Guinney.
+\newblock {GSVA}: gene set variation analysis for microarray and {RNA}-seq
+  data.
+\newblock \emph{BMC Bioinformatics}, 14:\penalty0 7, 2013.
+\newblock \doi{10.1186/1471-2105-14-7}.
+
+\bibitem[Foroutan et~al.(2018)Foroutan, Bhuva, Lyu, et~al.]{foroutan2018}
+Momeneh Foroutan, Dharmesh~D. Bhuva, Ruqian Lyu, et~al.
+\newblock Single sample scoring of molecular phenotypes.
+\newblock \emph{BMC Bioinformatics}, 19:\penalty0 404, 2018.
+\newblock \doi{10.1186/s12859-018-2435-4}.
+
+\bibitem[Tirosh et~al.(2016)Tirosh, Izar, Prakadan, et~al.]{tirosh2016}
+Itay Tirosh, Benjamin Izar, Sanjay~M. Prakadan, et~al.
+\newblock Dissecting the multicellular ecosystem of metastatic melanoma by
+  single-cell {RNA}-seq.
+\newblock \emph{Science}, 352:\penalty0 189--196, 2016.
+\newblock \doi{10.1126/science.aad0501}.
+
+\bibitem[Barbie et~al.(2009)Barbie, Tamayo, Boehm, et~al.]{barbie2009}
+David~A. Barbie, Pablo Tamayo, Jesse~S. Boehm, et~al.
+\newblock Systematic {RNA} interference reveals that oncogenic {KRAS}-driven
+  cancers require {TBK1}.
+\newblock \emph{Nature}, 462:\penalty0 108--112, 2009.
+\newblock \doi{10.1038/nature08460}.
+
+\bibitem[Subramanian et~al.(2005)Subramanian, Tamayo, Mootha,
+  et~al.]{subramanian2005}
+Aravind Subramanian, Pablo Tamayo, Vamsi~K. Mootha, et~al.
+\newblock Gene set enrichment analysis: a knowledge-based approach for
+  interpreting genome-wide expression profiles.
+\newblock \emph{Proceedings of the National Academy of Sciences USA},
+  102:\penalty0 15545--15550, 2005.
+\newblock \doi{10.1073/pnas.0506580102}.
+
+\bibitem[Badia-i Mompel et~al.(2022)Badia-i Mompel, V{\'e}lez~Santiago,
+  Braunger, et~al.]{badia2022}
+Pau Badia-i Mompel, Jes{\'u}s V{\'e}lez~Santiago, Jana Braunger, et~al.
+\newblock {decoupleR}: ensemble of computational methods to infer biological
+  activities from omics data.
+\newblock \emph{Bioinformatics Advances}, 2:\penalty0 vbac016, 2022.
+\newblock \doi{10.1093/bioadv/vbac016}.
+
+\bibitem[Regev et~al.(2017)Regev, Teichmann, Lander, et~al.]{regev2017}
+Aviv Regev, Sarah~A Teichmann, Eric~S Lander, et~al.
+\newblock The {Human Cell Atlas}.
+\newblock \emph{eLife}, 6:\penalty0 e27041, 2017.
+\newblock \doi{10.7554/eLife.27041}.
+
+\bibitem[Wang and Thakar(2024)]{wang2024scps}
+Ruoqiao~H. Wang and Juilee Thakar.
+\newblock Comparative analysis of single-cell pathway scoring methods and a
+  novel approach.
+\newblock \emph{NAR Genomics and Bioinformatics}, 6:\penalty0 lqae124, 2024.
+\newblock \doi{10.1093/nargab/lqae124}.
+
+\bibitem[Soneson and Robinson(2018)]{soneson2018}
+Charlotte Soneson and Mark~D Robinson.
+\newblock Bias, robustness and scalability in single-cell differential
+  expression analysis.
+\newblock \emph{Nature Methods}, 15:\penalty0 255--261, 2018.
+\newblock \doi{10.1038/nmeth.4612}.
+
+\bibitem[Squair et~al.(2021)Squair, Gautier, Kathe, et~al.]{squair2021}
+Jordan~W. Squair, Matthieu Gautier, Claudia Kathe, et~al.
+\newblock Confronting false discoveries in single-cell differential expression.
+\newblock \emph{Nature Communications}, 12:\penalty0 5692, 2021.
+\newblock \doi{10.1038/s41467-021-25960-2}.
+
+\bibitem[Zimmerman et~al.(2021)Zimmerman, Espeland, and
+  Langefeld]{zimmerman2021}
+Kip~D. Zimmerman, Mark~A. Espeland, and Carl~D. Langefeld.
+\newblock A practical solution to pseudoreplication bias in single-cell
+  studies.
+\newblock \emph{Nature Communications}, 12:\penalty0 738, 2021.
+\newblock \doi{10.1038/s41467-021-21038-1}.
+
+\bibitem[Svensson(2020)]{svensson2020}
+Valentine Svensson.
+\newblock Droplet sc{RNA-seq} is not zero-inflated.
+\newblock \emph{Nature Biotechnology}, 38:\penalty0 147--150, 2020.
+\newblock \doi{10.1038/s41587-019-0379-5}.
+
+\bibitem[Hicks et~al.(2018)Hicks, Townes, Teng, et~al.]{hicks2017}
+Stephanie~C Hicks, F~William Townes, Mingxiang Teng, et~al.
+\newblock Missing data and technical variability in single-cell
+  {RNA-seq}uencing experiments.
+\newblock \emph{Biostatistics}, 19:\penalty0 562--578, 2018.
+\newblock \doi{10.1093/biostatistics/kxx053}.
+
+\bibitem[Holland et~al.(2020)Holland, Tanevski, Perales-Pat{\'o}n,
+  et~al.]{holland2020}
+Christian~H. Holland, Jovan Tanevski, Javier Perales-Pat{\'o}n, et~al.
+\newblock Robustness and applicability of transcription factor and pathway
+  analysis tools on single-cell {RNA}-seq data.
+\newblock \emph{Genome Biology}, 21:\penalty0 36, 2020.
+\newblock \doi{10.1186/s13059-020-1949-z}.
+
+\bibitem[Wenzel et~al.(2024)Wenzel, Jun, Liefeld, Tamayo, and
+  Mesirov]{wenzel2024}
+Alexander~T. Wenzel, John Jun, Ted Liefeld, Pablo Tamayo, and Jill~P. Mesirov.
+\newblock Profiling ranked list enrichment scoring in sparse data elucidates
+  algorithmic tradeoffs.
+\newblock \emph{bioRxiv}, 2024.
+\newblock \doi{10.1101/2024.06.03.597180}.
+\newblock Preprint.
+
+\bibitem[Wu et~al.(2021)Wu, Al-Eryani, Roden, et~al.]{wu2021}
+Sunny~Z. Wu, Ghamdan Al-Eryani, Daniel~L. Roden, et~al.
+\newblock A single-cell and spatially resolved atlas of human breast cancers.
+\newblock \emph{Nature Genetics}, 53:\penalty0 1334--1347, 2021.
+\newblock \doi{10.1038/s41588-021-00911-1}.
+
+\bibitem[Ilicic et~al.(2016)Ilicic, Kim, Kolodziejczyk, et~al.]{ilicic2016}
+Tomislav Ilicic, Jong~Kyoung Kim, Aleksandra~A. Kolodziejczyk, et~al.
+\newblock Classification of low quality cells from single-cell {RNA-seq} data.
+\newblock \emph{Genome Biology}, 17:\penalty0 29, 2016.
+\newblock \doi{10.1186/s13059-016-0888-1}.
+
+\bibitem[Bhuva et~al.(2024)Bhuva, Tan, Salim, et~al.]{bhuva2024}
+Dharmesh~D. Bhuva, Chin~Wee Tan, Agus Salim, et~al.
+\newblock Library size confounds biology in spatial transcriptomics data.
+\newblock \emph{Genome Biology}, 25:\penalty0 99, 2024.
+\newblock \doi{10.1186/s13059-024-03241-7}.
+
+\bibitem[Zappia et~al.(2017)Zappia, Phipson, and Oshlack]{zappia2017}
+Luke Zappia, Belinda Phipson, and Alicia Oshlack.
+\newblock {Splatter}: simulation of single-cell rna sequencing data.
+\newblock \emph{Genome Biology}, 18:\penalty0 174, 2017.
+\newblock \doi{10.1186/s13059-017-1305-0}.
+
+\bibitem[Vieth et~al.(2017)Vieth, Ziegenhain, Parekh, et~al.]{vieth2017}
+Beate Vieth, Christoph Ziegenhain, Swati Parekh, et~al.
+\newblock {powsimR}: power analysis for bulk and single cell {RNA-seq}
+  experiments.
+\newblock \emph{Bioinformatics}, 33:\penalty0 3486--3488, 2017.
+\newblock \doi{10.1093/bioinformatics/btx435}.
+
+\bibitem[Wilson(1927)]{wilson1927}
+Edwin~B. Wilson.
+\newblock Probable inference, the law of succession, and statistical inference.
+\newblock \emph{Journal of the American Statistical Association}, 22:\penalty0
+  209--212, 1927.
+\newblock \doi{10.1080/01621459.1927.10502953}.
+
+\bibitem[Altman et~al.(1994)Altman, Lausen, Sauerbrei, and
+  Schumacher]{altman1994}
+Douglas~G. Altman, Berthold Lausen, Willi Sauerbrei, and Martin Schumacher.
+\newblock Dangers of using `optimal' cutpoints in the evaluation of prognostic
+  factors.
+\newblock \emph{Journal of the National Cancer Institute}, 86:\penalty0
+  829--835, 1994.
+\newblock \doi{10.1093/jnci/86.23.1798-a}.
+
+\bibitem[Royston et~al.(2006)Royston, Altman, and Sauerbrei]{royston2006}
+Patrick Royston, Douglas~G. Altman, and Willi Sauerbrei.
+\newblock Dichotomizing continuous predictors in multiple regression: a bad
+  idea.
+\newblock \emph{Statistics in Medicine}, 25:\penalty0 127--141, 2006.
+\newblock \doi{10.1002/sim.2331}.
+
+\bibitem[Liberzon et~al.(2015)Liberzon, Birger, Thorvaldsd{\'o}ttir,
+  et~al.]{liberzon2015}
+Arthur Liberzon, Chet Birger, Helga Thorvaldsd{\'o}ttir, et~al.
+\newblock The molecular signatures database ({MSigDB}) hallmark gene set
+  collection.
+\newblock \emph{Cell Systems}, 1:\penalty0 417--425, 2015.
+\newblock \doi{10.1016/j.cels.2015.12.004}.
+
+\bibitem[Pal et~al.(2021)Pal, Chen, Vaillant, et~al.]{pal2021}
+Bhupinder Pal, Yunshun Chen, Fran{\c{c}}ois Vaillant, et~al.
+\newblock A single-cell {RNA} expression atlas of normal, preneoplastic and
+  tumorigenic states in the human breast.
+\newblock \emph{The EMBO Journal}, 40:\penalty0 e107333, 2021.
+\newblock \doi{10.15252/embj.2020107333}.
+
+\bibitem[Alvarez et~al.(2016)Alvarez, Shen, Giorgi, et~al.]{alvarez2016}
+Mariano~J Alvarez, Yao Shen, Federico~M Giorgi, et~al.
+\newblock Functional characterization of somatic mutations in cancer using
+  network-based inference of protein activity.
+\newblock \emph{Nature Genetics}, 48:\penalty0 838--847, 2016.
+\newblock \doi{10.1038/ng.3593}.
+
+\bibitem[Anders and Huber(2010)]{anders2010}
+Simon Anders and Wolfgang Huber.
+\newblock Differential expression analysis for sequence count data.
+\newblock \emph{Genome Biology}, 11:\penalty0 R106, 2010.
+\newblock \doi{10.1186/gb-2010-11-10-r106}.
+
+\bibitem[Robinson and Oshlack(2010)]{robinson2010}
+Mark~D Robinson and Alicia Oshlack.
+\newblock A scaling normalization method for differential expression analysis
+  of {RNA-seq} data.
+\newblock \emph{Genome Biology}, 11:\penalty0 R25, 2010.
+\newblock \doi{10.1186/gb-2010-11-3-r25}.
+
+\bibitem[L.~Lun et~al.(2016)L.~Lun, Bach, and Marioni]{lun2016}
+Aaron~T. L.~Lun, Karsten Bach, and John~C. Marioni.
+\newblock Pooling across cells to normalize single-cell rna sequencing data
+  with many zero counts.
+\newblock \emph{Genome Biology}, 17:\penalty0 75, 2016.
+\newblock \doi{10.1186/s13059-016-0947-7}.
+
+\bibitem[Hafemeister and Satija(2019)]{hafemeister2019}
+Christoph Hafemeister and Rahul Satija.
+\newblock Normalization and variance stabilization of single-cell {RNA-seq}
+  data using regularized negative binomial regression.
+\newblock \emph{Genome Biology}, 20:\penalty0 296, 2019.
+\newblock \doi{10.1186/s13059-019-1874-1}.
+
+\bibitem[Spearman(1904)]{spearman1904}
+C.~Spearman.
+\newblock The proof and measurement of association between two things.
+\newblock \emph{The American Journal of Psychology}, 15:\penalty0 72, 1904.
+\newblock \doi{10.2307/1412159}.
+
+\bibitem[Hao et~al.(2021)Hao, Hao, Andersen-Nissen, et~al.]{hao2021}
+Yuhan Hao, Stephanie Hao, Erica Andersen-Nissen, et~al.
+\newblock Integrated analysis of multimodal single-cell data.
+\newblock \emph{Cell}, 184:\penalty0 3573--3587, 2021.
+\newblock \doi{10.1016/j.cell.2021.04.048}.
+
+\bibitem[Luecken and Theis(2019)]{luecken2019}
+Malte~D Luecken and Fabian~J Theis.
+\newblock Current best practices in single‐cell rna‐seq analysis: a
+  tutorial.
+\newblock \emph{Molecular Systems Biology}, 15:\penalty0 e8746, 2019.
+\newblock \doi{10.15252/msb.20188746}.
+
+\bibitem[Wolf et~al.(2018)Wolf, Angerer, and Theis]{wolf2018}
+F.~Alexander Wolf, Philipp Angerer, and Fabian~J. Theis.
+\newblock {SCANPY}: large-scale single-cell gene expression data analysis.
+\newblock \emph{Genome Biology}, 19:\penalty0 15, 2018.
+\newblock \doi{10.1186/s13059-017-1382-0}.
+
+\bibitem[Harris et~al.(2020)Harris, Millman, van~der Walt, et~al.]{harris2020}
+Charles~R. Harris, K.~Jarrod Millman, Stéfan~J. van~der Walt, et~al.
+\newblock Array programming with {NumPy}.
+\newblock \emph{Nature}, 585:\penalty0 357--362, 2020.
+\newblock \doi{10.1038/s41586-020-2649-2}.
+
+\bibitem[Virtanen et~al.(2020)Virtanen, Gommers, Oliphant,
+  et~al.]{virtanen2020}
+Pauli Virtanen, Ralf Gommers, Travis~E. Oliphant, et~al.
+\newblock {SciPy} 1.0: fundamental algorithms for scientific computing in
+  python.
+\newblock \emph{Nature Methods}, 17:\penalty0 261--272, 2020.
+\newblock \doi{10.1038/s41592-019-0686-2}.
+
+\end{thebibliography}

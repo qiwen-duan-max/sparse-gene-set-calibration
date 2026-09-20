@@ -1,0 +1,64 @@
+[gse161529] 33061 cells x 33538 genes, max_rank = 1677, ceiling = 1677
+[gse161529] 33,538 genes; max_rank = 1677 at the 5% AUCell fraction
+[gse161529] 18 groups on 'leiden_1.0', hvg = 3000
+  h.all.v2024.1.Hs.symbols.gmt: 50 sets kept (cap None)
+  c2.cp.kegg_legacy.v2024.1.Hs.symbols.gmt: 186 sets kept (cap None)
+  c2.cp.biocarta.v2024.1.Hs.symbols.gmt: 292 sets kept (cap None)
+  c2.cp.reactome.v2024.1.Hs.symbols.gmt: 250 sets kept (cap 250)
+  c2.cp.wikipathways.v2024.1.Hs.symbols.gmt: 200 sets kept (cap 200)
+  c7.immunesigdb.v2024.1.Hs.symbols.gmt: 400 sets kept (cap 400)
+[gse161529] 1378 gene sets, 16926 genes to retain (50% of the panel)
+  [0] 4000 cells (of 5569), median detected 452 (max_rank/median = 3.71), tie-break inclusion 0.0345, axis-depth rho -0.234, cache 12s
+  [0] 1378 sets scored in 60s (76s total)
+    matched nulls done for 20 sets (904s total)
+  [1] 4000 cells (of 5083), median detected 470 (max_rank/median = 3.57), tie-break inclusion 0.0352, axis-depth rho -0.041, cache 13s
+  [1] 1378 sets scored in 61s (981s total)
+    matched nulls done for 20 sets (1509s total)
+  [10] 1140 cells (of 1140), median detected 706 (max_rank/median = 2.37), tie-break inclusion 0.0282, axis-depth rho +0.098, cache 2s
+  [10] 1378 sets scored in 12s (1524s total)
+    matched nulls done for 20 sets (1740s total)
+  [11] 872 cells (of 872), median detected 1194 (max_rank/median = 1.40), tie-break inclusion 0.0161, axis-depth rho -0.213, cache 2s
+  [11] 1378 sets scored in 10s (1753s total)
+    matched nulls done for 20 sets (2000s total)
+  [12] 611 cells (of 611), median detected 2592 (max_rank/median = 0.65), tie-break inclusion 0.0072, axis-depth rho +0.077, cache 1s
+  [12] 1378 sets scored in 6s (2008s total)
+    matched nulls done for 20 sets (2237s total)
+  [13] 456 cells (of 456), median detected 1054 (max_rank/median = 1.59), tie-break inclusion 0.0190, axis-depth rho +0.204, cache 1s
+  [13] 1378 sets scored in 7s (2244s total)
+    matched nulls done for 20 sets (2369s total)
+  [14] 337 cells (of 337), median detected 2680 (max_rank/median = 0.63), tie-break inclusion 0.0046, axis-depth rho -0.042, cache 1s
+  [14] 1378 sets scored in 5s (2375s total)
+    matched nulls done for 20 sets (2562s total)
+  [15] 336 cells (of 336), median detected 704 (max_rank/median = 2.38), tie-break inclusion 0.0260, axis-depth rho +0.378, cache 1s
+  [15] 1378 sets scored in 7s (2570s total)
+    matched nulls done for 20 sets (2732s total)
+  [16] 256 cells (of 256), median detected 880 (max_rank/median = 1.91), tie-break inclusion 0.0207, axis-depth rho +0.564, cache 1s
+  [16] 1378 sets scored in 6s (2739s total)
+    matched nulls done for 20 sets (2903s total)
+  [17] only 129 cells, skipped
+  [2] 4000 cells (of 4353), median detected 1214 (max_rank/median = 1.38), tie-break inclusion 0.0171, axis-depth rho -0.706, cache 9s
+  [2] 1378 sets scored in 46s (2961s total)
+    matched nulls done for 20 sets (3947s total)
+  [3] 3282 cells (of 3282), median detected 907 (max_rank/median = 1.85), tie-break inclusion 0.0200, axis-depth rho -0.666, cache 6s
+  [3] 1378 sets scored in 28s (3983s total)
+    matched nulls done for 20 sets (4635s total)
+  [4] 2512 cells (of 2512), median detected 468 (max_rank/median = 3.58), tie-break inclusion 0.0349, axis-depth rho +0.255, cache 4s
+  [4] 1378 sets scored in 23s (4663s total)
+    matched nulls done for 20 sets (4839s total)
+  [5] 2493 cells (of 2493), median detected 1073 (max_rank/median = 1.56), tie-break inclusion 0.0170, axis-depth rho -0.711, cache 4s
+  [5] 1378 sets scored in 22s (4866s total)
+    matched nulls done for 20 sets (5433s total)
+  [6] 1639 cells (of 1639), median detected 2756 (max_rank/median = 0.61), tie-break inclusion 0.0059, axis-depth rho -0.378, cache 3s
+  [6] 1378 sets scored in 11s (5448s total)
+    matched nulls done for 20 sets (6049s total)
+  [7] 1489 cells (of 1489), median detected 2600 (max_rank/median = 0.65), tie-break inclusion 0.0054, axis-depth rho +0.476, cache 2s
+  [7] 1378 sets scored in 11s (6063s total)
+    matched nulls done for 20 sets (6555s total)
+  [8] 1258 cells (of 1258), median detected 1174 (max_rank/median = 1.43), tie-break inclusion 0.0161, axis-depth rho +0.097, cache 2s
+  [8] 1378 sets scored in 9s (6567s total)
+    matched nulls done for 20 sets (6828s total)
+  [9] 1246 cells (of 1246), median detected 1373 (max_rank/median = 1.22), tie-break inclusion 0.0131, axis-depth rho +0.384, cache 2s
+  [9] 1378 sets scored in 9s (6839s total)
+    matched nulls done for 20 sets (7102s total)
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/results/benchmark_gse161529_all.csv  ((23426, 32))
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/results/benchmark_gse161529_nulls.csv  ((340, 27))

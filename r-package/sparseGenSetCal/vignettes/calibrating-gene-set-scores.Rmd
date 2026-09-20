@@ -1,0 +1,506 @@
+---
+title: "Calibrating Gene-Set Scores in Your Data"
+author: "sparseGenSetCal"
+output:
+  rmarkdown::html_vignette:
+    toc: true
+    toc_depth: 3
+vignette: >
+  %\VignetteIndexEntry{Calibrating Gene-Set Scores in Your Data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE, comment = "#>",
+    fig.width = 6.5, fig.height = 3.4, dpi = 120,
+    fig.align = "center"
+)
+suppressPackageStartupMessages(library(sparseGenSetCal))
+```
+
+```{r, include = FALSE}
+# The vignette has to build in seconds, so the permutation counts are turned
+# down from their defaults and the matrix is small.  Every number the vignette
+# reports is a property of the data, not of these settings, which is the point
+# the text makes in the next section; the defaults are stated where they differ.
+set.seed(2024)
+```
+
+## The question this package answers
+
+You have a gene set, a single-cell matrix, and a hypothesis that the set's
+score tracks something -- a cluster, a treatment, a clinical axis. You compute
+AUCell scores, you test the correlation, you get a p-value. Before you believe
+it, there is one question worth answering: **how much of that score was
+measured, and how much of it was the ranking filling in for genes the cell
+never expressed?**
+
+That is not a rhetorical question, and its answer is computable in closed form.
+Every rank-based score asks where a gene sits among *all* genes in a cell. A
+cell that expresses fewer genes than the score's rank ceiling has no count to
+place in the remaining positions, so those positions go to genes the cell never
+expressed, ordered by whatever rule the implementation uses to break ties. One
+such gene contributes, in expectation,
+
+$$\tau(D) = \frac{(m-D)(m-D+1)}{2\,m\,(G-D)},$$
+
+with $m$ the rank ceiling, $G$ the panel size and $D$ the number of genes the
+cell detected. It is a function of the cell's depth and not of the gene set --
+and depth tracks almost every biological axis one cares about. A score carried
+by that term will correlate with the axis for reasons that have nothing to do
+with the biology.
+
+This vignette walks through the four steps that replace the null the data
+cannot support with one it can, on data small enough to run in a few seconds.
+Everything here is an export of the package, so you can paste it into your own
+script and point it at your matrix.
+
+## A matrix to work with
+
+`make_synthetic_matrix()` produces Poisson counts with a realistic
+gene-activity gradient -- three orders of magnitude between the most and least
+active genes -- and a depth distribution you control through `density`. Using
+your own data instead means passing the matrix and its gene names; nothing else
+changes.
+
+```{r}
+X <- make_synthetic_matrix(n_cells = 600, n_genes = 6000, density = 0.04,
+                           seed = 11)
+dim(X$matrix)
+```
+
+The rank ceiling is a fraction of the panel, as in AUCell's default. The cache
+holds each gene's rank in each cell whenever that rank is at or below the
+ceiling, and zero otherwise; ranks above the ceiling contribute to none of the
+scores implemented here, so keeping them would only cost memory.
+
+```{r}
+rank_frac <- 0.05
+ceiling <- as.integer(ceiling(rank_frac * ncol(X$matrix)))
+cache <- rank_cache(X$matrix, X$genes, ceiling = ceiling, seed = 2024)
+cache
+```
+
+One number decides whether any of this matters, and it can be read off the
+depth distribution before a gene set is chosen: the ceiling divided by the
+median number of genes a cell detects. Below one, every rank inside the ceiling
+holds a measured count and the tie-break never enters the score. Above one, the
+slots the cell cannot fill are given to genes it never expressed.
+
+```{r}
+median_depth <- stats::median(cache$depth)
+data.frame(quantity = c("max_rank", "median genes detected", "ratio"),
+           value = c(ceiling, median_depth, round(ceiling / median_depth, 2)))
+```
+
+Here the ratio is above one, which is the regime the whole framework is about.
+It is also the common one: a shallow cell in a large panel cannot fill a
+top-5% block with genes it detected.
+
+## Step 1: how much of the score was never measured
+
+`sparsity_report()` needs the cache and the set, and nothing else. It reports
+the share of cells scoring exactly zero, the detection profile of the set, and
+-- given the depth vector, which the cache carries -- the share of the set's
+chance of entering the score that the tie-break supplies.
+
+The thresholds the verdict uses are visible in the table below, which walks a
+set through detection rates from 0.2% to 80%. Real gene sets are not more
+exotic than this: a set of transcription factors and a set of ribosomal
+proteins are the two ends of it.
+
+```{r}
+set_at_detection <- function(target, n = 10) {
+    cache$genes[order(abs(cache$detection - target))][seq_len(n)]
+}
+gradient <- function(target) {
+    r <- sparsity_report(cache, set_at_detection(target), rank_frac = rank_frac)
+    v <- verdict(r)
+    data.frame(detection = target,
+               median_detection = r$median_detection,
+               zero_rate = r$observed_zero_rate,
+               share = r$tie_break_share,
+               verdict = v$verdict,
+               severity = v$severity)
+}
+watch <- function(d) {
+    d$median_detection <- round(d$median_detection, 3)
+    d$zero_rate <- round(d$zero_rate, 3)
+    d$share <- round(d$share, 3)
+    d
+}
+tb <- do.call(rbind, lapply(c(0.002, 0.005, 0.01, 0.02, 0.05, 0.15, 0.4, 0.8),
+                            gradient))
+watch(tb)
+```
+
+Read it down the `share` column: at 0.2% detection most of the set's chance of
+entering the score is tie-break, and at 15% almost none of it is -- an order of
+magnitude of movement over rows where the only thing that changed is how often
+the cells detected the set. No pathway, no co-expression, no biology moved.
+
+Three criteria can raise a set's severity, and the table shows them crossing
+independently of each other. The tie-break share drops below its moderate
+threshold at 2% detection, while the zero rate is still 0.75 and stays in the
+high band down to 5%: the share asks how much of the score's *chance* came from
+the ranking, and the zero rate asks how many *cells* carry any information
+about the set at all. The third is the gap between the observed zero rate and
+the rate the scoring rule implies under independence, and it is why the bottom
+rows are not the clean bill of health they look like. Those sets are detected
+in enough cells to have almost no tie-break component, and they are flagged
+anyway, because genes that are found together also depart from the independence
+the conventional null assumes -- in the other direction. That is the case the
+co-detection-matched null is for.  The `reasons` field of the verdict carries
+one line per criterion that fired.
+
+The verdict is also not a property of the gene set alone. Rerun this on a
+dataset with deeper cells and the same rows shift right, because the tie-break
+enters the score only where a cell's depth falls short of the ceiling.
+
+The rest of the vignette uses a set from the middle of that table, where the
+answer is genuinely contested.
+
+```{r}
+gene_set <- set_at_detection(0.02)
+```
+
+## Step 2: a null the data supports
+
+A permutation test that shuffles cells answers "is this score different from
+what the same cells would give by chance", which is not the question. The
+question is whether the *set* carries information beyond its detection
+profile, so the null has to be drawn from genes with the same profile.
+
+`construct_expression_matched_null()` draws replacement sets from the
+detection-rate stratum of each gene of the set, excluding the whole query set
+from the pool. It reports the composition it achieved, because a null that
+silently failed to match is worse than no null at all.
+
+```{r}
+built <- construct_expression_matched_null(cache, gene_set, n_sets = 20,
+                                           seed = 42)
+data.frame(
+    quantity = c("target detection", "null detection", "ratio",
+                 "mean per-set gap", "worst per-set gap",
+                 "draws within tolerance", "genes shared with the query",
+                 "draws that had to relax the pool", "status"),
+    value = c(round(built$target_detection, 4),
+              round(built$null_detection, 4),
+              round(built$detection_ratio, 4),
+              round(built$mean_detection_gap, 4),
+              round(built$worst_detection_gap, 4),
+              round(built$frac_within_tolerance, 3),
+              built$max_overlap, built$draw_relaxations, built$status))
+```
+
+Two of those columns are the ones to look at. `max_overlap` has to be zero: a
+null set that reuses a gene of the query is not a null, it is the observation
+with extra steps. And `status` is `FAIL` when the pool could not supply a set
+close enough in detection rate, which happens when the query is so sparse that
+nothing in the background resembles it -- a real finding about the data, not a
+hiccup in the function.
+
+`status` reads the *mean* gap rather than the worst one, and the two are both
+reported because they answer different questions. A maximum over draws can only
+grow as more draws are asked for, so a rule based on it would pass a family at
+25 draws and fail the same family at 100 -- the diagnostic would punish the
+better practice. The mean settles down instead, and `draws within tolerance`
+shows how much spread sits behind it.
+
+Now score the observation and its null on the same cells and correlate both
+against an axis. The axis here is the depth itself, which is the worst case and
+therefore the honest one to demonstrate with.
+
+```{r}
+axis <- cache$depth
+cal <- compute_calibrated_score(cache, gene_set,
+                                null_genes = built$null_genes,
+                                axis = axis)
+str(cal$summary[c("observed", "null_mean", "null_sd", "p_value")])
+```
+
+The observed correlation of the score with depth is compared against the
+distribution of the same correlation over the matched null draws. A score that
+tracks depth because the tie-break does will sit inside that distribution and
+the p-value will be unremarkable; a score that tracks depth through its genes
+will not. Here the observed value sits
+`r sprintf("%.1f", abs(cal$summary$observed - cal$summary$null_mean) / cal$summary$null_sd)`
+null standard deviations from the null mean, which is the quantity to report.
+The naive test on the same score, which permutes the axis instead of matching
+the genes, gives a p-value of
+`r sprintf("%.3f", spearman(cal$observed, axis)$p)` -- and that comparison is
+the reason the framework exists.
+
+## Step 3: what the rule you were going to use actually does
+
+The other silent source of false positives is the cutpoint. Choosing the
+cutpoint that best separates the outcome and then testing it as if it had been
+chosen in advance is the standard move in this literature, and it is
+anticonservative in a way that is easy to measure. `cutpoint_fpr()` permutes
+the outcome, re-applies the rule, and counts how often it declares a
+significance it was never entitled to.
+
+```{r}
+outcome <- axis > stats::median(axis)
+rules <- c("median", "optimum")
+fprs <- lapply(rules, function(m) {
+    cutpoint_fpr(cal$observed, outcome, n_perm = 300, method = m, seed = 7)
+})
+names(fprs) <- rules
+data.frame(rule = rules,
+           fpr = round(vapply(fprs, function(f) f$fpr, 0), 3),
+           observed_p = signif(vapply(fprs, function(f) f$observed_p, 0), 2),
+           cutpoint = signif(vapply(fprs, function(f) f$observed_cutpoint, 0), 3))
+```
+
+The median rule holds its level: its false-positive rate is about
+`r ALPHA`, as a rule that never looked at the outcome should. The optimal rule
+does not, and the multiple is what the outcome-driven cutpoint costs on this
+score. Both rules report the *same* data on the same cells; they differ only in
+whether the cutpoint was chosen by looking at the outcome. `n_perm = 300` here
+for speed; the default is 1000.
+
+## Step 4: the whole checklist in one call
+
+`diagnostic_checklist()` runs all four steps on one gene set and returns a
+serialisable object. This is the function to keep in a pipeline.
+
+```{r}
+check <- diagnostic_checklist(cache, gene_set, axis = axis, n_perm = 300,
+                              label = "example set")
+check$overall_verdict
+check$severity
+cat(check$reasons, sep = "\n")
+```
+
+The verdict is deliberately blunt. `NOT_IDENTIFIABLE` means the score cannot
+carry the cell-level claim being made about it, whatever the p-value was;
+`INTERPRETABLE_WITH_MATCHED_NULL` means the association may be real but every
+test of it has to be run against a matched null, and the object carries the one
+that was constructed. `to_json()` writes it out.
+
+```{r}
+path <- tempfile(fileext = ".json")
+to_json(check, path)
+cat(substr(readLines(path), 1, 60), sep = "\n")
+unlink(path)
+```
+
+## What changes and what does not
+
+The framework does not tell you that your association is false. It tells you
+what part of the evidence for it came from the measurement and what part came
+from the ranking, which is a distinction the conventional analysis does not
+draw. Three things follow, in the order they are usually needed:
+
+1. **Report the share.** A tie-break share of 0.6 means that 60% of the set's
+   chance of entering the score comes from genes the cell did not express.
+   That sentence belongs in the results whether or not it changes the
+   conclusion.
+2. **Replace the null.** Every test of the association -- correlation,
+   group difference, survival -- should be run against expression-matched
+   draws, and the p-value reported from that distribution rather than from the
+   cells.
+3. **Match the regime across cohorts.** A replication in a dataset with a
+   different depth distribution tests a different score. `comparability_report()`
+   reports whether two panels place the same set on the same scale before you
+   read a replication failure as a biological disagreement.
+
+One thing this does *not* license is treating every sparse set as
+uninformative. A set can be sparse and still carry signal: the split in
+`score_decomposition()` separates the two contributions cell by cell, and if
+the detected part is doing the work, the sparsity is a caveat and not a
+refutation.
+
+```{r, fig.width = 6.5, fig.height = 3.6}
+split <- score_decomposition(cache, gene_set, X$matrix > 0,
+                             max_rank = ceiling)
+# The cells that score at all, in fifths of depth, each point the mean of its
+# fifth.  Two things are being kept out of the picture: the three-quarters of
+# cells whose score is exactly zero, which carry no rank information either
+# way, and the cell-to-cell spread within a fifth, which is wide enough to hide
+# the trend if every cell were drawn.
+scoring <- split$total > 0
+tie_share <- split$tie_break[scoring] / split$total[scoring]
+depth <- cache$depth[scoring]
+fifth <- as.integer(cut(depth, stats::quantile(depth, seq(0, 1, 0.2)),
+                        labels = FALSE, include.lowest = TRUE))
+by_fifth <- function(v) as.numeric(tapply(v, fifth, mean))
+okabe <- c("#0072B2", "#D55E00")
+op <- par(bty = "n", mar = c(4.1, 4.3, 2.8, 1.2), las = 1,
+          col.axis = "#333333", col.lab = "#333333", fg = "#333333")
+plot(by_fifth(depth), 1 - by_fifth(tie_share), type = "b", pch = 19, lwd = 2,
+     col = okabe[1], ylim = c(0, 1.18),
+     xlab = "Genes detected in the cell", ylab = "Share of the cell's score",
+     main = "Where the score came from, cell by cell")
+lines(by_fifth(depth), by_fifth(tie_share), type = "b", pch = 19, lwd = 2,
+      col = okabe[2])
+# Labelled at opposite ends: the curves cross, so labels placed at the same
+# depth would sit on top of each other.  The offsets are in the direction the
+# label has room in, so neither runs off the margin.
+n <- length(by_fifth(depth))
+text(by_fifth(depth)[1], by_fifth(tie_share)[1], "tie-break fill",
+     col = okabe[2], adj = c(0, -0.75), font = 2)
+text(by_fifth(depth)[n], 1 - by_fifth(tie_share)[n], "measured genes",
+     col = okabe[1], adj = c(1, -0.75), font = 2)
+par(op)
+```
+
+The orange curve is the part of the score that the tie-break supplied. In the
+shallowest fifth of the cells that score at all it is three quarters of the
+score, and in the deepest fifth it is nothing -- which is exactly what makes it
+a confound, since it is a monotone function of depth and depth is rarely the
+variable of interest. The blue curve is the part the cells measured. Averaged
+over the set, the orange is the `tie_break_share` of the table above.
+
+## When the framework refuses, and when it only warns
+
+Three inputs break the framework rather than stretching it, and the difference
+between the two responses is deliberate. Each is shown here through the same
+entry point an analyst would use, on a small matrix built to trigger it.
+
+```{r}
+set.seed(6)
+n_cells <- 120
+panel <- paste0("g", seq_len(200))
+Xe <- matrix(0, n_cells, length(panel), dimnames = list(NULL, panel))
+# Three blocks, and the two examples below read one each.  The first five genes
+# are expressed in every cell and outrank everything else, so they hold ranks
+# 1-5 in every cell and a set made of them scores the same number everywhere.
+# The next twenty are switched on only in the second half of the cells, so a
+# set made of *those* separates the two halves completely.  The rest are
+# detected at a middling rate in every cell, which is the background both sets
+# are drawn against.
+Xe[, 1:5] <- 8
+Xe[61:120, 21:40] <- 5
+Xe[, 41:200] <- matrix(stats::rbinom(n_cells * 160, 1, 0.4), n_cells, 160)
+Xe <- Matrix::Matrix(Xe, sparse = TRUE)
+cache_e <- rank_cache(Xe, panel, ceiling = 10)
+axis_e <- stats::rnorm(n_cells)
+```
+
+**A gene set with no spread.** If the set's genes are detected in no cell, or in
+every cell, the score is the same number for every cell and its correlation with
+any axis is 0/0. The framework stops rather than returning a `NaN` that would
+surface much later, in whichever statistic first touched it, with nothing left
+to say which set produced it.
+
+```{r, error = TRUE}
+diagnostic_checklist(cache_e, panel[1:5], axis = axis_e, n_perm = 20,
+                     cutpoint_method = "median")
+```
+
+**A null that cannot be drawn.** Every draw excludes the query set, so what can
+stand in for a 400-gene set is the background *minus those 400 genes*, not the
+background. When fewer than `MIN_BACKGROUND_GENES` candidates are left, the
+detection floor is lowered by 10% and the widening is announced; if that still
+leaves too few, the call stops. A replacement drawn from five genes is not a
+null, and the P value it produced would be read as a test.
+
+```{r, error = TRUE}
+construct_expression_matched_null(cache_e, panel[-1], n_sets = 1)
+```
+
+**A score that separates its groups almost perfectly.** This one is a warning
+and not a refusal, because a marker that marks exactly what it is supposed to
+mark also lands here, and a framework that withheld the result would be hiding
+it rather than qualifying it. The three explanations worth checking travel with
+the warning.
+
+```{r}
+seen <- character(0)
+check_e <- withCallingHandlers(
+    diagnostic_checklist(cache_e, panel[21:40], axis = as.numeric(1:n_cells),
+                         n_perm = 20, cutpoint_method = "median"),
+    sparsegs_event = function(w) {
+        seen <<- c(seen, conditionMessage(w))
+        invokeRestart("muffleWarning")
+    })
+# The record the warning produced, split back into its fields:
+strsplit(grep("separation", seen, value = TRUE), " ")[[1]]
+# and the number that produced it, which the checklist reports whether or not
+# it crosses the threshold:
+check_e$step3_false_positive_rate$score_auc
+```
+
+The separation is checked in both directions. The brief states the case as
+"AUC >= 0.99", but `auroc()` does not fold its argument about 0.5, and a score
+that lands every high-axis cell *below* every low-axis cell separates them just
+as perfectly as one that does the reverse -- so reading only the upper tail
+would have missed half the ways this confound can arise. The record carries
+`auc` and `separation` separately for that reason.
+
+## The log, and reading it as data
+
+Every diagnostic above is a *record* rather than a sentence: an event name and a
+set of named fields, written `event field=value` with any value containing a
+space quoted. The point of the format is that a log can be counted and not only
+read -- "how many of these sets had to be drawn from a widened pool" is a
+question with an answer, and the answer is the reason the edge cases exist.
+
+```{r}
+# The call above ran at the default level, `warning`.  Wrapped so the records
+# can be counted:
+quiet <- function() {
+    got <- character(0)
+    withCallingHandlers(
+        diagnostic_checklist(cache_e, panel[21:40],
+                             axis = as.numeric(1:n_cells), n_perm = 20,
+                             cutpoint_method = "median"),
+        sparsegs_event = function(w) {
+            got <<- c(got, conditionMessage(w))
+            invokeRestart("muffleWarning")
+        })
+    got
+}
+length(quiet())
+```
+
+`set_log_level()` moves the floor for the framework's own records and for
+nothing else. At `error` the same record is dropped before it is ever
+formatted, so a caller who has decided the warnings are noise pays nothing for
+them -- and the caller's own warnings are untouched either way.
+
+```{r}
+set_log_level("error")
+length(quiet())
+set_log_level("warning")
+```
+
+Records arrive as conditions of class `sparsegs_event`, which is what lets the
+two be separated: `withCallingHandlers` above catches the framework's records
+and re-raises everything else, so a `tryCatch(warning = ...)` around the same
+call would see its own warnings and not ours.
+
+The same records come out of the Python implementation of this framework, byte
+for byte, and `experiments/cross_language_check.py` in the accompanying
+repository asserts it: a claim about log compatibility that rests on reading two
+files by eye is not a claim anyone can check.
+
+## Reproducibility and where the numbers come from
+
+Every function that draws anything takes a `seed`, and the defaults are stated
+in `DEFAULT_CONFIG`. The tie-break deserves a note of its own. It is not a draw
+from the random number generator: it is a key computed from the cell index, the
+gene index and the seed, so the cache is identical whatever `chunk` is used and
+identical to the Python reference implementation of the same framework, to the
+integer. That is what lets the two implementations be tested against each other
+rather than against each other's statistics.
+
+```{r}
+a <- rank_cache(X$matrix, X$genes, ceiling = ceiling, chunk = 400)
+b <- rank_cache(X$matrix, X$genes, ceiling = ceiling, chunk = 37)
+identical(a$clipped, b$clipped)
+```
+
+The full derivation, the rates the framework was calibrated on and the
+comparison with the conventional analyses are in the accompanying manuscript.
+`citation("sparseGenSetCal")` and the package documentation give the entry
+points; `?sparsity_report`, `?construct_expression_matched_null` and
+`?diagnostic_checklist` are the three to read first.
+
+```{r}
+sessionInfo()
+```

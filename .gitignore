@@ -1,0 +1,29 @@
+# Python build and test artefacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+
+# LaTeX intermediates (the compiled PDF and the .bbl are tracked)
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.fls
+manuscript/*.fdb_latexmk
+manuscript/*.synctex.gz
+manuscript/*.blg
+manuscript/*.toc
+manuscript/*.spl
+manuscript/*.nav
+manuscript/*.snm
+manuscript/*.vrb
+
+# Internal submission material (cover letter, checklists, reviewer
+# preparation) stays out of the public repository
+submission/
+
+# OS noise
+.DS_Store
+Thumbs.db

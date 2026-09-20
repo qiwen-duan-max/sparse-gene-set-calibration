@@ -1,0 +1,53 @@
+# Continuous integration for the calibration framework.
+#
+# Two jobs: the Python package's test suite plus the cross-language check
+# (which drives the R package through the same structured-log records from
+# inside the Python job, so it needs an R install), and the R package's own
+# testthat suite.  The full pipeline is a separate matter: its benchmark
+# stages need the two public cohorts, which CI does not download.
+#
+# The version numbers are the environment the manuscript was produced in;
+# see environment.yml and renv.lock.
+
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.3.3'
+      - name: Install R packages the cross-language check drives
+        run: Rscript -e 'install.packages(c("Matrix", "R6", "jsonlite"))'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the package with its test extras
+        run: pip install -e .[test]
+      - name: Test suite
+        run: python -m pytest tests/ -q
+      - name: Cross-language check (Python vs R structured logs)
+        run: python experiments/cross_language_check.py
+      - name: Citation keys resolve in both directions
+        run: python experiments/verify_references.py --offline
+
+  r-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.3.3'
+      - name: Install R package dependencies
+        run: Rscript -e 'install.packages(c("R6", "testthat", "jsonlite"))'
+      - name: Build the R tarball
+        run: R CMD build --no-build-vignettes r-package/sparseGenSetCal
+      - name: testthat suite
+        run: Rscript -e 'testthat::test_local("r-package/sparseGenSetCal", stop_on_failure = TRUE)'

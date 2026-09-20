@@ -1,0 +1,1686 @@
+
+=== 06:03:03  realised tie-break share per compartment ===
+  h.all.v2024.1.Hs.symbols.gmt: 50 sets kept (cap None)
+  c2.cp.kegg_legacy.v2024.1.Hs.symbols.gmt: 186 sets kept (cap None)
+  c2.cp.biocarta.v2024.1.Hs.symbols.gmt: 288 sets kept (cap None)
+  c2.cp.reactome.v2024.1.Hs.symbols.gmt: 250 sets kept (cap 250)
+  c2.cp.wikipathways.v2024.1.Hs.symbols.gmt: 200 sets kept (cap 200)
+  c7.immunesigdb.v2024.1.Hs.symbols.gmt: 400 sets kept (cap 400)
+[gse176078] 55003 cells x 24646 genes, max_rank = 1233, 1374 sets
+  [B] 1713 cells, 1374 sets, 8s
+  [CD4+ T] 4000 cells, 1374 sets, 22s
+  [CD8+ T] 4000 cells, 1374 sets, 24s
+  [Cancer epithelial] 4000 cells, 1374 sets, 40s
+  [Dendritic] 527 cells, 1374 sets, 4s
+  [Endothelial] 3904 cells, 1374 sets, 33s
+  [Fibroblast] 3445 cells, 1374 sets, 27s
+  [Macrophage] 3549 cells, 1374 sets, 31s
+  [Monocyte] 1358 cells, 1374 sets, 10s
+  [NK] 1089 cells, 1374 sets, 6s
+  [NKT] 627 cells, 1374 sets, 3s
+  [Normal epithelial] 2104 cells, 1374 sets, 17s
+  [Perivascular] 2859 cells, 1374 sets, 20s
+  [Plasma] 1844 cells, 1374 sets, 9s
+  [Proliferating T] 1355 cells, 1374 sets, 9s
+  [Treg] 2388 cells, 1374 sets, 14s
+
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/results/compartment_tie_break_gse176078.csv  (21984 rows, 16 compartments)
+realised tie-break share of the score, median across sets
+  Plasma                       0.1235   (max 1.0000, depth ratio 1.46)
+  NKT                          0.0886   (max 1.0000, depth ratio 1.52)
+  B                            0.0879   (max 1.0000, depth ratio 1.51)
+  CD4+ T                       0.0865   (max 0.9938, depth ratio 1.50)
+  NK                           0.0739   (max 0.9802, depth ratio 1.36)
+  CD8+ T                       0.0726   (max 0.9902, depth ratio 1.40)
+  Treg                         0.0634   (max 1.0000, depth ratio 1.27)
+  Perivascular                 0.0299   (max 0.8257, depth ratio 0.84)
+  Proliferating T              0.0274   (max 0.9603, depth ratio 0.83)
+  Fibroblast                   0.0266   (max 0.5608, depth ratio 0.73)
+  Monocyte                     0.0225   (max 0.9390, depth ratio 0.77)
+  Endothelial                  0.0207   (max 0.8770, depth ratio 0.66)
+  Macrophage                   0.0194   (max 0.6916, depth ratio 0.60)
+  Dendritic                    0.0147   (max 0.8534, depth ratio 0.71)
+  Cancer epithelial            0.0122   (max 0.9644, depth ratio 0.52)
+  Normal epithelial            0.0106   (max 0.5912, depth ratio 0.57)
+    ok
+
+=== 06:07:41  the same for the second cohort ===
+  h.all.v2024.1.Hs.symbols.gmt: 50 sets kept (cap None)
+  c2.cp.kegg_legacy.v2024.1.Hs.symbols.gmt: 186 sets kept (cap None)
+  c2.cp.biocarta.v2024.1.Hs.symbols.gmt: 292 sets kept (cap None)
+  c2.cp.reactome.v2024.1.Hs.symbols.gmt: 250 sets kept (cap 250)
+  c2.cp.wikipathways.v2024.1.Hs.symbols.gmt: 200 sets kept (cap 200)
+  c7.immunesigdb.v2024.1.Hs.symbols.gmt: 400 sets kept (cap 400)
+[gse161529] 33061 cells x 33538 genes, max_rank = 1677, 1378 sets
+  [0] 4000 cells, 1378 sets, 20s
+  [1] 4000 cells, 1378 sets, 19s
+  [10] 1140 cells, 1378 sets, 5s
+  [11] 872 cells, 1378 sets, 6s
+  [12] 611 cells, 1378 sets, 5s
+  [13] 456 cells, 1378 sets, 3s
+  [14] 337 cells, 1378 sets, 4s
+  [15] 336 cells, 1378 sets, 2s
+  [16] 256 cells, 1378 sets, 2s
+  [2] 4000 cells, 1378 sets, 30s
+  [3] 3282 cells, 1378 sets, 20s
+  [4] 2512 cells, 1378 sets, 12s
+  [5] 2493 cells, 1378 sets, 19s
+  [6] 1639 cells, 1378 sets, 14s
+  [7] 1489 cells, 1378 sets, 12s
+  [8] 1258 cells, 1378 sets, 7s
+  [9] 1246 cells, 1378 sets, 7s
+
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/results/compartment_tie_break_gse161529.csv  (23426 rows, 17 compartments)
+realised tie-break share of the score, median across sets
+  0                            0.3377   (max 0.9944, depth ratio 3.71)
+  1                            0.2883   (max 1.0000, depth ratio 3.57)
+  4                            0.2844   (max 1.0000, depth ratio 3.58)
+  10                           0.1947   (max 1.0000, depth ratio 2.37)
+  15                           0.1585   (max 1.0000, depth ratio 2.38)
+  2                            0.1170   (max 1.0000, depth ratio 1.38)
+  16                           0.1130   (max 1.0000, depth ratio 1.91)
+  3                            0.1062   (max 1.0000, depth ratio 1.85)
+  5                            0.1045   (max 1.0000, depth ratio 1.56)
+  13                           0.0995   (max 1.0000, depth ratio 1.59)
+  11                           0.0899   (max 1.0000, depth ratio 1.40)
+  8                            0.0852   (max 1.0000, depth ratio 1.43)
+  9                            0.0579   (max 1.0000, depth ratio 1.22)
+  12                           0.0383   (max 1.0000, depth ratio 0.65)
+  6                            0.0287   (max 1.0000, depth ratio 0.61)
+  7                            0.0280   (max 1.0000, depth ratio 0.65)
+  14                           0.0189   (max 1.0000, depth ratio 0.63)
+    ok
+
+=== 06:10:53  operating characteristics from the sweeps ===
+
+========================================================================
+A_calibration: 1080 runs
+========================================================================
+
+pooled rejection rate at alpha = 0.05
+  naive              0.400 [0.371, 0.430]
+  permutation        0.397 [0.368, 0.427]
+  cutpoint_median    0.337 [0.309, 0.366]
+  cutpoint_optimal   0.556 [0.527, 0.586]
+  random             0.201 [0.178, 0.226]
+  expression         0.068 [0.054, 0.084]
+  codetection        0.094 [0.078, 0.113]
+
+matched tests in all three tails (false-positive rate)
+                   test   k    n  rate  ci_low  ci_high
+     random (two-sided) 217 1080 0.201   0.178    0.226
+         random (lower)  47 1080 0.044   0.033    0.057
+         random (upper) 225 1080 0.208   0.185    0.234
+ expression (two-sided)  73 1080 0.068   0.054    0.084
+     expression (lower)  80 1080 0.074   0.060    0.091
+     expression (upper)  51 1080 0.047   0.036    0.062
+codetection (two-sided) 102 1080 0.094   0.078    0.113
+    codetection (lower) 109 1080 0.101   0.084    0.120
+    codetection (upper)  41 1080 0.038   0.028    0.051
+
+by depth_programme_loading
+ depth_programme_loading   n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+                   0.000 360  0.064        0.069            0.078             0.308   0.064       0.069        0.075
+                   0.300 360  0.442        0.436            0.322             0.586   0.222       0.072        0.083
+                   0.600 360  0.694        0.686            0.611             0.775   0.317       0.061        0.125
+
+by detection
+ detection   n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+     0.010 360  0.239        0.239            0.183             0.344   0.061       0.081        0.083
+     0.050 360  0.331        0.328            0.300             0.553   0.094       0.047        0.061
+     0.150 360  0.631        0.625            0.528             0.772   0.447       0.075        0.139
+
+by coexpr
+ coexpr   n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+  0.000 540  0.407        0.406            0.356             0.567   0.226       0.056        0.054
+  0.600 540  0.393        0.389            0.319             0.546   0.176       0.080        0.135
+
+by median_detected
+   median_detected  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+(284.999, 325.917] 90  0.433        0.422            0.378             0.567   0.222       0.122        0.133
+(325.917, 349.417] 90  0.456        0.444            0.433             0.589   0.278       0.067        0.111
+  (349.417, 397.0] 92  0.380        0.359            0.293             0.522   0.120       0.054        0.087
+  (397.0, 416.333] 88  0.432        0.443            0.330             0.580   0.193       0.114        0.136
+(416.333, 446.167] 90  0.367        0.367            0.333             0.600   0.200       0.044        0.056
+  (446.167, 465.0] 95  0.326        0.326            0.337             0.526   0.200       0.032        0.053
+    (465.0, 483.5] 87  0.333        0.333            0.253             0.448   0.115       0.034        0.057
+  (483.5, 520.167] 88  0.466        0.455            0.420             0.602   0.182       0.045        0.091
+  (520.167, 565.5] 95  0.495        0.484            0.389             0.600   0.221       0.042        0.021
+    (565.5, 596.0] 86  0.267        0.279            0.233             0.500   0.174       0.093        0.116
+  (596.0, 609.542] 89  0.371        0.382            0.270             0.539   0.191       0.079        0.112
+  (609.542, 731.5] 90  0.467        0.467            0.367             0.600   0.311       0.089        0.167
+
+by depth_ratio
+   depth_ratio  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+(0.819, 0.984] 90  0.467        0.467            0.367             0.600   0.311       0.089        0.167
+(0.984, 1.007] 91  0.374        0.385            0.264             0.538   0.187       0.077        0.110
+(1.007, 1.061] 90  0.300        0.311            0.256             0.511   0.200       0.089        0.111
+(1.061, 1.153] 89  0.472        0.461            0.382             0.596   0.202       0.045        0.022
+(1.153, 1.241] 91  0.451        0.440            0.407             0.582   0.176       0.044        0.088
+ (1.241, 1.29] 90  0.333        0.333            0.267             0.456   0.122       0.033        0.056
+ (1.29, 1.345] 89  0.337        0.337            0.337             0.539   0.202       0.034        0.056
+(1.345, 1.441] 90  0.367        0.367            0.333             0.600   0.200       0.044        0.056
+(1.441, 1.511] 91  0.440        0.451            0.341             0.582   0.187       0.121        0.143
+(1.511, 1.717] 89  0.371        0.348            0.281             0.517   0.124       0.045        0.079
+(1.717, 1.841] 90  0.456        0.444            0.433             0.589   0.278       0.067        0.111
+(1.841, 2.105] 90  0.433        0.422            0.378             0.567   0.222       0.122        0.133
+
+by tie_break_share
+  tie_break_share  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+(0.00258, 0.0171] 90  0.556        0.556            0.478             0.744   0.433       0.089        0.156
+ (0.0171, 0.0312] 90  0.611        0.611            0.500             0.778   0.456       0.056        0.089
+ (0.0312, 0.0436] 90  0.578        0.578            0.422             0.700   0.322       0.111        0.144
+ (0.0436, 0.0571] 90  0.511        0.511            0.444             0.689   0.333       0.044        0.133
+ (0.0571, 0.0778] 90  0.556        0.556            0.433             0.644   0.311       0.067        0.089
+ (0.0778, 0.0972] 90  0.467        0.433            0.400             0.633   0.211       0.056        0.111
+  (0.0972, 0.131] 90  0.256        0.267            0.233             0.489   0.056       0.022        0.033
+   (0.131, 0.184] 90  0.200        0.211            0.244             0.433   0.044       0.033        0.078
+   (0.184, 0.246] 90  0.222        0.222            0.211             0.389   0.033       0.100        0.089
+   (0.246, 0.361] 90  0.278        0.267            0.267             0.444   0.056       0.067        0.056
+   (0.361, 0.488] 90  0.211        0.200            0.111             0.289   0.033       0.056        0.056
+   (0.488, 0.703] 90  0.356        0.356            0.300             0.444   0.122       0.111        0.100
+
+depth_programme_loading x detection
+naive rejection rate (n in brackets)
+                                        0.01            0.05            0.15
+  0.0                            0.100 (120)     0.033 (120)     0.058 (120)
+  0.3                            0.175 (120)     0.317 (120)     0.833 (120)
+  0.6                            0.442 (120)     0.642 (120)     1.000 (120)
+
+depth_programme_loading x detection
+cutpoint_optimal rejection rate (n in brackets)
+                                        0.01            0.05            0.15
+  0.0                            0.208 (120)     0.325 (120)     0.392 (120)
+  0.3                            0.300 (120)     0.533 (120)     0.925 (120)
+  0.6                            0.525 (120)     0.800 (120)     1.000 (120)
+
+depth_programme_loading x detection
+codetection rejection rate (n in brackets)
+                                        0.01            0.05            0.15
+  0.0                            0.117 (120)     0.050 (120)     0.058 (120)
+  0.3                            0.083 (120)     0.058 (120)     0.108 (120)
+  0.6                            0.050 (120)     0.075 (120)     0.250 (120)
+
+depth_programme_loading x coexpr
+naive rejection rate (n in brackets)
+                                         0.0             0.6
+  0.0                            0.044 (180)     0.083 (180)
+  0.3                            0.478 (180)     0.406 (180)
+  0.6                            0.700 (180)     0.689 (180)
+
+depth_programme_loading x coexpr
+cutpoint_optimal rejection rate (n in brackets)
+                                         0.0             0.6
+  0.0                            0.311 (180)     0.306 (180)
+  0.3                            0.594 (180)     0.578 (180)
+  0.6                            0.794 (180)     0.756 (180)
+
+depth_programme_loading x coexpr
+codetection rejection rate (n in brackets)
+                                         0.0             0.6
+  0.0                            0.056 (180)     0.094 (180)
+  0.3                            0.067 (180)     0.100 (180)
+  0.6                            0.039 (180)     0.211 (180)
+
+by whether the tie-break channel is open (depth_ratio > 1)
+  open    n =   925  naive 0.395  permutation 0.390  cutpoint_median 0.338  cutpoint_optimal 0.554  random 0.188  expression 0.065  codetection 0.085
+  closed  n =   155  naive 0.432  permutation 0.439  cutpoint_median 0.329  cutpoint_optimal 0.574  random 0.277  expression 0.084  codetection 0.148
+
+rejection against the reported tie-break share
+ tie_break_share_low  tie_break_share_high   n  rate  ci_low  ci_high
+               0.003                 0.031 180 0.583   0.510    0.653
+               0.031                 0.057 180 0.544   0.472    0.616
+               0.057                 0.097 180 0.511   0.439    0.583
+               0.097                 0.184 180 0.228   0.173    0.294
+               0.184                 0.361 180 0.250   0.192    0.318
+               0.361                 0.703 180 0.283   0.223    0.353
+
+naive: rejection against the pre-flight product (trend z = +23.71, P = 2.65e-124)
+ test  implied_low  implied_high  implied_median   n  rate  ci_low  ci_high
+naive       -0.001         0.002           0.001 180 0.078   0.047    0.126
+naive        0.002         0.007           0.004 180 0.044   0.023    0.085
+naive        0.007         0.034           0.018 180 0.089   0.055    0.140
+naive        0.034         0.059           0.046 180 0.356   0.289    0.428
+naive        0.059         0.097           0.079 180 0.833   0.772    0.881
+naive        0.097         0.297           0.145 180 1.000   0.979    1.000
+  for comparison, the same test against the tie-break share: z = -8.73, P = 2.58e-18 (FALLS)
+
+permutation: rejection against the pre-flight product (trend z = +23.36, P = 1.13e-120)
+       test  implied_low  implied_high  implied_median   n  rate  ci_low  ci_high
+permutation       -0.001         0.002           0.001 180 0.083   0.051    0.133
+permutation        0.002         0.007           0.004 180 0.056   0.030    0.099
+permutation        0.007         0.034           0.018 180 0.083   0.051    0.133
+permutation        0.034         0.059           0.046 180 0.339   0.274    0.411
+permutation        0.059         0.097           0.079 180 0.828   0.766    0.876
+permutation        0.097         0.297           0.145 180 0.994   0.969    0.999
+  for comparison, the same test against the tie-break share: z = -8.79, P = 1.45e-18 (FALLS)
+
+cutpoint_median: rejection against the pre-flight product (trend z = +19.75, P = 7.84e-87)
+           test  implied_low  implied_high  implied_median   n  rate  ci_low  ci_high
+cutpoint_median       -0.001         0.002           0.001 180 0.100   0.064    0.153
+cutpoint_median        0.002         0.007           0.004 180 0.050   0.027    0.092
+cutpoint_median        0.007         0.034           0.018 180 0.089   0.055    0.140
+cutpoint_median        0.034         0.059           0.046 180 0.311   0.248    0.382
+cutpoint_median        0.059         0.097           0.079 180 0.556   0.483    0.626
+cutpoint_median        0.097         0.297           0.145 180 0.917   0.867    0.949
+  for comparison, the same test against the tie-break share: z = -7.39, P = 1.49e-13 (FALLS)
+
+cutpoint_optimal: rejection against the pre-flight product (trend z = +17.59, P = 2.86e-69)
+            test  implied_low  implied_high  implied_median   n  rate  ci_low  ci_high
+cutpoint_optimal       -0.001         0.002           0.001 180 0.294   0.233    0.365
+cutpoint_optimal        0.002         0.007           0.004 180 0.300   0.238    0.371
+cutpoint_optimal        0.007         0.034           0.018 180 0.306   0.243    0.376
+cutpoint_optimal        0.034         0.059           0.046 180 0.589   0.516    0.658
+cutpoint_optimal        0.059         0.097           0.079 180 0.856   0.797    0.899
+cutpoint_optimal        0.097         0.297           0.145 180 0.994   0.969    0.999
+  for comparison, the same test against the tie-break share: z = -9.63, P = 6.00e-22 (FALLS)
+
+random: rejection against the pre-flight product (trend z = +15.85, P = 1.35e-56)
+  test  implied_low  implied_high  implied_median   n  rate  ci_low  ci_high
+random       -0.001         0.002           0.001 180 0.072   0.043    0.120
+random        0.002         0.007           0.004 180 0.050   0.027    0.092
+random        0.007         0.034           0.018 180 0.022   0.009    0.056
+random        0.034         0.059           0.046 180 0.061   0.034    0.106
+random        0.059         0.097           0.079 180 0.283   0.223    0.353
+random        0.097         0.297           0.145 180 0.717   0.647    0.777
+  for comparison, the same test against the tie-break share: z = -11.58, P = 4.99e-31 (FALLS)
+
+expression: rejection against the pre-flight product (trend z = +0.32, P = 7.49e-01)
+      test  implied_low  implied_high  implied_median   n  rate  ci_low  ci_high
+expression       -0.001         0.002           0.001 180 0.089   0.055    0.140
+expression        0.002         0.007           0.004 180 0.050   0.027    0.092
+expression        0.007         0.034           0.018 180 0.067   0.039    0.113
+expression        0.034         0.059           0.046 180 0.028   0.012    0.063
+expression        0.059         0.097           0.079 180 0.089   0.055    0.140
+expression        0.097         0.297           0.145 180 0.083   0.051    0.133
+  for comparison, the same test against the tie-break share: z = +0.25, P = 8.04e-01 (rises)
+
+codetection: rejection against the pre-flight product (trend z = +3.29, P = 1.00e-03)
+       test  implied_low  implied_high  implied_median   n  rate  ci_low  ci_high
+codetection       -0.001         0.002           0.001 180 0.094   0.060    0.146
+codetection        0.002         0.007           0.004 180 0.061   0.034    0.106
+codetection        0.007         0.034           0.018 180 0.072   0.043    0.120
+codetection        0.034         0.059           0.046 180 0.028   0.012    0.063
+codetection        0.059         0.097           0.079 180 0.128   0.087    0.184
+codetection        0.097         0.297           0.145 180 0.183   0.134    0.246
+  for comparison, the same test against the tie-break share: z = -2.56, P = 1.05e-02 (FALLS)
+
+rejection regressed on both pre-flight quantities (standardised)
+ test             model      term    n    coef      se        z       p
+naive     product alone intercept 1080 -0.1606 +0.1025  -1.5666 +0.1172
+naive     product alone   product 1080 +3.6230 +0.2169 +16.7071 +0.0000
+naive       share alone intercept 1080 -0.4320 +0.0640  -6.7476 +0.0000
+naive       share alone     share 1080 -0.4475 +0.0710  -6.3038 +0.0000
+naive product and share intercept 1080 -0.1514 +0.1036  -1.4607 +0.1441
+naive product and share   product 1080 +3.6120 +0.2173 +16.6232 +0.0000
+naive product and share     share 1080 -0.0637 +0.0984  -0.6473 +0.5174
+
+tie-break share against the ceiling ratio: rho = +0.537 (P = 1.05e-81, n = 1080)
+
+========================================================================
+B_regime: 600 runs
+========================================================================
+
+pooled rejection rate at alpha = 0.05
+  naive              0.368 [0.331, 0.408]
+  permutation        0.370 [0.332, 0.409]
+  cutpoint_median    0.348 [0.311, 0.387]
+  cutpoint_optimal   0.545 [0.505, 0.584]
+  random             0.195 [0.165, 0.229]
+  expression         0.067 [0.049, 0.090]
+  codetection        0.043 [0.030, 0.063]
+
+matched tests in all three tails (false-positive rate)
+                   test   k   n  rate  ci_low  ci_high
+     random (two-sided) 117 600 0.195   0.165    0.229
+         random (lower)  12 600 0.020   0.011    0.035
+         random (upper) 128 600 0.213   0.182    0.248
+ expression (two-sided)  40 600 0.067   0.049    0.090
+     expression (lower)  20 600 0.033   0.022    0.051
+     expression (upper)  46 600 0.077   0.058    0.101
+codetection (two-sided)  26 600 0.043   0.030    0.063
+    codetection (lower)  23 600 0.038   0.026    0.057
+    codetection (upper)  32 600 0.053   0.038    0.074
+
+by depth_programme_loading
+ depth_programme_loading   n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+                   0.000 300  0.037        0.040            0.043             0.263   0.040       0.040        0.037
+                   0.600 300  0.700        0.700            0.653             0.827   0.350       0.093        0.050
+
+by median_detected
+   median_detected  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+   (93.999, 155.0] 52  0.538        0.538            0.481             0.692   0.404       0.115        0.038
+    (155.0, 195.0] 49  0.531        0.531            0.531             0.673   0.367       0.122        0.061
+   (195.0, 229.75] 49  0.490        0.490            0.510             0.571   0.327       0.122        0.061
+ (229.75, 275.333] 50  0.520        0.520            0.460             0.600   0.240       0.040        0.040
+(275.333, 317.583] 50  0.520        0.520            0.460             0.600   0.240       0.060        0.080
+ (317.583, 384.75] 50  0.440        0.440            0.420             0.540   0.180       0.000        0.000
+   (384.75, 454.0] 51  0.392        0.392            0.451             0.647   0.196       0.118        0.078
+  (454.0, 540.167] 49  0.224        0.204            0.286             0.490   0.061       0.020        0.000
+ (540.167, 630.75] 50  0.280        0.280            0.220             0.580   0.100       0.020        0.020
+ (630.75, 748.083] 50  0.200        0.200            0.160             0.400   0.080       0.140        0.100
+(748.083, 937.292] 50  0.120        0.160            0.100             0.360   0.080       0.000        0.000
+ (937.292, 1386.0] 50  0.160        0.160            0.100             0.380   0.060       0.040        0.040
+
+by depth_ratio
+   depth_ratio  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+ (0.432, 0.64] 50  0.160        0.160            0.100             0.380   0.060       0.040        0.040
+ (0.64, 0.802] 50  0.120        0.160            0.100             0.360   0.080       0.000        0.000
+(0.802, 0.951] 50  0.200        0.200            0.160             0.400   0.080       0.140        0.100
+(0.951, 1.111] 50  0.280        0.280            0.220             0.580   0.100       0.020        0.020
+(1.111, 1.322] 51  0.255        0.235            0.314             0.510   0.078       0.020        0.000
+(1.322, 1.559] 49  0.367        0.367            0.429             0.633   0.184       0.122        0.082
+(1.559, 1.889] 50  0.440        0.440            0.420             0.540   0.180       0.000        0.000
+(1.889, 2.179] 50  0.520        0.520            0.460             0.600   0.240       0.060        0.080
+(2.179, 2.612] 50  0.520        0.520            0.460             0.600   0.240       0.040        0.040
+(2.612, 3.077] 51  0.510        0.510            0.529             0.588   0.353       0.137        0.059
+(3.077, 3.871] 50  0.540        0.540            0.540             0.680   0.360       0.100        0.060
+(3.871, 6.383] 49  0.510        0.510            0.449             0.673   0.388       0.122        0.041
+
+by tie_break_share
+      tie_break_share  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+(-0.0009872, 0.00705] 50  0.140        0.140            0.100             0.340   0.060       0.020        0.020
+    (0.00705, 0.0243] 50  0.160        0.180            0.140             0.380   0.100       0.040        0.020
+     (0.0243, 0.0476] 50  0.320        0.320            0.220             0.440   0.160       0.060        0.060
+     (0.0476, 0.0683] 50  0.300        0.320            0.280             0.680   0.140       0.060        0.040
+      (0.0683, 0.106] 50  0.320        0.300            0.280             0.520   0.200       0.060        0.040
+       (0.106, 0.136] 50  0.400        0.400            0.480             0.600   0.260       0.080        0.060
+       (0.136, 0.165] 50  0.460        0.460            0.500             0.640   0.300       0.100        0.060
+         (0.165, 0.2] 50  0.460        0.460            0.400             0.540   0.220       0.100        0.040
+         (0.2, 0.241] 50  0.440        0.440            0.420             0.540   0.160       0.080        0.020
+       (0.241, 0.277] 50  0.520        0.520            0.520             0.700   0.320       0.100        0.040
+       (0.277, 0.331] 50  0.400        0.400            0.420             0.560   0.200       0.040        0.060
+        (0.331, 0.46] 50  0.500        0.500            0.420             0.600   0.220       0.060        0.060
+
+by whether the tie-break channel is open (depth_ratio > 1)
+  open    n =   430  naive 0.442  permutation 0.440  cutpoint_median 0.430  cutpoint_optimal 0.602  random 0.235  expression 0.070  codetection 0.042
+  closed  n =   170  naive 0.182  permutation 0.194  cutpoint_median 0.141  cutpoint_optimal 0.400  random 0.094  expression 0.059  codetection 0.047
+
+rejection against the reported tie-break share
+ tie_break_share_low  tie_break_share_high   n  rate  ci_low  ci_high
+              -0.001                 0.024 100 0.150   0.093    0.233
+               0.024                 0.068 100 0.310   0.228    0.406
+               0.068                 0.136 100 0.360   0.273    0.458
+               0.136                 0.200 100 0.460   0.366    0.557
+               0.200                 0.277 100 0.480   0.385    0.577
+               0.277                 0.460 100 0.450   0.356    0.548
+
+naive: rejection against the pre-flight product (trend z = +19.06, P = 5.95e-81)
+ test  implied_low  implied_high  implied_median   n  rate  ci_low  ci_high
+naive       -0.001         0.001           0.000 100 0.030   0.010    0.085
+naive        0.001         0.003           0.002 100 0.040   0.016    0.098
+naive        0.003         0.009           0.005 100 0.030   0.010    0.085
+naive        0.009         0.057           0.028 100 0.170   0.109    0.255
+naive        0.057         0.139           0.102 100 0.940   0.875    0.972
+naive        0.139         0.292           0.177 100 1.000   0.963    1.000
+  for comparison, the same test against the tie-break share: z = +5.23, P = 1.71e-07 (rises)
+
+permutation: rejection against the pre-flight product (trend z = +18.91, P = 8.82e-80)
+       test  implied_low  implied_high  implied_median   n  rate  ci_low  ci_high
+permutation       -0.001         0.001           0.000 100 0.040   0.016    0.098
+permutation        0.001         0.003           0.002 100 0.040   0.016    0.098
+permutation        0.003         0.009           0.005 100 0.030   0.010    0.085
+permutation        0.009         0.057           0.028 100 0.170   0.109    0.255
+permutation        0.057         0.139           0.102 100 0.940   0.875    0.972
+permutation        0.139         0.292           0.177 100 1.000   0.963    1.000
+  for comparison, the same test against the tie-break share: z = +5.05, P = 4.41e-07 (rises)
+
+cutpoint_median: rejection against the pre-flight product (trend z = +17.79, P = 9.02e-71)
+           test  implied_low  implied_high  implied_median   n  rate  ci_low  ci_high
+cutpoint_median       -0.001         0.001           0.000 100 0.060   0.028    0.125
+cutpoint_median        0.001         0.003           0.002 100 0.030   0.010    0.085
+cutpoint_median        0.003         0.009           0.005 100 0.050   0.022    0.112
+cutpoint_median        0.009         0.057           0.028 100 0.150   0.093    0.233
+cutpoint_median        0.057         0.139           0.102 100 0.810   0.722    0.875
+cutpoint_median        0.139         0.292           0.177 100 0.990   0.946    0.998
+  for comparison, the same test against the tie-break share: z = +5.59, P = 2.22e-08 (rises)
+
+cutpoint_optimal: rejection against the pre-flight product (trend z = +13.95, P = 3.37e-44)
+            test  implied_low  implied_high  implied_median   n  rate  ci_low  ci_high
+cutpoint_optimal       -0.001         0.001           0.000 100 0.270   0.193    0.364
+cutpoint_optimal        0.001         0.003           0.002 100 0.280   0.201    0.375
+cutpoint_optimal        0.003         0.009           0.005 100 0.290   0.210    0.385
+cutpoint_optimal        0.009         0.057           0.028 100 0.500   0.404    0.596
+cutpoint_optimal        0.057         0.139           0.102 100 0.930   0.863    0.966
+cutpoint_optimal        0.139         0.292           0.177 100 1.000   0.963    1.000
+  for comparison, the same test against the tie-break share: z = +3.14, P = 1.67e-03 (rises)
+
+random: rejection against the pre-flight product (trend z = +13.55, P = 8.47e-42)
+  test  implied_low  implied_high  implied_median   n  rate  ci_low  ci_high
+random       -0.001         0.001           0.000 100 0.040   0.016    0.098
+random        0.001         0.003           0.002 100 0.040   0.016    0.098
+random        0.003         0.009           0.005 100 0.030   0.010    0.085
+random        0.009         0.057           0.028 100 0.010   0.002    0.054
+random        0.057         0.139           0.102 100 0.210   0.142    0.300
+random        0.139         0.292           0.177 100 0.840   0.756    0.899
+  for comparison, the same test against the tie-break share: z = +2.87, P = 4.16e-03 (rises)
+
+expression: rejection against the pre-flight product (trend z = +3.07, P = 2.17e-03)
+      test  implied_low  implied_high  implied_median   n  rate  ci_low  ci_high
+expression       -0.001         0.001           0.000 100 0.060   0.028    0.125
+expression        0.001         0.003           0.002 100 0.030   0.010    0.085
+expression        0.003         0.009           0.005 100 0.060   0.028    0.125
+expression        0.009         0.057           0.028 100 0.020   0.006    0.070
+expression        0.057         0.139           0.102 100 0.040   0.016    0.098
+expression        0.139         0.292           0.177 100 0.190   0.125    0.278
+  for comparison, the same test against the tie-break share: z = +1.05, P = 2.92e-01 (rises)
+
+codetection: rejection against the pre-flight product (trend z = +1.17, P = 2.40e-01)
+       test  implied_low  implied_high  implied_median   n  rate  ci_low  ci_high
+codetection       -0.001         0.001           0.000 100 0.030   0.010    0.085
+codetection        0.001         0.003           0.002 100 0.040   0.016    0.098
+codetection        0.003         0.009           0.005 100 0.040   0.016    0.098
+codetection        0.009         0.057           0.028 100 0.040   0.016    0.098
+codetection        0.057         0.139           0.102 100 0.040   0.016    0.098
+codetection        0.139         0.292           0.177 100 0.070   0.034    0.137
+  for comparison, the same test against the tie-break share: z = +0.82, P = 4.11e-01 (rises)
+
+rejection regressed on both pre-flight quantities (standardised)
+ test             model      term   n    coef      se        z       p
+naive     product alone intercept 600 +0.1843 +0.2366  +0.7791 +0.4359
+naive     product alone   product 600 +5.3117 +0.4962 +10.7040 +0.0000
+naive       share alone intercept 600 -0.5599 +0.0868  -6.4535 +0.0000
+naive       share alone     share 600 +0.4195 +0.0866  +4.8440 +0.0000
+naive product and share intercept 600 +0.2658 +0.2580  +1.0304 +0.3028
+naive product and share   product 600 +5.3711 +0.5161 +10.4074 +0.0000
+naive product and share     share 600 +0.2202 +0.2182  +1.0090 +0.3130
+
+tie-break share against the ceiling ratio: rho = +0.915 (P = 7.68e-238, n = 600)
+
+========================================================================
+C_power: 480 runs
+========================================================================
+
+pooled rejection rate at alpha = 0.05
+  naive              0.887 [0.856, 0.913]
+  permutation        0.890 [0.858, 0.915]
+  cutpoint_median    0.850 [0.815, 0.879]
+  cutpoint_optimal   0.910 [0.882, 0.933]
+  random             0.840 [0.804, 0.870]
+  expression         0.929 [0.903, 0.949]
+  codetection        0.925 [0.898, 0.945]
+
+  (effect > 0: these rates are power, not false-positive rate)
+
+matched tests in all three tails (power)
+                   test   k   n  rate  ci_low  ci_high
+     random (two-sided) 403 480 0.840   0.804    0.870
+         random (lower)   0 480 0.000   0.000    0.008
+         random (upper) 410 480 0.854   0.820    0.883
+ expression (two-sided) 446 480 0.929   0.903    0.949
+     expression (lower)   0 480 0.000   0.000    0.008
+     expression (upper) 456 480 0.950   0.927    0.966
+codetection (two-sided) 444 480 0.925   0.898    0.945
+    codetection (lower)   0 480 0.000   0.000    0.008
+    codetection (upper) 455 480 0.948   0.924    0.964
+
+by depth_programme_loading
+ depth_programme_loading   n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+                   0.000 240  0.933        0.938            0.892             0.946   0.929       0.933        0.925
+                   0.600 240  0.842        0.842            0.808             0.875   0.750       0.925        0.925
+
+by detection
+ detection   n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+     0.010 160  0.662        0.669            0.550             0.731   0.525       0.787        0.775
+     0.050 160  1.000        1.000            1.000             1.000   0.994       1.000        1.000
+     0.150 160  1.000        1.000            1.000             1.000   1.000       1.000        1.000
+
+by median_detected
+   median_detected  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+(285.999, 314.917] 40  0.900        0.900            0.825             0.925   0.800       0.925        0.900
+  (314.917, 338.0] 42  0.881        0.905            0.857             0.905   0.857       0.905        0.905
+   (338.0, 399.75] 38  0.789        0.789            0.711             0.842   0.711       0.868        0.842
+ (399.75, 448.833] 40  0.850        0.850            0.825             0.925   0.850       0.925        0.875
+(448.833, 463.292] 40  0.850        0.850            0.850             0.875   0.825       0.925        0.925
+  (463.292, 483.0] 42  0.857        0.857            0.833             0.905   0.786       0.881        0.881
+  (483.0, 513.708] 38  0.921        0.921            0.868             0.921   0.868       0.974        1.000
+(513.708, 546.333] 40  0.875        0.875            0.750             0.850   0.775       0.875        0.875
+  (546.333, 578.5] 40  0.925        0.925            0.925             0.950   0.875       1.000        1.000
+    (578.5, 599.0] 42  0.857        0.857            0.857             0.905   0.833       0.905        0.905
+  (599.0, 618.542] 38  0.947        0.947            0.921             0.947   0.947       0.974        1.000
+  (618.542, 733.0] 40  1.000        1.000            0.975             0.975   0.950       1.000        1.000
+
+by effect
+ effect   n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+  0.250 240  0.829        0.829            0.783             0.842   0.779       0.871        0.863
+  0.500 240  0.946        0.950            0.917             0.979   0.900       0.988        0.988
+
+by depth_ratio
+   depth_ratio  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+ (0.818, 0.97] 40  1.000        1.000            0.975             0.975   0.950       1.000        1.000
+ (0.97, 1.002] 41  0.951        0.951            0.927             0.951   0.951       0.976        1.000
+(1.002, 1.037] 39  0.846        0.846            0.846             0.897   0.821       0.897        0.897
+(1.037, 1.098] 40  0.925        0.925            0.925             0.950   0.875       1.000        1.000
+(1.098, 1.168] 40  0.875        0.875            0.750             0.850   0.775       0.875        0.875
+(1.168, 1.242] 42  0.929        0.929            0.881             0.929   0.881       0.976        1.000
+(1.242, 1.295] 38  0.842        0.842            0.816             0.895   0.763       0.868        0.868
+(1.295, 1.337] 40  0.850        0.850            0.850             0.875   0.825       0.925        0.925
+(1.337, 1.501] 40  0.850        0.850            0.825             0.925   0.850       0.925        0.875
+(1.501, 1.775] 42  0.810        0.810            0.738             0.857   0.738       0.881        0.857
+(1.775, 1.905] 38  0.868        0.895            0.842             0.895   0.842       0.895        0.895
+(1.905, 2.098] 40  0.900        0.900            0.825             0.925   0.800       0.925        0.900
+
+by tie_break_share
+ tie_break_share  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+(0.0027, 0.0154] 40  1.000        1.000            1.000             1.000   1.000       1.000        1.000
+(0.0154, 0.0266] 40  1.000        1.000            1.000             1.000   1.000       1.000        1.000
+(0.0266, 0.0414] 40  1.000        1.000            1.000             1.000   1.000       1.000        1.000
+(0.0414, 0.0513] 40  1.000        1.000            1.000             1.000   1.000       1.000        1.000
+(0.0513, 0.0688] 40  1.000        1.000            1.000             1.000   0.975       1.000        1.000
+(0.0688, 0.0874] 40  1.000        1.000            0.975             0.975   1.000       1.000        1.000
+ (0.0874, 0.121] 40  1.000        1.000            0.975             1.000   0.975       1.000        1.000
+  (0.121, 0.167] 40  0.925        0.925            0.925             0.925   0.900       0.950        0.950
+  (0.167, 0.223] 40  0.875        0.875            0.875             0.925   0.800       0.950        0.975
+  (0.223, 0.319] 40  0.825        0.825            0.750             0.850   0.675       0.875        0.875
+  (0.319, 0.463] 40  0.525        0.525            0.325             0.625   0.400       0.775        0.725
+  (0.463, 0.662] 40  0.500        0.525            0.375             0.625   0.350       0.600        0.575
+
+depth_programme_loading x detection
+naive rejection rate (n in brackets)
+                                        0.01            0.05            0.15
+  0.0                            0.800 ( 80)     1.000 ( 80)     1.000 ( 80)
+  0.6                            0.525 ( 80)     1.000 ( 80)     1.000 ( 80)
+
+depth_programme_loading x detection
+cutpoint_optimal rejection rate (n in brackets)
+                                        0.01            0.05            0.15
+  0.0                            0.838 ( 80)     1.000 ( 80)     1.000 ( 80)
+  0.6                            0.625 ( 80)     1.000 ( 80)     1.000 ( 80)
+
+depth_programme_loading x detection
+codetection rejection rate (n in brackets)
+                                        0.01            0.05            0.15
+  0.0                            0.775 ( 80)     1.000 ( 80)     1.000 ( 80)
+  0.6                            0.775 ( 80)     1.000 ( 80)     1.000 ( 80)
+
+by whether the tie-break channel is open (depth_ratio > 1)
+  open    n =   403  naive 0.871  permutation 0.873  cutpoint_median 0.831  cutpoint_optimal 0.901  random 0.819  expression 0.918  codetection 0.911
+  closed  n =    77  naive 0.974  permutation 0.974  cutpoint_median 0.948  cutpoint_optimal 0.961  random 0.948  expression 0.987  codetection 1.000
+
+rejection against the reported tie-break share
+ tie_break_share_low  tie_break_share_high  n  rate  ci_low  ci_high
+               0.003                 0.027 80 1.000   0.954    1.000
+               0.027                 0.051 80 1.000   0.954    1.000
+               0.051                 0.087 80 1.000   0.954    1.000
+               0.087                 0.167 80 0.963   0.895    0.987
+               0.167                 0.319 80 0.850   0.756    0.912
+               0.319                 0.662 80 0.512   0.405    0.619
+
+naive: rejection against the pre-flight product (trend z = +1.27, P = 2.05e-01)
+ test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+naive       -0.001         0.001           0.000 80 0.925   0.846    0.965
+naive        0.001         0.003           0.002 80 0.900   0.815    0.948
+naive        0.003         0.010           0.005 80 0.900   0.815    0.948
+naive        0.010         0.117           0.040 80 0.600   0.490    0.700
+naive        0.117         0.283           0.206 80 1.000   0.954    1.000
+naive        0.283         0.465           0.357 80 1.000   0.954    1.000
+  for comparison, the same test against the tie-break share: z = -9.90, P = 4.33e-23 (FALLS)
+
+permutation: rejection against the pre-flight product (trend z = +1.07, P = 2.86e-01)
+       test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+permutation       -0.001         0.001           0.000 80 0.938   0.862    0.973
+permutation        0.001         0.003           0.002 80 0.900   0.815    0.948
+permutation        0.003         0.010           0.005 80 0.900   0.815    0.948
+permutation        0.010         0.117           0.040 80 0.600   0.490    0.700
+permutation        0.117         0.283           0.206 80 1.000   0.954    1.000
+permutation        0.283         0.465           0.357 80 1.000   0.954    1.000
+  for comparison, the same test against the tie-break share: z = -9.76, P = 1.61e-22 (FALLS)
+
+cutpoint_median: rejection against the pre-flight product (trend z = +2.25, P = 2.47e-02)
+           test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+cutpoint_median       -0.001         0.001           0.000 80 0.875   0.785    0.931
+cutpoint_median        0.001         0.003           0.002 80 0.850   0.756    0.912
+cutpoint_median        0.003         0.010           0.005 80 0.850   0.756    0.912
+cutpoint_median        0.010         0.117           0.040 80 0.525   0.417    0.631
+cutpoint_median        0.117         0.283           0.206 80 1.000   0.954    1.000
+cutpoint_median        0.283         0.465           0.357 80 1.000   0.954    1.000
+  for comparison, the same test against the tie-break share: z = -11.53, P = 9.69e-31 (FALLS)
+
+cutpoint_optimal: rejection against the pre-flight product (trend z = +1.26, P = 2.06e-01)
+            test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+cutpoint_optimal       -0.001         0.001           0.000 80 0.938   0.862    0.973
+cutpoint_optimal        0.001         0.003           0.002 80 0.912   0.830    0.957
+cutpoint_optimal        0.003         0.010           0.005 80 0.925   0.846    0.965
+cutpoint_optimal        0.010         0.117           0.040 80 0.688   0.579    0.778
+cutpoint_optimal        0.117         0.283           0.206 80 1.000   0.954    1.000
+cutpoint_optimal        0.283         0.465           0.357 80 1.000   0.954    1.000
+  for comparison, the same test against the tie-break share: z = -8.38, P = 5.49e-17 (FALLS)
+
+random: rejection against the pre-flight product (trend z = +0.69, P = 4.89e-01)
+  test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+random       -0.001         0.001           0.000 80 0.925   0.846    0.965
+random        0.001         0.003           0.002 80 0.875   0.785    0.931
+random        0.003         0.010           0.005 80 0.875   0.785    0.931
+random        0.010         0.117           0.040 80 0.362   0.266    0.472
+random        0.117         0.283           0.206 80 1.000   0.954    1.000
+random        0.283         0.465           0.357 80 1.000   0.954    1.000
+  for comparison, the same test against the tie-break share: z = -11.54, P = 8.03e-31 (FALLS)
+
+expression: rejection against the pre-flight product (trend z = +2.19, P = 2.87e-02)
+      test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+expression       -0.001         0.001           0.000 80 0.938   0.862    0.973
+expression        0.001         0.003           0.002 80 0.887   0.800    0.940
+expression        0.003         0.010           0.005 80 0.938   0.862    0.973
+expression        0.010         0.117           0.040 80 0.812   0.713    0.883
+expression        0.117         0.283           0.206 80 1.000   0.954    1.000
+expression        0.283         0.465           0.357 80 1.000   0.954    1.000
+  for comparison, the same test against the tie-break share: z = -7.71, P = 1.27e-14 (FALLS)
+
+codetection: rejection against the pre-flight product (trend z = +2.33, P = 1.96e-02)
+       test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+codetection       -0.001         0.001           0.000 80 0.925   0.846    0.965
+codetection        0.001         0.003           0.002 80 0.887   0.800    0.940
+codetection        0.003         0.010           0.005 80 0.938   0.862    0.973
+codetection        0.010         0.117           0.040 80 0.800   0.700    0.873
+codetection        0.117         0.283           0.206 80 1.000   0.954    1.000
+codetection        0.283         0.465           0.357 80 1.000   0.954    1.000
+  for comparison, the same test against the tie-break share: z = -8.12, P = 4.76e-16 (FALLS)
+
+tie-break share against the ceiling ratio: rho = +0.575 (P = 1.12e-43, n = 480)
+
+========================================================================
+D_size: 400 runs
+========================================================================
+
+pooled rejection rate at alpha = 0.05
+  naive              0.640 [0.592, 0.686]
+  permutation        0.637 [0.589, 0.683]
+  cutpoint_median    0.517 [0.469, 0.566]
+  cutpoint_optimal   0.710 [0.664, 0.752]
+  random             0.228 [0.189, 0.271]
+  expression         0.050 [0.033, 0.076]
+  codetection        0.050 [0.033, 0.076]
+
+matched tests in all three tails (false-positive rate)
+                   test  k   n  rate  ci_low  ci_high
+     random (two-sided) 91 400 0.228   0.189    0.271
+         random (lower) 68 400 0.170   0.136    0.210
+         random (upper) 63 400 0.158   0.125    0.196
+ expression (two-sided) 20 400 0.050   0.033    0.076
+     expression (lower) 19 400 0.048   0.031    0.073
+     expression (upper) 23 400 0.058   0.039    0.085
+codetection (two-sided) 20 400 0.050   0.033    0.076
+    codetection (lower) 24 400 0.060   0.041    0.088
+    codetection (upper) 16 400 0.040   0.025    0.064
+
+by detection
+ detection   n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+     0.010 200  0.640        0.640            0.460             0.665   0.170       0.055        0.070
+     0.050 200  0.640        0.635            0.575             0.755   0.285       0.045        0.030
+
+by median_detected
+  median_detected  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+(285.999, 331.25] 34  0.618        0.618            0.588             0.647   0.294       0.029        0.029
+  (331.25, 357.0] 34  0.618        0.618            0.471             0.706   0.176       0.000        0.059
+  (357.0, 388.75] 32  0.719        0.719            0.531             0.719   0.219       0.031        0.000
+  (388.75, 430.0] 34  0.735        0.735            0.500             0.647   0.206       0.029        0.029
+ (430.0, 455.875] 33  0.667        0.667            0.667             0.758   0.303       0.061        0.030
+ (455.875, 468.0] 34  0.618        0.618            0.588             0.794   0.206       0.118        0.147
+ (468.0, 493.375] 32  0.719        0.719            0.531             0.750   0.156       0.031        0.000
+ (493.375, 521.5] 34  0.706        0.706            0.588             0.794   0.294       0.029        0.029
+   (521.5, 560.5] 34  0.588        0.559            0.559             0.647   0.294       0.000        0.029
+  (560.5, 598.25] 32  0.531        0.531            0.281             0.688   0.094       0.094        0.094
+ (598.25, 633.75] 33  0.576        0.576            0.485             0.667   0.212       0.030        0.030
+  (633.75, 758.0] 34  0.588        0.588            0.412             0.706   0.265       0.147        0.118
+
+by n_target
+ n_target   n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+        4 100  0.340        0.340            0.280             0.360   0.050       0.030        0.040
+        8 100  0.570        0.540            0.510             0.680   0.140       0.060        0.050
+       20 100  0.720        0.730            0.570             0.840   0.200       0.050        0.060
+       50 100  0.930        0.940            0.710             0.960   0.520       0.060        0.050
+
+by depth_ratio
+   depth_ratio  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+(0.791, 0.947] 34  0.588        0.588            0.412             0.706   0.265       0.147        0.118
+(0.947, 1.003] 33  0.576        0.576            0.485             0.667   0.212       0.030        0.030
+ (1.003, 1.07] 34  0.559        0.559            0.324             0.706   0.118       0.088        0.118
+ (1.07, 1.151] 33  0.576        0.545            0.545             0.636   0.273       0.000        0.000
+(1.151, 1.216] 33  0.697        0.697            0.576             0.788   0.303       0.030        0.030
+(1.216, 1.282] 36  0.750        0.750            0.528             0.778   0.167       0.056        0.028
+(1.282, 1.316] 30  0.567        0.567            0.600             0.767   0.200       0.100        0.133
+(1.316, 1.395] 34  0.676        0.676            0.647             0.735   0.294       0.059        0.029
+(1.395, 1.543] 33  0.727        0.727            0.515             0.667   0.212       0.030        0.030
+(1.543, 1.681] 36  0.667        0.667            0.500             0.667   0.194       0.028        0.000
+(1.681, 1.811] 30  0.667        0.667            0.500             0.767   0.200       0.000        0.067
+(1.811, 2.098] 34  0.618        0.618            0.588             0.647   0.294       0.029        0.029
+
+by tie_break_share
+               tie_break_share  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+(0.014499999999999999, 0.0472] 34  0.794        0.794            0.647             0.912   0.500       0.118        0.059
+               (0.0472, 0.077] 33  0.636        0.636            0.485             0.879   0.303       0.030        0.030
+                (0.077, 0.101] 33  0.545        0.515            0.455             0.636   0.242       0.000        0.000
+                (0.101, 0.126] 33  0.576        0.576            0.485             0.636   0.212       0.091        0.091
+                (0.126, 0.157] 34  0.529        0.529            0.529             0.676   0.176       0.088        0.029
+                (0.157, 0.199] 33  0.727        0.727            0.636             0.879   0.212       0.030        0.061
+                (0.199, 0.239] 33  0.485        0.485            0.485             0.515   0.121       0.000        0.000
+                (0.239, 0.292] 33  0.485        0.515            0.424             0.576   0.242       0.061        0.091
+                (0.292, 0.377] 34  0.765        0.735            0.559             0.676   0.176       0.059        0.059
+                (0.377, 0.463] 33  0.758        0.727            0.515             0.758   0.152       0.061        0.121
+                (0.463, 0.556] 33  0.636        0.636            0.424             0.667   0.212       0.061        0.030
+                (0.556, 0.719] 34  0.735        0.765            0.559             0.706   0.176       0.000        0.029
+
+by whether the tie-break channel is open (depth_ratio > 1)
+  open    n =   334  naive 0.653  permutation 0.650  cutpoint_median 0.533  cutpoint_optimal 0.716  random 0.225  expression 0.042  codetection 0.045
+  closed  n =    66  naive 0.576  permutation 0.576  cutpoint_median 0.439  cutpoint_optimal 0.682  random 0.242  expression 0.091  codetection 0.076
+
+rejection against the reported tie-break share
+ tie_break_share_low  tie_break_share_high  n  rate  ci_low  ci_high
+               0.014                 0.077 67 0.716   0.599    0.810
+               0.077                 0.126 66 0.561   0.441    0.674
+               0.126                 0.199 67 0.627   0.507    0.733
+               0.199                 0.292 66 0.485   0.368    0.603
+               0.292                 0.463 67 0.761   0.647    0.847
+               0.463                 0.719 67 0.687   0.568    0.785
+
+naive: rejection against the pre-flight product (trend z = +14.61, P = 2.60e-48)
+ test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+naive       -0.001         0.034           0.020 67 0.015   0.003    0.080
+naive        0.034         0.054           0.045 67 0.343   0.241    0.463
+naive        0.054         0.071           0.062 66 0.606   0.485    0.715
+naive        0.071         0.101           0.083 66 0.879   0.779    0.937
+naive        0.101         0.133           0.114 67 1.000   0.946    1.000
+naive        0.133         0.246           0.161 67 1.000   0.946    1.000
+  for comparison, the same test against the tie-break share: z = +0.63, P = 5.28e-01 (rises)
+
+permutation: rejection against the pre-flight product (trend z = +14.80, P = 1.56e-49)
+       test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+permutation       -0.001         0.034           0.020 67 0.015   0.003    0.080
+permutation        0.034         0.054           0.045 67 0.313   0.215    0.432
+permutation        0.054         0.071           0.062 66 0.606   0.485    0.715
+permutation        0.071         0.101           0.083 66 0.894   0.797    0.948
+permutation        0.101         0.133           0.114 67 1.000   0.946    1.000
+permutation        0.133         0.246           0.161 67 1.000   0.946    1.000
+  for comparison, the same test against the tie-break share: z = +0.72, P = 4.71e-01 (rises)
+
+cutpoint_median: rejection against the pre-flight product (trend z = +12.89, P = 5.15e-38)
+           test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+cutpoint_median       -0.001         0.034           0.020 67 0.075   0.032    0.163
+cutpoint_median        0.034         0.054           0.045 67 0.209   0.129    0.321
+cutpoint_median        0.054         0.071           0.062 66 0.409   0.299    0.530
+cutpoint_median        0.071         0.101           0.083 66 0.591   0.470    0.701
+cutpoint_median        0.101         0.133           0.114 67 0.851   0.747    0.917
+cutpoint_median        0.133         0.246           0.161 67 0.970   0.898    0.992
+  for comparison, the same test against the tie-break share: z = -0.59, P = 5.58e-01 (FALLS)
+
+cutpoint_optimal: rejection against the pre-flight product (trend z = +11.65, P = 2.25e-31)
+            test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+cutpoint_optimal       -0.001         0.034           0.020 67 0.254   0.165    0.369
+cutpoint_optimal        0.034         0.054           0.045 67 0.522   0.405    0.637
+cutpoint_optimal        0.054         0.071           0.062 66 0.621   0.501    0.729
+cutpoint_optimal        0.071         0.101           0.083 66 0.864   0.761    0.927
+cutpoint_optimal        0.101         0.133           0.114 67 1.000   0.946    1.000
+cutpoint_optimal        0.133         0.246           0.161 67 1.000   0.946    1.000
+  for comparison, the same test against the tie-break share: z = -2.24, P = 2.53e-02 (FALLS)
+
+random: rejection against the pre-flight product (trend z = +12.72, P = 4.80e-37)
+  test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+random       -0.001         0.034           0.020 67 0.000   0.000    0.054
+random        0.034         0.054           0.045 67 0.015   0.003    0.080
+random        0.054         0.071           0.062 66 0.000   0.000    0.055
+random        0.071         0.101           0.083 66 0.091   0.042    0.184
+random        0.101         0.133           0.114 67 0.433   0.321    0.552
+random        0.133         0.246           0.161 67 0.821   0.713    0.894
+  for comparison, the same test against the tie-break share: z = -2.91, P = 3.61e-03 (FALLS)
+
+expression: rejection against the pre-flight product (trend z = +2.01, P = 4.44e-02)
+      test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+expression       -0.001         0.034           0.020 67 0.030   0.008    0.102
+expression        0.034         0.054           0.045 67 0.015   0.003    0.080
+expression        0.054         0.071           0.062 66 0.045   0.016    0.125
+expression        0.071         0.101           0.083 66 0.045   0.016    0.125
+expression        0.101         0.133           0.114 67 0.090   0.042    0.182
+expression        0.133         0.246           0.161 67 0.075   0.032    0.163
+  for comparison, the same test against the tie-break share: z = -0.95, P = 3.44e-01 (FALLS)
+
+codetection: rejection against the pre-flight product (trend z = +1.47, P = 1.40e-01)
+       test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+codetection       -0.001         0.034           0.020 67 0.030   0.008    0.102
+codetection        0.034         0.054           0.045 67 0.015   0.003    0.080
+codetection        0.054         0.071           0.062 66 0.045   0.016    0.125
+codetection        0.071         0.101           0.083 66 0.061   0.024    0.146
+codetection        0.101         0.133           0.114 67 0.119   0.062    0.218
+codetection        0.133         0.246           0.161 67 0.030   0.008    0.102
+  for comparison, the same test against the tie-break share: z = +0.26, P = 7.94e-01 (rises)
+
+rejection regressed on both pre-flight quantities (standardised)
+ test             model      term   n    coef      se       z       p
+naive     product alone intercept 400 +2.3745 +0.3162 +7.5099 +0.0000
+naive     product alone   product 400 +4.5830 +0.5141 +8.9152 +0.0000
+naive       share alone intercept 400 +0.5787 +0.1045 +5.5357 +0.0000
+naive       share alone     share 400 +0.1511 +0.1066 +1.4171 +0.1565
+naive product and share intercept 400 +2.3594 +0.3216 +7.3367 +0.0000
+naive product and share   product 400 +4.5641 +0.5191 +8.7923 +0.0000
+naive product and share     share 400 +0.0388 +0.1658 +0.2341 +0.8149
+
+tie-break share against the ceiling ratio: rho = +0.621 (P = 4.22e-44, n = 400)
+
+========================================================================
+E_donor: 240 runs
+========================================================================
+
+pooled rejection rate at alpha = 0.05
+  naive              0.304 [0.249, 0.365]
+  permutation        0.300 [0.246, 0.361]
+  cutpoint_median    0.296 [0.242, 0.356]
+  cutpoint_optimal   0.558 [0.495, 0.620]
+  random             0.079 [0.051, 0.120]
+  expression         0.033 [0.017, 0.064]
+  codetection        0.033 [0.017, 0.064]
+
+matched tests in all three tails (false-positive rate)
+                   test  k   n  rate  ci_low  ci_high
+     random (two-sided) 19 240 0.079   0.051    0.120
+         random (lower)  4 240 0.017   0.006    0.042
+         random (upper) 23 240 0.096   0.065    0.140
+ expression (two-sided)  8 240 0.033   0.017    0.064
+     expression (lower) 13 240 0.054   0.032    0.090
+     expression (upper) 13 240 0.054   0.032    0.090
+codetection (two-sided)  8 240 0.033   0.017    0.064
+    codetection (lower) 12 240 0.050   0.029    0.085
+    codetection (upper) 12 240 0.050   0.029    0.085
+
+by depth_programme_loading
+ depth_programme_loading   n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+                   0.000 120  0.100        0.100            0.100             0.342   0.033       0.025        0.025
+                   0.600 120  0.508        0.500            0.492             0.775   0.125       0.042        0.042
+
+by median_detected
+   median_detected  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+(285.499, 365.458] 20  0.450        0.450            0.400             0.500   0.100       0.000        0.000
+(365.458, 399.417] 20  0.200        0.200            0.250             0.500   0.000       0.050        0.050
+(399.417, 425.375] 20  0.250        0.250            0.250             0.450   0.000       0.050        0.000
+(425.375, 435.667] 20  0.350        0.350            0.200             0.500   0.050       0.050        0.050
+  (435.667, 449.0] 21  0.238        0.238            0.286             0.619   0.000       0.000        0.000
+    (449.0, 457.5] 20  0.250        0.250            0.300             0.550   0.000       0.000        0.000
+  (457.5, 468.208] 19  0.211        0.211            0.263             0.474   0.158       0.053        0.053
+  (468.208, 482.0] 22  0.364        0.364            0.273             0.636   0.091       0.000        0.045
+  (482.0, 498.125] 18  0.278        0.278            0.389             0.778   0.111       0.056        0.056
+(498.125, 529.917] 20  0.350        0.350            0.400             0.500   0.150       0.000        0.000
+ (529.917, 587.25] 20  0.300        0.250            0.200             0.550   0.050       0.000        0.050
+   (587.25, 728.0] 20  0.400        0.400            0.350             0.650   0.250       0.150        0.100
+
+by n_samples
+ n_samples  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+         1 80  0.300        0.287            0.338             0.588   0.125       0.037        0.013
+         4 80  0.375        0.375            0.250             0.550   0.062       0.037        0.025
+        16 80  0.237        0.237            0.300             0.537   0.050       0.025        0.062
+
+by depth_ratio
+   depth_ratio  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+(0.823, 1.022] 20  0.400        0.400            0.350             0.650   0.250       0.150        0.100
+(1.022, 1.132] 20  0.300        0.250            0.200             0.550   0.050       0.000        0.050
+(1.132, 1.205] 20  0.350        0.350            0.400             0.500   0.150       0.000        0.000
+(1.205, 1.245] 21  0.286        0.286            0.333             0.762   0.095       0.048        0.048
+(1.245, 1.281] 19  0.368        0.368            0.316             0.632   0.105       0.000        0.053
+(1.281, 1.311] 21  0.190        0.190            0.238             0.429   0.143       0.048        0.048
+(1.311, 1.336] 20  0.250        0.250            0.350             0.650   0.000       0.000        0.000
+(1.336, 1.377] 19  0.263        0.263            0.263             0.579   0.000       0.000        0.000
+(1.377, 1.411] 20  0.350        0.350            0.200             0.500   0.050       0.050        0.050
+(1.411, 1.502] 20  0.250        0.250            0.250             0.450   0.000       0.050        0.000
+(1.502, 1.642] 20  0.200        0.200            0.250             0.500   0.000       0.050        0.050
+(1.642, 2.102] 20  0.450        0.450            0.400             0.500   0.100       0.000        0.000
+
+by tie_break_share
+  tie_break_share  n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+(0.00819, 0.0491] 20  0.400        0.400            0.400             0.650   0.300       0.100        0.050
+  (0.0491, 0.065] 20  0.450        0.450            0.400             0.750   0.250       0.050        0.100
+  (0.065, 0.0847] 20  0.500        0.500            0.250             0.800   0.150       0.000        0.000
+ (0.0847, 0.0991] 20  0.500        0.450            0.300             0.550   0.050       0.000        0.000
+  (0.0991, 0.114] 20  0.450        0.450            0.350             0.650   0.100       0.050        0.050
+   (0.114, 0.126] 20  0.250        0.250            0.300             0.500   0.000       0.100        0.050
+   (0.126, 0.139] 20  0.100        0.100            0.450             0.550   0.000       0.000        0.000
+   (0.139, 0.153] 20  0.300        0.300            0.350             0.500   0.100       0.000        0.050
+   (0.153, 0.167] 20  0.300        0.300            0.200             0.500   0.000       0.000        0.000
+   (0.167, 0.193] 20  0.100        0.100            0.100             0.350   0.000       0.000        0.000
+   (0.193, 0.225] 20  0.150        0.150            0.250             0.500   0.000       0.000        0.100
+    (0.225, 0.32] 20  0.150        0.150            0.200             0.400   0.000       0.100        0.000
+
+depth_programme_loading x n_samples
+naive rejection rate (n in brackets)
+                                           1               4              16
+  0.0                            0.000 ( 40)     0.200 ( 40)     0.100 ( 40)
+  0.6                            0.600 ( 40)     0.550 ( 40)     0.375 ( 40)
+
+depth_programme_loading x n_samples
+cutpoint_optimal rejection rate (n in brackets)
+                                           1               4              16
+  0.0                            0.325 ( 40)     0.325 ( 40)     0.375 ( 40)
+  0.6                            0.850 ( 40)     0.775 ( 40)     0.700 ( 40)
+
+depth_programme_loading x n_samples
+codetection rejection rate (n in brackets)
+                                           1               4              16
+  0.0                            0.000 ( 40)     0.000 ( 40)     0.075 ( 40)
+  0.6                            0.025 ( 40)     0.050 ( 40)     0.050 ( 40)
+
+by whether the tie-break channel is open (depth_ratio > 1)
+  open    n =   226  naive 0.301  permutation 0.296  cutpoint_median 0.288  cutpoint_optimal 0.553  random 0.062  expression 0.022  codetection 0.027
+  closed  n =    14  naive 0.357  permutation 0.357  cutpoint_median 0.429  cutpoint_optimal 0.643  random 0.357  expression 0.214  codetection 0.143
+
+rejection against the reported tie-break share
+ tie_break_share_low  tie_break_share_high  n  rate  ci_low  ci_high
+               0.008                 0.065 40 0.425   0.285    0.578
+               0.065                 0.099 40 0.500   0.352    0.648
+               0.099                 0.126 40 0.350   0.221    0.505
+               0.126                 0.153 40 0.200   0.105    0.348
+               0.153                 0.193 40 0.200   0.105    0.348
+               0.193                 0.320 40 0.150   0.071    0.291
+
+naive: rejection against the pre-flight product (trend z = +11.13, P = 8.74e-29)
+ test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+naive       -0.001         0.002           0.001 40 0.000   0.000    0.088
+naive        0.002         0.007           0.004 40 0.000   0.000    0.088
+naive        0.007         0.020           0.012 40 0.075   0.026    0.199
+naive        0.020         0.042           0.031 40 0.200   0.105    0.348
+naive        0.042         0.079           0.056 40 0.550   0.398    0.693
+naive        0.079         0.203           0.105 40 1.000   0.912    1.000
+  for comparison, the same test against the tie-break share: z = -3.98, P = 6.76e-05 (FALLS)
+
+permutation: rejection against the pre-flight product (trend z = +11.13, P = 8.51e-29)
+       test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+permutation       -0.001         0.002           0.001 40 0.000   0.000    0.088
+permutation        0.002         0.007           0.004 40 0.000   0.000    0.088
+permutation        0.007         0.020           0.012 40 0.075   0.026    0.199
+permutation        0.020         0.042           0.031 40 0.175   0.087    0.320
+permutation        0.042         0.079           0.056 40 0.550   0.398    0.693
+permutation        0.079         0.203           0.105 40 1.000   0.912    1.000
+  for comparison, the same test against the tie-break share: z = -3.88, P = 1.06e-04 (FALLS)
+
+cutpoint_median: rejection against the pre-flight product (trend z = +8.65, P = 4.98e-18)
+           test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+cutpoint_median       -0.001         0.002           0.001 40 0.025   0.004    0.129
+cutpoint_median        0.002         0.007           0.004 40 0.075   0.026    0.199
+cutpoint_median        0.007         0.020           0.012 40 0.100   0.040    0.231
+cutpoint_median        0.020         0.042           0.031 40 0.250   0.142    0.402
+cutpoint_median        0.042         0.079           0.056 40 0.600   0.446    0.737
+cutpoint_median        0.079         0.203           0.105 40 0.725   0.572    0.839
+  for comparison, the same test against the tie-break share: z = -1.95, P = 5.16e-02 (FALLS)
+
+cutpoint_optimal: rejection against the pre-flight product (trend z = +7.84, P = 4.52e-15)
+            test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+cutpoint_optimal       -0.001         0.002           0.001 40 0.275   0.161    0.428
+cutpoint_optimal        0.002         0.007           0.004 40 0.300   0.181    0.454
+cutpoint_optimal        0.007         0.020           0.012 40 0.375   0.242    0.530
+cutpoint_optimal        0.020         0.042           0.031 40 0.675   0.520    0.799
+cutpoint_optimal        0.042         0.079           0.056 40 0.750   0.598    0.858
+cutpoint_optimal        0.079         0.203           0.105 40 0.975   0.871    0.996
+  for comparison, the same test against the tie-break share: z = -3.12, P = 1.80e-03 (FALLS)
+
+random: rejection against the pre-flight product (trend z = +5.53, P = 3.21e-08)
+  test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+random       -0.001         0.002           0.001 40 0.000   0.000    0.088
+random        0.002         0.007           0.004 40 0.000   0.000    0.088
+random        0.007         0.020           0.012 40 0.025   0.004    0.129
+random        0.020         0.042           0.031 40 0.050   0.014    0.165
+random        0.042         0.079           0.056 40 0.025   0.004    0.129
+random        0.079         0.203           0.105 40 0.375   0.242    0.530
+  for comparison, the same test against the tie-break share: z = -4.69, P = 2.74e-06 (FALLS)
+
+expression: rejection against the pre-flight product (trend z = +0.21, P = 8.33e-01)
+      test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+expression       -0.001         0.002           0.001 40 0.025   0.004    0.129
+expression        0.002         0.007           0.004 40 0.050   0.014    0.165
+expression        0.007         0.020           0.012 40 0.025   0.004    0.129
+expression        0.020         0.042           0.031 40 0.025   0.004    0.129
+expression        0.042         0.079           0.056 40 0.025   0.004    0.129
+expression        0.079         0.203           0.105 40 0.050   0.014    0.165
+  for comparison, the same test against the tie-break share: z = -0.84, P = 4.00e-01 (FALLS)
+
+codetection: rejection against the pre-flight product (trend z = +0.21, P = 8.33e-01)
+       test  implied_low  implied_high  implied_median  n  rate  ci_low  ci_high
+codetection       -0.001         0.002           0.001 40 0.000   0.000    0.088
+codetection        0.002         0.007           0.004 40 0.050   0.014    0.165
+codetection        0.007         0.020           0.012 40 0.075   0.026    0.199
+codetection        0.020         0.042           0.031 40 0.025   0.004    0.129
+codetection        0.042         0.079           0.056 40 0.000   0.000    0.088
+codetection        0.079         0.203           0.105 40 0.050   0.014    0.165
+  for comparison, the same test against the tie-break share: z = -0.63, P = 5.28e-01 (FALLS)
+
+rejection regressed on both pre-flight quantities (standardised)
+ test             model      term   n    coef      se       z       p
+naive     product alone intercept 240 -1.1405 +0.2516 -4.5322 +0.0000
+naive     product alone   product 240 +3.9216 +0.5417 +7.2400 +0.0000
+naive       share alone intercept 240 -0.8906 +0.1485 -5.9951 +0.0000
+naive       share alone     share 240 -0.5682 +0.1613 -3.5234 +0.0004
+naive product and share intercept 240 -1.1428 +0.2559 -4.4667 +0.0000
+naive product and share   product 240 +3.9577 +0.5561 +7.1163 +0.0000
+naive product and share     share 240 -0.5166 +0.3011 -1.7157 +0.0862
+
+tie-break share against the ceiling ratio: rho = +0.791 (P = 9.37e-53, n = 240)
+
+========================================================================
+calibration summary
+========================================================================
+False-positive rate under effect = 0, pooled over the whole grid.
+A valid test at alpha = 0.05 sits at 0.05.
+
+  test                   FPR            95% CI    vs 0.05
+  naive               0.4000  [0.3712, 0.4295]  anti-conservative
+  permutation         0.3972  [0.3685, 0.4267]  anti-conservative
+  cutpoint_median     0.3370  [0.3095, 0.3658]  anti-conservative
+  cutpoint_optimal    0.5565  [0.5267, 0.5859]  anti-conservative
+  random              0.2009  [0.1781, 0.2259]  anti-conservative
+  expression          0.0676  [0.0541, 0.0841]  anti-conservative
+  codetection         0.0944  [0.0784, 0.1134]  anti-conservative
+
+At the highest confounding (depth_programme_loading >= 0.6):
+  naive               0.6944  [0.6450, 0.7398]  (n = 360)
+  permutation         0.6861  [0.6364, 0.7319]  (n = 360)
+  cutpoint_median     0.6111  [0.5598, 0.6600]  (n = 360)
+  cutpoint_optimal    0.7750  [0.7291, 0.8151]  (n = 360)
+  random              0.3167  [0.2708, 0.3664]  (n = 360)
+  expression          0.0611  [0.0407, 0.0908]  (n = 360)
+  codetection         0.1250  [0.0947, 0.1632]  (n = 360)
+
+matched tests in all three tails, pooled over the calibration grids (n = 1680)
+                   test   k    n  rate  ci_low  ci_high
+     random (two-sided) 334 1680 0.199   0.180    0.219
+         random (lower)  59 1680 0.035   0.027    0.045
+         random (upper) 353 1680 0.210   0.191    0.230
+ expression (two-sided) 113 1680 0.067   0.056    0.080
+     expression (lower) 100 1680 0.060   0.049    0.072
+     expression (upper)  97 1680 0.058   0.048    0.070
+codetection (two-sided) 128 1680 0.076   0.064    0.090
+    codetection (lower) 132 1680 0.079   0.067    0.092
+    codetection (upper)  73 1680 0.043   0.035    0.054
+
+the same three readings on the power grid
+                   test   k   n  rate  ci_low  ci_high
+     random (two-sided) 403 480 0.840   0.804    0.870
+         random (lower)   0 480 0.000   0.000    0.008
+         random (upper) 410 480 0.854   0.820    0.883
+ expression (two-sided) 446 480 0.929   0.903    0.949
+     expression (lower)   0 480 0.000   0.000    0.008
+     expression (upper) 456 480 0.950   0.927    0.966
+codetection (two-sided) 444 480 0.925   0.898    0.945
+    codetection (lower)   0 480 0.000   0.000    0.008
+    codetection (upper) 455 480 0.948   0.924    0.964
+
+========================================================================
+both candidate diagnostics in one model, pooled over the calibration grids (n = 1680)
+========================================================================
+Standardised predictors of a rejection under effect = 0.  A quantity
+that forecasts the failure has a positive coefficient of its own.
+
+ test             model      term    n    coef      se        z       p
+naive     product alone intercept 1680 -0.0725 +0.0942  -0.7690 +0.4419
+naive     product alone   product 1680 +4.1665 +0.2054 +20.2879 +0.0000
+naive       share alone intercept 1680 -0.4571 +0.0503  -9.0862 +0.0000
+naive       share alone     share 1680 -0.1837 +0.0521  -3.5241 +0.0004
+naive product and share intercept 1680 -0.0707 +0.0946  -0.7476 +0.4547
+naive product and share   product 1680 +4.1652 +0.2054 +20.2748 +0.0000
+naive product and share     share 1680 -0.0175 +0.0831  -0.2111 +0.8328
+
+========================================================================
+power
+========================================================================
+ effect   n  naive  permutation  cutpoint_median  cutpoint_optimal  random  expression  codetection
+  0.250 240  0.829        0.829            0.783             0.842   0.779       0.871        0.863
+  0.500 240  0.946        0.950            0.917             0.979   0.900       0.988        0.988
+
+matched tests in all three tails, by planted effect
+ effect                    test   k   n  rate  ci_low  ci_high
+  0.250      random (two-sided) 187 240 0.779   0.723    0.827
+  0.250          random (lower)   0 240 0.000   0.000    0.016
+  0.250          random (upper) 194 240 0.808   0.754    0.853
+  0.250  expression (two-sided) 209 240 0.871   0.822    0.907
+  0.250      expression (lower)   0 240 0.000   0.000    0.016
+  0.250      expression (upper) 218 240 0.908   0.865    0.939
+  0.250 codetection (two-sided) 207 240 0.863   0.813    0.900
+  0.250     codetection (lower)   0 240 0.000   0.000    0.016
+  0.250     codetection (upper) 216 240 0.900   0.856    0.932
+  0.500      random (two-sided) 216 240 0.900   0.856    0.932
+  0.500          random (lower)   0 240 0.000   0.000    0.016
+  0.500          random (upper) 216 240 0.900   0.856    0.932
+  0.500  expression (two-sided) 237 240 0.988   0.964    0.996
+  0.500      expression (lower)   0 240 0.000   0.000    0.016
+  0.500      expression (upper) 238 240 0.992   0.970    0.998
+  0.500 codetection (two-sided) 237 240 0.988   0.964    0.996
+  0.500     codetection (lower)   0 240 0.000   0.000    0.016
+  0.500     codetection (upper) 239 240 0.996   0.977    0.999
+
+naive rejection rate (n in brackets)
+                                         0.0             0.6
+  0.25                           0.883 (120)     0.775 (120)
+  0.5                            0.983 (120)     0.908 (120)
+
+expression rejection rate (n in brackets)
+                                         0.0             0.6
+  0.25                           0.883 (120)     0.858 (120)
+  0.5                            0.983 (120)     0.992 (120)
+
+codetection rejection rate (n in brackets)
+                                         0.0             0.6
+  0.25                           0.867 (120)     0.858 (120)
+  0.5                            0.983 (120)     0.992 (120)
+
+========================================================================
+null composition achieved, A_calibration
+========================================================================
+  random         detection ratio 0.943 +- 0.888   expression ratio 1.033   co-detection gap -0.0820
+  expression     detection ratio 0.972 +- 0.056   expression ratio 0.926   co-detection gap -0.0179
+  codetection    detection ratio 1.005 +- 0.034   expression ratio 0.993   co-detection gap -0.0085
+
+========================================================================
+null composition achieved, C_power
+========================================================================
+  random         detection ratio 0.914 +- 0.858   expression ratio 1.000   co-detection gap -0.0951
+  expression     detection ratio 0.978 +- 0.055   expression ratio 0.916   co-detection gap -0.0258
+  codetection    detection ratio 1.018 +- 0.032   expression ratio 0.995   co-detection gap -0.0134
+
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/results/grid_summary.json
+    ok
+
+=== 06:10:56  real-data benchmark summary ===
+
+=== gse176078 ===  21984 (cell type, gene set) pairs, 16 cell types, 1374 gene sets
+
+-- level 1: cell type --
+        cell_type  n_cells  median_detected  depth_ratio  tie_break_inclusion  median_score_tie_break_share  median_abs_rho_depth  frac_depth_gt_03  median_zero_rate
+Normal epithelial     2104         2149.500        0.574                0.002                         0.011                 0.149             0.172             0.003
+Cancer epithelial     4000         2352.500        0.524                0.003                         0.012                 0.144             0.178             0.005
+        Dendritic      527         1741.000        0.708                0.004                         0.015                 0.175             0.250             0.002
+       Macrophage     3549         2060.000        0.599                0.004                         0.019                 0.197             0.298             0.003
+      Endothelial     3904         1871.000        0.659                0.005                         0.021                 0.221             0.368             0.003
+       Fibroblast     3445         1678.000        0.735                0.005                         0.027                 0.194             0.303             0.005
+         Monocyte     1358         1596.000        0.773                0.005                         0.023                 0.213             0.343             0.002
+     Perivascular     2859         1463.000        0.843                0.006                         0.030                 0.197             0.318             0.003
+  Proliferating T     1355         1489.000        0.828                0.006                         0.027                 0.195             0.316             0.004
+             Treg     2388          974.000        1.266                0.012                         0.063                 0.255             0.408             0.006
+               NK     1089          908.000        1.358                0.014                         0.074                 0.258             0.418             0.007
+           CD8+ T     4000          882.000        1.398                0.014                         0.073                 0.218             0.318             0.005
+                B     1713          818.000        1.507                0.016                         0.088                 0.206             0.315             0.009
+           Plasma     1844          847.000        1.456                0.016                         0.124                 0.269             0.449             0.015
+           CD4+ T     4000          822.500        1.499                0.016                         0.086                 0.226             0.355             0.006
+              NKT      627          812.000        1.518                0.017                         0.089                 0.210             0.317             0.008
+  Spearman(tie-break inclusion, median |rho_depth|) = +0.706
+  AUC for median |rho_depth| >= 0.3 = undefined: no compartment's median reaches it (range 0.144 to 0.269), so the classification has one class
+
+-- level 2: gene set within cell type --
+n_sets                                        +1374.000
+rho_median_detection_vs_absrho                   +0.317
+auc_median_detection_for_absrho_ge_0.3           +0.697
+rho_mean_detection_vs_absrho                     +0.583
+auc_mean_detection_for_absrho_ge_0.3             +0.796
+rho_frac_above_floor_vs_absrho                   +0.113
+auc_frac_above_floor_for_absrho_ge_0.3           +0.576
+rho_score_tie_break_share_vs_absrho              -0.630
+auc_score_tie_break_share_for_absrho_ge_0.3      +0.187
+rho_zero_excess_vs_absrho                        +0.012
+auc_zero_excess_for_absrho_ge_0.3                +0.513
+rho_zero_rate_vs_absrho                          -0.462
+auc_zero_rate_for_absrho_ge_0.3                  +0.238
+rho_k_vs_absrho                                  +0.297
+auc_k_for_absrho_ge_0.3                          +0.675
+
+-- UCell normaliser --
+  n_pairs                                21984
+  frac_default_appropriate               0.3750
+  median_rho_default_implied             0.9997
+  frac_rho_below_099                     0.4399
+  frac_rho_below_090                     0.2388
+  median_rho_appropriate                 1.0000
+  frac_below_099_appropriate             0.0066
+  median_rho_inappropriate               0.9170
+  frac_below_099_inappropriate           0.6999
+  auc_inclusion_for_rho_below_099        0.9991
+
+-- matched nulls on real gene sets --
+  n_pairs                                320
+  frac_abs_rho_ge_0.3_depth              0.3375
+  reject_depth_random                    0.2875
+  auc_random_reject_vs_absrho_depth      0.7835
+  reject_depth_expression                0.1125
+  auc_expression_reject_vs_absrho_depth  0.4604
+  reject_depth_codetection               0.1437
+  auc_codetection_reject_vs_absrho_depth 0.4744
+  frac_abs_rho_ge_0.3_axis               0.2031
+  reject_axis_random                     0.1688
+  auc_random_reject_vs_absrho_axis       0.9593
+  reject_axis_expression                 0.1281
+  auc_expression_reject_vs_absrho_axis   0.8029
+  reject_axis_codetection                0.1781
+  auc_codetection_reject_vs_absrho_axis  0.7203
+
+-- generality: collections --
+       label  n_sets  n_pairs  median_k  median_detection  median_abs_rho_depth  frac_ge_03  frac_ge_05  detection_vs_absrho  n_compartments
+    Hallmark      50      800   168.500             0.066                 0.349       0.569       0.226                0.638              16
+ Immunologic     400     6400   185.000             0.064                 0.273       0.446       0.112                0.410              16
+    Reactome     250     4000    26.000             0.070                 0.193       0.303       0.094                0.427              16
+    BioCarta     288     4608    14.000             0.084                 0.175       0.217       0.015                0.299              16
+        KEGG     186     2976    46.000             0.049                 0.173       0.273       0.092                0.256              16
+WikiPathways     200     3200    27.000             0.056                 0.162       0.222       0.046                0.278              16
+
+-- generality: named sets in the themes a reader checks --
+  [Cell cycle]
+                                                                                                                 gene_set   k  median_detection  median_abs_rho_depth  frac_ge_03  n_compartments
+                                                                                                 BIOCARTA_SKP2E2F_PATHWAY  10             0.049                 0.085       0.000              16
+                                                                                                     HALLMARK_E2F_TARGETS 195             0.067                 0.159       0.250              16
+                                                                                                  HALLMARK_G2M_CHECKPOINT 190             0.073                 0.200       0.312              16
+                                                                                                          KEGG_CELL_CYCLE 124             0.065                 0.302       0.500              16
+                                                                                                REACTOME_G2_M_CHECKPOINTS 127             0.103                 0.452       1.000              16
+                                                                                       REACTOME_PTK6_REGULATES_CELL_CYCLE   6             0.089                 0.096       0.000              16
+                                                       REACTOME_THE_ROLE_OF_GTSE1_IN_G2_M_PROGRESSION_AFTER_G2_CHECKPOINT  76             0.265                 0.504       1.000              16
+REACTOME_TP53_REGULATES_TRANSCRIPTION_OF_ADDITIONAL_CELL_CYCLE_GENES_WHOSE_EXACT_ROLE_IN_THE_P53_PATHWAY_REMAIN_UNCERTAIN  20             0.118                 0.203       0.062              16
+                                                                              REACTOME_TRANSCRIPTIONAL_REGULATION_BY_E2F6  34             0.083                 0.112       0.062              16
+                                                     WP_MIR124_PREDICTED_INTERACTIONS_WITH_CELL_CYCLE_AND_DIFFERENTIATION   6             0.081                 0.064       0.000              16
+  [Hypoxia]
+                                    gene_set   k  median_detection  median_abs_rho_depth  frac_ge_03  n_compartments
+                 BIOCARTA_P53HYPOXIA_PATHWAY  21             0.118                 0.134       0.062              16
+GSE26023_PHD3_KO_VS_WT_NEUTROPHIL_HYPOXIA_DN 178             0.037                 0.318       0.562              16
+                            HALLMARK_HYPOXIA 189             0.054                 0.466       0.938              16
+  [Immune checkpoint]
+               gene_set  k  median_detection  median_abs_rho_depth  frac_ge_03  n_compartments
+ BIOCARTA_CTLA4_PATHWAY 20             0.056                 0.217       0.438              16
+REACTOME_PD_1_SIGNALING 26             0.084                 0.262       0.438              16
+  [Interferon]
+                          gene_set   k  median_detection  median_abs_rho_depth  frac_ge_03  n_compartments
+HALLMARK_INTERFERON_ALPHA_RESPONSE  95             0.124                 0.355       0.625              16
+HALLMARK_INTERFERON_GAMMA_RESPONSE 196             0.108                 0.490       0.750              16
+  WP_TYPE_III_INTERFERON_SIGNALING  10             0.083                 0.184       0.000              16
+   WP_TYPE_II_INTERFERON_SIGNALING  34             0.147                 0.442       0.750              16
+  across collections: Spearman(median set size, median |rho| with depth) = +0.49 on 6 points, reported as a pattern rather than a test
+
+=== gse161529 ===  23426 (cell type, gene set) pairs, 17 cell types, 1378 gene sets
+
+-- level 1: cell type --
+ cell_type  n_cells  median_detected  depth_ratio  tie_break_inclusion  median_score_tie_break_share  median_abs_rho_depth  frac_depth_gt_03  median_zero_rate
+        14      337         2680.000        0.626                0.005                         0.019                 0.215             0.332             0.003
+         7     1489         2600.000        0.645                0.005                         0.028                 0.281             0.459             0.004
+         6     1639         2756.000        0.608                0.006                         0.029                 0.292             0.493             0.005
+        12      611         2592.000        0.647                0.007                         0.038                 0.280             0.463             0.005
+         9     1246         1373.000        1.221                0.013                         0.058                 0.316             0.523             0.006
+        11      872         1194.000        1.405                0.016                         0.090                 0.419             0.642             0.011
+         8     1258         1173.500        1.429                0.016                         0.085                 0.354             0.576             0.010
+         5     2493         1073.000        1.563                0.017                         0.104                 0.411             0.620             0.009
+         2     4000         1213.500        1.382                0.017                         0.117                 0.436             0.665             0.016
+        13      456         1054.000        1.591                0.019                         0.099                 0.394             0.620             0.011
+         3     3282          907.000        1.849                0.020                         0.106                 0.436             0.663             0.009
+        16      256          880.000        1.906                0.021                         0.113                 0.440             0.671             0.016
+        15      336          704.000        2.382                0.026                         0.159                 0.376             0.590             0.015
+        10     1140          706.500        2.374                0.028                         0.195                 0.280             0.470             0.016
+         0     4000          452.500        3.706                0.035                         0.338                 0.260             0.443             0.040
+         4     2512          468.500        3.580                0.035                         0.284                 0.236             0.371             0.024
+         1     4000          470.000        3.568                0.035                         0.288                 0.214             0.337             0.025
+  Spearman(tie-break inclusion, median |rho_depth|) = -0.091
+  AUC for median |rho_depth| >= 0.3 = 0.500
+
+-- level 2: gene set within cell type --
+n_sets                                        +1378.000
+rho_median_detection_vs_absrho                   +0.456
+auc_median_detection_for_absrho_ge_0.3           +0.726
+rho_mean_detection_vs_absrho                     +0.656
+auc_mean_detection_for_absrho_ge_0.3             +0.823
+rho_frac_above_floor_vs_absrho                   +0.290
+auc_frac_above_floor_for_absrho_ge_0.3           +0.642
+rho_score_tie_break_share_vs_absrho              -0.683
+auc_score_tie_break_share_for_absrho_ge_0.3      +0.158
+rho_zero_excess_vs_absrho                        +0.051
+auc_zero_excess_for_absrho_ge_0.3                +0.510
+rho_zero_rate_vs_absrho                          -0.728
+auc_zero_rate_for_absrho_ge_0.3                  +0.135
+rho_k_vs_absrho                                  +0.610
+auc_k_for_absrho_ge_0.3                          +0.805
+
+-- UCell normaliser --
+  n_pairs                                23426
+  frac_default_appropriate               0.1176
+  median_rho_default_implied             0.9505
+  frac_rho_below_099                     0.7887
+  frac_rho_below_090                     0.3544
+  median_rho_appropriate                 0.9891
+  frac_below_099_appropriate             0.5200
+  median_rho_inappropriate               0.9364
+  frac_below_099_inappropriate           0.8246
+  auc_inclusion_for_rho_below_099        0.9168
+
+-- matched nulls on real gene sets --
+  n_pairs                                340
+  frac_abs_rho_ge_0.3_depth              0.5324
+  reject_depth_random                    0.2588
+  auc_random_reject_vs_absrho_depth      0.5878
+  reject_depth_expression                0.1441
+  auc_expression_reject_vs_absrho_depth  0.5148
+  reject_depth_codetection               0.1794
+  auc_codetection_reject_vs_absrho_depth 0.6165
+  frac_abs_rho_ge_0.3_axis               0.2647
+  reject_axis_random                     0.1706
+  auc_random_reject_vs_absrho_axis       0.8248
+  reject_axis_expression                 0.1676
+  auc_expression_reject_vs_absrho_axis   0.7148
+  reject_axis_codetection                0.1500
+  auc_codetection_reject_vs_absrho_axis  0.6481
+
+-- generality: collections --
+       label  n_sets  n_pairs  median_k  median_detection  median_abs_rho_depth  frac_ge_03  frac_ge_05  detection_vs_absrho  n_compartments
+    Hallmark      50      850   176.000             0.058                 0.496       0.766       0.492                0.722              17
+ Immunologic     400     6800   193.000             0.051                 0.470       0.750       0.447                0.734              17
+    Reactome     250     4250    23.000             0.052                 0.259       0.436       0.232                0.569              17
+        KEGG     186     3162    52.000             0.040                 0.255       0.433       0.203                0.417              17
+    BioCarta     292     4964    15.000             0.066                 0.248       0.388       0.103                0.485              17
+WikiPathways     200     3400    25.000             0.049                 0.245       0.417       0.167                0.350              17
+
+-- generality: named sets in the themes a reader checks --
+  [Cell cycle]
+                                                                                                                 gene_set   k  median_detection  median_abs_rho_depth  frac_ge_03  n_compartments
+                                                                                                 BIOCARTA_SKP2E2F_PATHWAY  10             0.048                 0.251       0.353              17
+                                                                                                     HALLMARK_E2F_TARGETS 198             0.047                 0.491       1.000              17
+                                                                                                  HALLMARK_G2M_CHECKPOINT 195             0.060                 0.569       1.000              17
+                                                                                                          KEGG_CELL_CYCLE 124             0.056                 0.558       1.000              17
+                                                                                                REACTOME_G2_M_CHECKPOINTS 133             0.071                 0.713       1.000              17
+                                                                                       REACTOME_PTK6_REGULATES_CELL_CYCLE   6             0.070                 0.218       0.176              17
+REACTOME_TP53_REGULATES_TRANSCRIPTION_OF_ADDITIONAL_CELL_CYCLE_GENES_WHOSE_EXACT_ROLE_IN_THE_P53_PATHWAY_REMAIN_UNCERTAIN  21             0.105                 0.250       0.412              17
+                                          REACTOME_TP53_REGULATES_TRANSCRIPTION_OF_GENES_INVOLVED_IN_G2_CELL_CYCLE_ARREST  18             0.083                 0.189       0.118              17
+            REACTOME_TRANSCRIPTION_OF_E2F_TARGETS_UNDER_NEGATIVE_CONTROL_BY_P107_RBL1_AND_P130_RBL2_IN_COMPLEX_WITH_HDAC1  16             0.019                 0.052       0.000              17
+                                                                                            WP_G1_TO_S_CELL_CYCLE_CONTROL  64             0.055                 0.144       0.000              17
+  [Hypoxia]
+                                    gene_set   k  median_detection  median_abs_rho_depth  frac_ge_03  n_compartments
+                 BIOCARTA_P53HYPOXIA_PATHWAY  21             0.115                 0.420       0.765              17
+GSE26023_PHD3_KO_VS_WT_NEUTROPHIL_HYPOXIA_DN 189             0.035                 0.515       1.000              17
+                            HALLMARK_HYPOXIA 197             0.069                 0.649       1.000              17
+  [Immune checkpoint]
+               gene_set  k  median_detection  median_abs_rho_depth  frac_ge_03  n_compartments
+ BIOCARTA_CTLA4_PATHWAY 20             0.022                 0.178       0.412              17
+REACTOME_PD_1_SIGNALING 26             0.019                 0.205       0.235              17
+  [Interferon]
+                                            gene_set   k  median_detection  median_abs_rho_depth  frac_ge_03  n_compartments
+                  HALLMARK_INTERFERON_ALPHA_RESPONSE  96             0.101                 0.425       0.824              17
+                  HALLMARK_INTERFERON_GAMMA_RESPONSE 196             0.067                 0.526       0.941              17
+REACTOME_EVASION_BY_RSV_OF_HOST_INTERFERON_RESPONSES  34             0.067                 0.578       1.000              17
+                    WP_TYPE_III_INTERFERON_SIGNALING  10             0.033                 0.199       0.000              17
+  across collections: Spearman(median set size, median |rho| with depth) = +0.66 on 6 points, reported as a pattern rather than a test
+
+=== cross-cohort ===
+  max_rank_1                             1233
+  max_rank_2                             1677
+  max_rank_ratio                         1.3601
+  median_detected_1                      1476.0000
+  median_detected_2                      1073.0000
+  tie_break_inclusion_1                  0.0063
+  tie_break_inclusion_2                  0.0171
+  median_rho_depth_1                     0.1701
+  median_rho_depth_2                     0.3051
+  n_common_gene_sets                     1077
+  spearman_rho_axis_across_cohorts       0.1018
+  sign_agreement                         0.5664
+  strong_axis_threshold                  0.2000
+  n_strong_in_1                          70
+  strong_sign_agreement                  0.8286
+  strong_median_abs_1                    0.2458
+  strong_median_abs_2                    0.0359
+  median_abs_change                      0.0577
+
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/results/benchmark_summary.json
+    ok
+
+=== 06:10:58  audit of the matched null's residual ===
+72 datasets x (9 sets x 61 draws)
+  4/72  0.830 sets/s
+  8/72  1.010 sets/s
+  12/72  1.092 sets/s
+  16/72  1.145 sets/s
+  20/72  1.192 sets/s
+  24/72  1.233 sets/s
+  28/72  1.260 sets/s
+  32/72  1.277 sets/s
+  36/72  1.296 sets/s
+  40/72  1.311 sets/s
+  44/72  1.321 sets/s
+  48/72  1.326 sets/s
+  52/72  1.332 sets/s
+  56/72  1.339 sets/s
+  60/72  1.346 sets/s
+  64/72  1.349 sets/s
+  68/72  1.351 sets/s
+  72/72  1.354 sets/s
+
+==============================================================================
+FPR of the expression-matched test, and the dispersion that explains it
+==============================================================================
+dispersion_ratio = sd of the observed rho across datasets / the null's own sd.
+A valid test has this at 1.0 and the FPR at 0.05.
+
+                 audit          kind   n    fpr  fpr_lower  fpr_upper  depth_ratio  tie_break  rho_mean  rho_sd  null_sd  dispersion_ratio  median_p
+confounded_coexpressed pseudo_target 192 0.0260     0.0365     0.0521          NaN     0.1225    0.0819  0.0509   0.0344            1.4798    0.4590
+confounded_coexpressed   real_target  24 0.1250     0.2083     0.0000       1.3839     0.1225    0.0687  0.0537   0.0348            1.5408    0.3934
+     confounded_sparse pseudo_target 192 0.0781     0.0417     0.0990          NaN     0.4006   -0.0483  0.0625   0.0343            1.8205    0.5246
+     confounded_sparse   real_target  24 0.0417     0.0833     0.0417       1.3847     0.4006   -0.0592  0.0733   0.0337            2.1711    0.4836
+  control_unconfounded pseudo_target 192 0.0260     0.0156     0.0365          NaN     0.1378   -0.0005  0.0393   0.0346            1.1354    0.5246
+  control_unconfounded   real_target  24 0.0000     0.0000     0.0000       1.3814     0.1378   -0.0040  0.0360   0.0349            1.0330    0.7213
+
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/results/audit_matched_null.jsonl
+    ok
+
+=== 06:11:51  residual of the score decomposition ===
+{
+ "n_datasets": 90,
+ "n_cells": 108000,
+ "exact_gap_max": 1.1102230246251565e-16,
+ "eps_sd_median": 0.012188800643333806,
+ "eps_sd_max": 0.019373431634911436,
+ "eps_max_abs_over_datasets": 0.16306804619488907,
+ "worst": {
+  "params": {
+   "depth_programme_loading": 0.6,
+   "detection": 0.05,
+   "coexpr": 0.0,
+   "effect": 0.0,
+   "n_samples": 1
+  },
+  "rep": 1,
+  "eps_max_abs": 0.16306804619488907,
+  "eps_sd": 0.008814731572448402,
+  "max_rank": 600
+ },
+ "elapsed": 135.62990641593933
+}
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/results/decomposition_residual.json
+    ok
+
+=== 06:14:08  manuscript numbers ===
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/manuscript/numbers.tex  (757 macros, 0 pending)
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/manuscript/tail_robustness_table.tex
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/manuscript/cohorts_table.tex
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/manuscript/generality_table.tex
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/manuscript/null_selector_table.tex
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/manuscript/tools_table.tex
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/manuscript/grid_defs_table.tex
+    ok
+
+=== 06:14:11  companion figure ===
+Duplicate key in file PosixPath('/usr/local/lib/python3.12/dist-packages/matplotlib/mpl-data/matplotlibrc'), line 850 ('font.sans-serif: Noto Sans CJK SC, DejaVu Sans, Bitstream Vera Sans, sans-serif')
+Duplicate key in file PosixPath('/usr/local/lib/python3.12/dist-packages/matplotlib/mpl-data/matplotlibrc'), line 851 ('axes.unicode_minus: False')
+compartments plotted: 16
+channel open in 7 of 16
+naive rejection, lowest pre-flight product 0.057 -> highest 1.000
+matched rejection, lowest pre-flight product 0.075 -> highest 0.107  (endpoints alone mislead: the curve is not monotone)
+naive rejection, lowest tie-break share 0.583 -> highest 0.283  (the refuted candidate)
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/figures/figure1_calibration.svg
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/figures/figure1_calibration.pdf
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/figures/figure1_calibration.png
+    ok
+
+=== 06:14:18  references against Crossref ===
+  wu2021           ok          
+  pal2021          ok          
+  aibar2017        ok          
+  andreatta2021    ok          
+  hanzelmann2013   ok          
+  foroutan2018     ok          
+  tirosh2016       ok          
+  badia2022        ok          
+  squair2021       ok          
+  zimmerman2021    ok          
+  holland2020      ok          
+  wang2024scps     ok          
+  bhuva2024        ok          
+  liberzon2015     ok          
+  subramanian2005  ok          
+  barbie2009       ok          
+  altman1994       ok          
+  royston2006      ok          
+  wilson1927       ok          
+  wenzel2024       ok          
+
+20 entries, 20 distinct keys cited
+  ok: 20
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/results/reference_check.csv
+    ok
+
+=== 06:14:57  manuscript build ===
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: Changing directory to 'manuscript/'
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  ../figures/figure1_calibration.pdf
+Category 'changed_user':
+  ../figures/figure1_calibration.pdf
+
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -recorder  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/translations/translations.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/authblk.sty) (./numbers.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(./main.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(./main.out) (./main.out)
+(/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictio
+nary-english.trsl) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd) [1{/var/lib/texmf/fo
+nts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-
+super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[2] (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd) [3] [4] [5]
+[6] [7] [8] [9] [10] [11] [12] [13] (./main.bbl [14] [15]) [16]
+(./tail_robustness_table.tex) (./cohorts_table.tex) (./generality_table.tex)
+(./null_selector_table.tex) (./tools_table.tex) (./grid_defs_table.tex)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[17] [18] [19] [20] [21] [22] [23 <../figures/figure1_calibration.pdf>]
+(./main.aux) )</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cme
+x10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-sup
+er/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></us
+r/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/
+type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-supe
+r/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr
+/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on main.pdf (23 pages, 540248 bytes).
+Transcript written on main.log.
+Latexmk: Getting log file 'main.log'
+Latexmk: Examining 'main.fls'
+Latexmk: Examining 'main.log'
+Latexmk: Found input bbl file 'main.bbl'
+Latexmk: Log file says output to 'main.pdf'
+Latexmk: Found bibliography file(s):
+  ./references.bib
+Latexmk: All targets (main.pdf) are up-to-date
+Latexmk: Undoing directory change
+
+    ok
+
+=== 06:14:58  format and macro check ===
+/home/user/ClawsGO/project-20260915-2/naturemethods/manuscript/main.tex
+  title            17
+  abstract        136  (limit 150, ok)
+  main text      4998  (target 3000, ceiling 5000, over target)
+  methods        2201  (ceiling 4000, ok)
+  captions        371  (excluded from the main-text count)
+  display items     5  (print limit 6)
+  macros        all resolved
+  pending       none
+  spacing       ok
+  appendix      floats numbered supplementary
+
+  every measured limit is satisfied
+    ok
+
+06:14:58  pipeline complete

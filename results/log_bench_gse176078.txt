@@ -1,0 +1,60 @@
+[gse176078] 55003 cells x 24646 genes, max_rank = 1233, ceiling = 1500
+[gse176078] 24,646 genes; max_rank = 1233 at the 5% AUCell fraction
+[gse176078] 16 groups on 'cell_type', hvg = 3000
+  h.all.v2024.1.Hs.symbols.gmt: 50 sets kept (cap None)
+  c2.cp.kegg_legacy.v2024.1.Hs.symbols.gmt: 186 sets kept (cap None)
+  c2.cp.biocarta.v2024.1.Hs.symbols.gmt: 288 sets kept (cap None)
+  c2.cp.reactome.v2024.1.Hs.symbols.gmt: 250 sets kept (cap 250)
+  c2.cp.wikipathways.v2024.1.Hs.symbols.gmt: 200 sets kept (cap 200)
+  c7.immunesigdb.v2024.1.Hs.symbols.gmt: 400 sets kept (cap 400)
+[gse176078] 1374 gene sets, 15293 genes to retain (62% of the panel)
+  [B] 1713 cells (of 1713), median detected 818 (max_rank/median = 1.51), tie-break inclusion 0.0164, axis-depth rho -0.274, cache 2s
+  [B] 1374 sets scored in 14s (18s total)
+    matched nulls done for 20 sets (267s total)
+  [CD4+ T] 4000 cells (of 8531), median detected 822 (max_rank/median = 1.50), tie-break inclusion 0.0164, axis-depth rho +0.262, cache 6s
+  [CD4+ T] 1374 sets scored in 42s (317s total)
+    matched nulls done for 20 sets (997s total)
+  [CD8+ T] 4000 cells (of 5904), median detected 882 (max_rank/median = 1.40), tie-break inclusion 0.0145, axis-depth rho -0.436, cache 5s
+  [CD8+ T] 1374 sets scored in 39s (1042s total)
+    matched nulls done for 20 sets (1725s total)
+  [Cancer epithelial] 4000 cells (of 13806), median detected 2352 (max_rank/median = 0.52), tie-break inclusion 0.0028, axis-depth rho +0.025, cache 8s
+  [Cancer epithelial] 1374 sets scored in 49s (1786s total)
+    matched nulls done for 20 sets (3327s total)
+  [Dendritic] 527 cells (of 527), median detected 1741 (max_rank/median = 0.71), tie-break inclusion 0.0037, axis-depth rho -0.390, cache 1s
+  [Dendritic] 1374 sets scored in 6s (3335s total)
+    matched nulls done for 20 sets (3580s total)
+  [Endothelial] 3904 cells (of 3904), median detected 1871 (max_rank/median = 0.66), tie-break inclusion 0.0046, axis-depth rho +0.416, cache 5s
+  [Endothelial] 1374 sets scored in 43s (3629s total)
+    matched nulls done for 20 sets (5127s total)
+  [Fibroblast] 3445 cells (of 3445), median detected 1678 (max_rank/median = 0.73), tie-break inclusion 0.0053, axis-depth rho -0.390, cache 6s
+  [Fibroblast] 1374 sets scored in 33s (5168s total)
+    matched nulls done for 20 sets (6462s total)
+  [Macrophage] 3549 cells (of 3549), median detected 2060 (max_rank/median = 0.60), tie-break inclusion 0.0041, axis-depth rho +0.472, cache 5s
+  [Macrophage] 1374 sets scored in 33s (6502s total)
+    matched nulls done for 20 sets (7831s total)
+  [Monocyte] 1358 cells (of 1358), median detected 1596 (max_rank/median = 0.77), tie-break inclusion 0.0054, axis-depth rho -0.746, cache 2s
+  [Monocyte] 1374 sets scored in 11s (7844s total)
+    matched nulls done for 20 sets (8304s total)
+  [NK] 1089 cells (of 1089), median detected 908 (max_rank/median = 1.36), tie-break inclusion 0.0143, axis-depth rho +0.621, cache 1s
+  [NK] 1374 sets scored in 11s (8317s total)
+    matched nulls done for 20 sets (8589s total)
+  [NKT] 627 cells (of 627), median detected 812 (max_rank/median = 1.52), tie-break inclusion 0.0171, axis-depth rho -0.162, cache 1s
+  [NKT] 1374 sets scored in 7s (8597s total)
+    matched nulls done for 20 sets (8749s total)
+  [Normal epithelial] 2104 cells (of 2104), median detected 2150 (max_rank/median = 0.57), tie-break inclusion 0.0023, axis-depth rho -0.408, cache 3s
+  [Normal epithelial] 1374 sets scored in 20s (8773s total)
+    matched nulls done for 20 sets (9748s total)
+  [Perivascular] 2859 cells (of 2859), median detected 1463 (max_rank/median = 0.84), tie-break inclusion 0.0061, axis-depth rho -0.080, cache 4s
+  [Perivascular] 1374 sets scored in 32s (9785s total)
+    matched nulls done for 20 sets (10573s total)
+  [Plasma] 1844 cells (of 1844), median detected 847 (max_rank/median = 1.46), tie-break inclusion 0.0164, axis-depth rho +0.128, cache 2s
+  [Plasma] 1374 sets scored in 16s (10592s total)
+    matched nulls done for 20 sets (10918s total)
+  [Proliferating T] 1355 cells (of 1355), median detected 1489 (max_rank/median = 0.83), tie-break inclusion 0.0065, axis-depth rho +0.720, cache 2s
+  [Proliferating T] 1374 sets scored in 14s (10935s total)
+    matched nulls done for 20 sets (11360s total)
+  [Treg] 2388 cells (of 2388), median detected 974 (max_rank/median = 1.27), tie-break inclusion 0.0125, axis-depth rho +0.695, cache 4s
+  [Treg] 1374 sets scored in 28s (11393s total)
+    matched nulls done for 20 sets (11832s total)
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/results/benchmark_gse176078_all.csv  ((21984, 32))
+wrote /home/user/ClawsGO/project-20260915-2/naturemethods/results/benchmark_gse176078_nulls.csv  ((320, 27))

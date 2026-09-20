@@ -1,0 +1,26 @@
+# The environment the results in the manuscript were computed in.
+#
+# Version bounds that make the package work on other machines live in
+# pyproject.toml (numpy>=1.22, scipy>=1.9, pandas>=1.5); this file pins the
+# versions that were actually installed here, which is what a reproduction
+# needs.  Create it with:
+#
+#     conda env create -f environment.yml
+#     conda activate sparse-gene-set-calibration
+#     pip install -e .[test,app,comparators]
+#
+name: sparse-gene-set-calibration
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy=2.4.6
+  - scipy=1.18.1
+  - pandas=2.3.3
+  # Optional extras the repository uses: the interactive application, the
+  # head-to-head comparator runs, the tutorial notebook, and the tests.
+  # Install through pip with the package's own extras (above) so the bounds
+  # stay declared in one place.
+  - pip
+  - pip:
+      - -e .[test,app,comparators,tutorial]
