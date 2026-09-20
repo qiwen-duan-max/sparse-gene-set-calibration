@@ -39,6 +39,10 @@ import calibration_app as app  # noqa: E402
 
 FAILURES = []
 
+# The app's step-1 metric label for the tie-break share; kept here because the
+# check below reads it twice and a literal spelled twice is a typo waiting.
+SHARE_LABEL = "Tie-break share of the set's inclusion"
+
 
 @pytest.fixture(autouse=True)
 def _no_check_records_a_failure():
@@ -123,10 +127,8 @@ def test_numbers_match_package():
     cache = sg.RankCache.build(data.X, data.genes, ceiling=300, seed=42)
     report = sg.sparsity_report(cache, data.target, rank_frac=0.05)
     check("tie-break share agrees",
-          shown.get("Tie-break share of the set's inclusion")
-          == f"{report['tie_break_share']:.3f}",
-          f"{shown.get('Tie-break share of the set\'s inclusion')} vs "
-          f"{report['tie_break_share']:.3f}")
+          shown.get(SHARE_LABEL) == f"{report['tie_break_share']:.3f}",
+          f"{shown.get(SHARE_LABEL)} vs {report['tie_break_share']:.3f}")
     check("zero rate agrees",
           shown.get("Cells scoring exactly zero")
           == f"{report['observed_zero_rate']:.1%}",

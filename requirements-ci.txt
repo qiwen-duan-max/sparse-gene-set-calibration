@@ -1,7 +1,10 @@
 # CI-only test requirements, deliberately kept out of pyproject.toml: the
 # v0.1.0 release archives were hashed and uploaded, and their bytes must not
-# move.  These two are needed only by tests that parse generated documents
-# (the HTML report and the companion figure); without them those tests skip
-# themselves rather than fail.
+# move.  matplotlib and lxml are needed only by tests that parse generated
+# documents (the HTML report and the companion figure); without them those
+# tests skip themselves rather than fail.  streamlit is needed only by the
+# application checks, which drive the deployed app script through
+# streamlit.testing.
 matplotlib>=3.6
 lxml>=4.9
+streamlit>=1.30

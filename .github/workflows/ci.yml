@@ -43,10 +43,37 @@ jobs:
         run: pip install -r requirements-ci.txt
       - name: Test suite
         run: python -m pytest tests/ -q
+      - name: Application checks (the Streamlit app through AppTest)
+        # app/test_app.py is pytest-shaped but sits outside testpaths; run it
+        # explicitly.  It drives the deployed app script through
+        # streamlit.testing, which is why streamlit is in requirements-ci.txt.
+        run: python -m pytest app/test_app.py -q
       - name: Cross-language check (Python vs R structured logs)
         run: python experiments/cross_language_check.py
       - name: Citation keys resolve in both directions
         run: python experiments/verify_references.py --offline
+
+  # The main job runs on 3.12, the environment the manuscript was produced in.
+  # This job runs the suite on 3.10, next to the declared >=3.9 floor, so that
+  # drift below 3.12 cannot land silently -- a backslash inside an f-string
+  # expression parses on 3.12 and is a SyntaxError below, which is exactly
+  # the class of bug this job exists to catch.  The cross-language check has
+  # its own step in the main job and does not depend on the Python version.
+  python-310:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install the package with its test extras
+        run: pip install -e .[test]
+      - name: Install the CI-only test requirements
+        run: pip install -r requirements-ci.txt
+      - name: Test suite
+        run: python -m pytest tests/ -q
+      - name: Application checks
+        run: python -m pytest app/test_app.py -q
 
   r-package:
     runs-on: ubuntu-latest
