@@ -42,6 +42,12 @@ def test_predict_fpr_reproduces_the_fit_from_the_grid_files():
     # The constants travelled by hand from the results files into the source.
     # Recompute them from the same files and the shipped fit must predict the
     # same probability to the last digit the files support.
+    missing = [f"grid_{g}.jsonl" for g in FPR_MODEL["grids"]
+               if not os.path.exists(os.path.join(RESULTS, f"grid_{g}.jsonl"))]
+    if missing:
+        pytest.skip("the grid records are not in this checkout (they travel "
+                    "as the release attachment raw_data_results.zip): "
+                    + ", ".join(missing))
     from experiments.analyse_grid import implied_rho, load
 
     pool = pd.concat([load(n, allow_partial=True)
@@ -190,7 +196,11 @@ def test_the_boundary_constants_match_the_grid_rules():
 def test_the_shipped_fit_matches_the_summary_the_manuscript_reports():
     # The joint logistic file is the fit's source of record; the coefficients
     # below travelled from it into the source by hand.
-    with open(os.path.join(RESULTS, "grid_A_B_joint_logistic.csv")) as fh:
+    fit_path = os.path.join(RESULTS, "grid_A_B_joint_logistic.csv")
+    if not os.path.exists(fit_path):
+        pytest.skip("grid_A_B_joint_logistic.csv is not in this checkout (it "
+                    "travels as the release attachment raw_data_results.zip)")
+    with open(fit_path) as fh:
         rows = list(csv.DictReader(fh))
     fit = next(r for r in rows
                if r["model"] == "product alone" and r["term"] == "product")

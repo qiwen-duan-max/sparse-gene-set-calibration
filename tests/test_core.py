@@ -17,8 +17,8 @@ import pytest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.join(
-    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-    "scripts"))
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "reference"))
 
 import sparsegs as sg  # noqa: E402
 
@@ -1770,7 +1770,7 @@ def test_the_report_defaults_to_the_strongest_null_it_can_build(tmp_path):
     """A calibrator built from a matrix can measure co-detection, so that is the
     family its report uses; one built without the matrix falls back rather than
     raising, and either way the figure names the family it drew."""
-    from lxml import html as LH
+    LH = pytest.importorskip("lxml.html")
 
     cal, programme, axis = _report_calibrator(tmp_path)
     path = tmp_path / "auto.html"
@@ -2648,12 +2648,13 @@ def test_the_figure_scores_the_same_panel_the_manuscript_describes():
     wrong.  The log is the QC pipeline's own output, so it is the copy that
     moves, and this asserts the figure has not been left behind.
     """
-    from experiments import make_figure
-
     log = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                        "results", "log_bench_gse176078.txt")
     if not os.path.exists(log):
         pytest.skip("the benchmark has not been run in this checkout")
+    pytest.importorskip("matplotlib")
+    from experiments import make_figure
+
     text = open(log, encoding="utf-8").read()
     genes = int(re.search(r"(\d+)\s+cells\s+x\s+(\d+)\s+genes", text).group(2))
     rank = int(re.search(r"max_rank = (\d+)", text).group(1))

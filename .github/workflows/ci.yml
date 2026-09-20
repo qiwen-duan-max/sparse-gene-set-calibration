@@ -31,6 +31,11 @@ jobs:
           python-version: '3.12'
       - name: Install the package with its test extras
         run: pip install -e .[test]
+      - name: Install the CI-only test requirements
+        # matplotlib and lxml are needed by two document-parsing tests.  They
+        # live in a repository file rather than the package metadata so the
+        # release archives stay byte-identical to what was hashed and uploaded.
+        run: pip install -r requirements-ci.txt
       - name: Test suite
         run: python -m pytest tests/ -q
       - name: Cross-language check (Python vs R structured logs)

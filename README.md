@@ -381,6 +381,15 @@ Every artefact the manuscript shows traces to exactly one generating script:
 | Reference check | `experiments/verify_references.py` | `manuscript/refs.bib` vs Crossref |
 | PDF build + measured-limit check | `experiments/run_pipeline.sh` | everything above, in order |
 
+One input the table does not cover: the test suite's reference engine.
+`tests/test_core.py` imports `common.score_matrix` -- the legacy
+random-tie-break implementation the package is validated against -- which
+lives at `reference/common.py`, extracted verbatim from the project's early
+scoring scripts.  And on a fresh checkout of this repository the few tests
+that read the simulation grids' records skip themselves, because those
+records travel as the release attachment `raw_data_results.zip` rather than
+in the repository; in the authors' working tree they run in full.
+
 The two raw layers are the only steps with real wall-clock cost; everything
 after them reruns in minutes. The environment files pin what the runs used:
 `environment.yml` (Python 3.12, numpy 2.4.6, scipy 1.18.1, pandas 2.3.3 —

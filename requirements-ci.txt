@@ -1,0 +1,7 @@
+# CI-only test requirements, deliberately kept out of pyproject.toml: the
+# v0.1.0 release archives were hashed and uploaded, and their bytes must not
+# move.  These two are needed only by tests that parse generated documents
+# (the HTML report and the companion figure); without them those tests skip
+# themselves rather than fail.
+matplotlib>=3.6
+lxml>=4.9
