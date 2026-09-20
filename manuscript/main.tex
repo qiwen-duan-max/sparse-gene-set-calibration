@@ -1054,7 +1054,8 @@ Supplementary Table~\ref{tab:verification} shows the most recent such check.
 \section*{Code availability}
 The Python package \code{sparsegs}, the R package \code{sparseGenSetCal}, the
 interactive application, the tutorial notebook and the scripts that produce
-every number and figure in this paper are in the project repository, and both
+every number and figure in this paper are in the public repository
+\url{https://github.com/qiwen-duan-max/sparse-gene-set-calibration}, and both
 packages travel with the submission as source archives
 (\code{sparse\_gene\_set\_calibration-0.1.0.tar.gz} and
 \code{sparseGenSetCal\_0.1.0.tar.gz}). The simulation grids' records travel
@@ -1069,9 +1070,12 @@ from the records independently of the generated macros, with exact
 agreement. The test suites passed in full on the same day --- 127 pytest
 tests and 51 R test blocks, none skipped --- together with the
 cross-language check described in Methods. The continuous-integration
-workflow is defined in the repository (\code{.github/workflows/ci.yml}) but
-has not yet run on a public host, so no CI status is claimed until the
-repository is public and the badge is green. The archived release carries a
+workflow (\code{.github/workflows/ci.yml}) runs both test suites, the
+cross-language check and the offline reference check on every push, and the
+run accompanying this submission is green: 124 of the 127 pytest tests
+execute on a bare checkout --- the three that read the archived records skip
+there by design, because the records travel with the release --- and the R
+suite reports zero failures. The archived release carries a
 DOI, inserted here once minted: \code{XXX-DOI-XXX}.
 
 \section*{Author contributions}
@@ -1332,9 +1336,12 @@ grids run at roughly 0.3 configurations per second on one core, so a full
 regeneration of all five grids is an overnight job and parallelises across
 configurations.
 
-\paragraph{Continuous integration and archiving.} The CI workflow is defined
-in the repository and will exercise the regeneration on a public host once
-the repository is released; until then no CI status is claimed. The archived
+\paragraph{Continuous integration and archiving.} The CI workflow
+(\code{.github/workflows/ci.yml}) runs on a public host on every push and is
+green at the time of writing: both test suites, the cross-language check and
+the offline reference check execute on a bare checkout of the repository,
+the record-dependent tests skipping there by design because the records
+travel with the release. The archived
 release will carry a DOI (\code{XXX-DOI-XXX} pending minting). Questions
 about code, data or reproducibility go to the corresponding author,
 \code{duanqiwen603@gmail.com}.

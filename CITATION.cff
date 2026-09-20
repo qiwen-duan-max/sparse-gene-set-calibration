@@ -24,10 +24,10 @@ authors:
       The Second Affiliated Hospital of Shenzhen University, Shenzhen, China
     corresponding-indicator: true
 version: 0.1.0
-date-released: "2026-09-18"
+date-released: "2026-09-20"
 license: MIT
 repository-code: >-
-  https://example.invalid/sparse-gene-set-calibration
+  https://github.com/qiwen-duan-max/sparse-gene-set-calibration
 abstract: >-
   Python and R packages implementing a four-step calibration framework for
   sparse gene-set scores: the closed form for the tie-break level, three
