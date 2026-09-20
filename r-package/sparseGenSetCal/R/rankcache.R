@@ -93,6 +93,14 @@ RankCache <- R6::R6Class(
             }
 
             X <- as_dgCMatrix(X)
+            if (any(!is.finite(X@x))) {
+                stop("X contains NaN or infinite values; the rank cache needs finite, non-negative expression values",
+                     call. = FALSE)
+            }
+            if (any(X@x < 0)) {
+                stop("X contains negative values; the rank order is defined for non-negative values only -- pass log-normalised data",
+                     call. = FALSE)
+            }
             detection <- as.numeric(col_counts(X)) / n_cells
             mean_expression <- as.numeric(Matrix::colMeans(X))
             depth <- as.integer(row_counts(X))
@@ -156,17 +164,40 @@ RankCache <- R6::R6Class(
         },
 
         #' @description Keep only the rows of a subset of cells.
+        #'
+        #'   A rank is computed within one cell across genes, so the clipped
+        #'   rank matrix can be sliced directly.  Detection rate and mean
+        #'   expression *do* depend on the cell set: by default the
+        #'   whole-matrix values are carried over (a subset cache describes
+        #'   the matrix it was built from), which is wrong whenever the cell
+        #'   types differ in depth -- pass the recomputed per-gene vectors to
+        #'   get a cache that behaves as if it had been built from the subset
+        #'   alone.  This mirrors the Python `RankCache.subset_cells`.
         #' @param idx Row indices.
-        subset_cells = function(idx) {
+        #' @param detection Per-gene detection rate over the subset, aligned
+        #'   with `self$genes`.
+        #' @param mean_expression Per-gene mean expression over the subset,
+        #'   aligned with `self$genes`.
+        subset_cells = function(idx, detection = NULL, mean_expression = NULL) {
             keep <- self$clipped[idx, , drop = FALSE]
             depth <- if (is.null(self$depth)) NULL else self$depth[idx]
+            if (!is.null(detection) && length(detection) != length(self$genes)) {
+                stop(sprintf("detection has length %d; pass it aligned with the cache's %d genes",
+                             length(detection), length(self$genes)), call. = FALSE)
+            }
+            if (!is.null(mean_expression) &&
+                length(mean_expression) != length(self$genes)) {
+                stop(sprintf("mean_expression has length %d; pass it aligned with the cache's %d genes",
+                             length(mean_expression), length(self$genes)),
+                     call. = FALSE)
+            }
             cache <- RankCache$new()
             cache$clipped <- keep
             cache$genes <- self$genes
             cache$n_genes_total <- self$n_genes_total
             cache$ceiling <- self$ceiling
-            cache$detection <- as.numeric(colMeans(keep > 0))
-            cache$mean_expression <- self$mean_expression
+            cache$detection <- if (is.null(detection)) self$detection else as.numeric(detection)
+            cache$mean_expression <- if (is.null(mean_expression)) self$mean_expression else as.numeric(mean_expression)
             cache$depth <- depth
             cache
         },

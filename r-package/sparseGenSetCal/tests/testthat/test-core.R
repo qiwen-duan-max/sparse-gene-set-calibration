@@ -930,3 +930,45 @@ test_that("a tie-break that never varies is clear and says so", {
     live <- seq(20, 400, length.out = 300)
     expect_true(is.finite(preflight(live, axis, 100, 2000)$tau_axis_rho))
 })
+
+test_that("subset_cells carries the whole-matrix fields and accepts overrides", {
+    # A rank lives within one cell, so slicing the clipped matrix is exact;
+    # detection and mean expression belong to the cell set, and the default is
+    # to carry the whole-matrix values over rather than silently recompute
+    # them from a subset the user did not ask to describe.  The recompute used
+    # to count the clipped matrix's zeros -- genes whose rank fell beyond the
+    # ceiling -- as undetected, which understates detection twice over.
+    X <- rbind(trunc(matrix(rexp(240, 0.3), 20)),
+               trunc(matrix(rexp(240, 1.5), 20)))
+    genes <- sprintf("G%02d", seq_len(12))
+    cache <- rank_cache(X, genes, ceiling = 5, seed = 3)
+
+    deep <- cache$subset_cells(1:20)
+    expect_equal(deep$clipped, cache$clipped[1:20, , drop = FALSE])
+    expect_equal(deep$detection, cache$detection)
+    expect_equal(deep$mean_expression, cache$mean_expression)
+    expect_equal(deep$depth, cache$depth[1:20])
+
+    sub_det <- as.numeric(colSums(X[1:20, ] != 0) / 20)
+    re <- cache$subset_cells(1:20, detection = sub_det)
+    expect_equal(re$detection, sub_det)
+    expect_error(cache$subset_cells(1:20, detection = rep(0.5, 11)),
+                 "aligned with the cache's 12 genes")
+})
+
+test_that("the rank cache refuses NaN and negative values", {
+    # The bit-complement rank order is defined on the bit pattern of a
+    # non-negative double: a NaN would sort above almost every positive value
+    # and take rank 1, and a negative value sorts below every detected gene.
+    # Both fail silently if accepted, so the build refuses them instead.
+    X <- matrix(rexp(240, 0.5), nrow = 20)
+    genes <- sprintf("G%02d", seq_len(12))
+    X_nan <- X
+    X_nan[3, 4] <- NaN
+    expect_error(rank_cache(X_nan, genes, ceiling = 5),
+                 "NaN or infinite")
+    X_neg <- X
+    X_neg[7, 2] <- -0.5
+    expect_error(rank_cache(X_neg, genes, ceiling = 5),
+                 "negative values")
+})

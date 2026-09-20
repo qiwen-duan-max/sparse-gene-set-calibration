@@ -164,17 +164,31 @@ depend on the blocking, so neither do the ranks.}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-RankCache-subset_cells"></a>}}
 \if{latex}{\out{\hypertarget{method-RankCache-subset_cells}{}}}
-\subsection{\code{RankCache$subset_cells()}}{
+\subsection{\code{RankCache$subset_cells(idx, detection = NULL, mean_expression = NULL)}}{
   Keep only the rows of a subset of cells.
+
+  A rank is computed within one cell across genes, so the clipped rank
+  matrix can be sliced directly.  Detection rate and mean expression *do*
+  depend on the cell set: by default the whole-matrix values are carried
+  over (a subset cache describes the matrix it was built from), which is
+  wrong whenever the cell types differ in depth -- pass the recomputed
+  per-gene vectors to get a cache that behaves as if it had been built from
+  the subset alone.  This mirrors the Python \code{RankCache.subset_cells}.
   \subsection{Usage}{
     \if{html}{\out{<div class="r">}}
-    \preformatted{RankCache$subset_cells(idx)}
+    \preformatted{RankCache$subset_cells(idx, detection = NULL, mean_expression = NULL)}
     \if{html}{\out{</div>}}
   }
   \subsection{Arguments}{
     \if{html}{\out{<div class="arguments">}}
     \describe{
       \item{\code{idx}}{Row indices.}
+
+      \item{\code{detection}}{Per-gene detection rate over the subset, aligned
+      with \code{self$genes}.}
+
+      \item{\code{mean_expression}}{Per-gene mean expression over the subset,
+      aligned with \code{self$genes}.}
     }
     \if{html}{\out{</div>}}
   }

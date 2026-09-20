@@ -13,7 +13,9 @@ score_genes(X, genes, gene_set, ctrl_size = 50, n_bins = 25, seed = 0)
 
 \item{gene_set}{Character vector.}
 
-\item{ctrl_size}{Number of control genes drawn per gene of the set.}
+\item{ctrl_size}{Number of control genes drawn per gene of the set.  When it
+reaches the bin's non-set gene count the whole bin is taken and `seed`
+cannot influence the draw.}
 
 \item{n_bins}{Number of expression bins.}
 
@@ -29,4 +31,8 @@ drawn from the same expression bin, and the score is the mean expression of
 the set minus the mean of the pooled controls.  It produces no null
 distribution on its own; it is here so that a calibration result can be
 checked across scoring rules.
+
+When `ctrl_size` is at least the number of non-set genes in a bin, the
+whole bin is taken and the draw cannot depend on `seed` at all; pass a
+`ctrl_size` comfortably below the bin size when the seed has to matter.
 }

@@ -3,10 +3,10 @@ Type: Package
 Title: Calibration for Sparse Gene-Set Scores
 Version: 0.1.0
 Authors@R: c(
-    person("Author", "names to be completed", role = c("aut", "cre"),
-           email = "corresponding.author@institution.ac.in"),
-    person("ClawsGO", "Science Agent", role = "ctb",
-           comment = "AI assistance with the code; reviewed by the author, who is responsible for it"))
+    person("Ming", "Tang", role = "aut"),
+    person("Xin", "Chen", role = "aut"),
+    person("Qiwen", "Duan", role = c("aut", "cre"),
+           email = "duanqiwen603@gmail.com"))
 Description: Rank-based gene-set scores such as AUCell and UCell are sums over
     the top ranks of each cell.  In a shallow cell far fewer genes are detected
     than the rank ceiling admits, so the unused slots are filled by genes with a

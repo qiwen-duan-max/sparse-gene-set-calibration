@@ -113,10 +113,16 @@ ucell <- function(cache, genes, r_max = 1500, normalisation = "v2") {
 #' distribution on its own; it is here so that a calibration result can be
 #' checked across scoring rules.
 #'
+#' When `ctrl_size` is at least the number of non-set genes in a bin, the
+#' whole bin is taken and the draw cannot depend on `seed` at all; pass a
+#' `ctrl_size` comfortably below the bin size when the seed has to matter.
+#'
 #' @param X Cells x genes matrix.
 #' @param genes Gene names, one per column of `X`.
 #' @param gene_set Character vector.
-#' @param ctrl_size Number of control genes drawn per gene of the set.
+#' @param ctrl_size Number of control genes drawn per gene of the set.  When it
+#'   reaches the bin's non-set gene count the whole bin is taken and `seed`
+#'   cannot influence the draw.
 #' @param n_bins Number of expression bins.
 #' @param seed Integer.
 #'

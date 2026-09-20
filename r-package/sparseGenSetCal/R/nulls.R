@@ -327,7 +327,11 @@ MatchedNullBuilder <- R6::R6Class(
         },
 
         #' @description Co-detection of a set: the mean Jaccard overlap of its
-        #'   gene pairs across cells.
+        #'   gene pairs across cells.  The Python implementation of the same
+        #'   builder uses the mean pairwise cosine between the binary
+        #'   detection columns instead -- a correlated but different
+        #'   statistic -- so co-detection values are comparable within one
+        #'   language, not across the two.
         #' @param gene_set Character vector.
         #' @return A single number, or `NA` for a set of fewer than two genes or
         #'   a builder built without a detection matrix.
@@ -364,11 +368,15 @@ MatchedNullBuilder <- R6::R6Class(
                 return(self$expression_matched_set(gene_set))
             }
             best <- self$expression_matched_set(gene_set)
+            # `codetection` returns NA for a replacement that lost all but one
+            # of its genes; comparing NA would stop() mid-refinement, so a
+            # non-finite gap simply never wins (as in the Python builder).
             best_gap <- self$codetection(best) - target
+            if (!is.finite(best_gap)) best_gap <- Inf
             for (i in seq_len(as.integer(n_draws))) {
                 candidate <- self$expression_matched_set(gene_set)
                 gap <- self$codetection(candidate) - target
-                if (abs(gap) < abs(best_gap)) {
+                if (is.finite(gap) && abs(gap) < abs(best_gap)) {
                     best <- candidate
                     best_gap <- gap
                 }
