@@ -28,6 +28,12 @@ date-released: "2026-09-20"
 license: MIT
 repository-code: >-
   https://github.com/qiwen-duan-max/sparse-gene-set-calibration
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22854132
+    description: >-
+      Zenodo archive of the repository snapshot (v0.1.1); the concept DOI
+      covering all versions of the archive is 10.5281/zenodo.22854131.
 abstract: >-
   Python and R packages implementing a four-step calibration framework for
   sparse gene-set scores: the closed form for the tie-break level, three
