@@ -1,4 +1,0 @@
-n_samples,n,naive,permutation,cutpoint_median,cutpoint_optimal,random,expression,codetection
-1,80,0.3,0.2875,0.3375,0.5875,0.125,0.0375,0.0125
-4,80,0.375,0.375,0.25,0.55,0.0625,0.0375,0.025
-16,80,0.2375,0.2375,0.3,0.5375,0.05,0.025,0.0625

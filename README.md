@@ -391,6 +391,14 @@ from Package/Version without). `.github/workflows/ci.yml` runs the test suites
 and the cross-language check on push; it does not run the pipeline, whose
 benchmark stages need the two public cohorts.
 
+The generated records and summaries themselves — the five grids' 2,800
+JSON-line records, the benchmark CSVs and the audit outputs under `results/`
+(131 files, ~52 MB) — are distributed with the release as the archive
+`raw_data_results.zip`, attached to the v0.1.0 release and checksummed by
+`results_md5.txt` in the repository root; `make_verification_table.py`
+recomputes the headline rates from them and must report a worst difference
+of 0.000.
+
 ---
 
 ## Attribution

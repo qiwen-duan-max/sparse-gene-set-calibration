@@ -6,6 +6,11 @@ __pycache__/
 build/
 dist/
 
+# Generated results (~52 MB, 131 files) are distributed as the release
+# attachment raw_data_results.zip and checksummed by results_md5.txt at the
+# repository root, which stays tracked.
+results/
+
 # LaTeX intermediates (the compiled PDF and the .bbl are tracked)
 manuscript/*.aux
 manuscript/*.log
