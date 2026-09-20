@@ -9,6 +9,13 @@ Every statistic in this README is computed
 from the matrices and simulations shipped with the project; none is reproduced
 from a published source.
 
+**Scope and intended use.** This is a research-use quality-control and
+calibration tool for gene-set *scores*. What it measures is how much of a score
+is sequencing depth and what the data can still support; it does not measure
+whether a pathway is active, and no verdict it prints is diagnostic,
+prognostic, or a basis for patient decisions. The cell — not the patient, and
+not a cohort — is the unit of every number the framework computes.
+
 ---
 
 ## The problem, stated exactly
@@ -295,7 +302,7 @@ have.
 python -m pytest tests/ -q
 ```
 
-127 tests. Three of them are load-bearing and the rest depend on them:
+129 tests. Three of them are load-bearing and the rest depend on them:
 
 - `test_cache_reproduces_reference_aucell` — the cache must reproduce the
   scoring engine this project already used, exactly. Everything downstream
@@ -312,6 +319,11 @@ python -m pytest tests/ -q
 chance band empirically: over 200 null axes the flag must fire at the rate the
 band claims and not more, which is what stops the CLEAR threshold from being a
 number someone liked.
+
+The Streamlit application has its own suite, `python -m pytest
+app/test_app.py -q`: it drives the deployed app script through
+`streamlit.testing` and asserts, among the rest, that the numbers the app
+displays are the numbers the package computes.
 
 ---
 
@@ -377,9 +389,15 @@ Every artefact the manuscript shows traces to exactly one generating script:
 | Matched-null audit | `experiments/audit_matched_null.py` | grid sweep draws |
 | Decomposition residual | `experiments/measure_residual.py` | grid-A configurations, 5 reps |
 | Every macro in `manuscript/numbers.tex`, supplementary Tables S1–S6 | `experiments/make_numbers.py` | the summaries above |
+| Supplementary Table S8 (the regeneration check) | `experiments/make_verification_table.py` | the archived records, recomputed independently of the macros |
+| Diagnostic-checklist sensitivity | `experiments/checklist_acceptance.py` | synthetic sets at known states |
+| Severity-rule justification | `experiments/decide_confounded_severity.py` | null-draw sweeps at effect = 0 |
 | Companion figure | `experiments/make_figure.py` | the same summaries |
-| Reference check | `experiments/verify_references.py` | `manuscript/refs.bib` vs Crossref |
+| Reference check | `experiments/verify_references.py` | `manuscript/references.bib` vs Crossref |
+| `docs/API.md` | `docs/build_api.py` | the package docstrings |
+| Python wheel + sdist and the R tarball | `experiments/build_dist.sh` | the current source tree |
 | PDF build + measured-limit check | `experiments/run_pipeline.sh` | everything above, in order |
+| Queue a step behind a running grid (development aid) | `experiments/chain_after_grid.sh`, `experiments/chain_figure.sh` | the grid's process table |
 
 One input the table does not cover: the test suite's reference engine.
 `tests/test_core.py` imports `common.score_matrix` -- the legacy
@@ -396,9 +414,10 @@ after them reruns in minutes. The environment files pin what the runs used:
 `pyproject.toml` holds the looser bounds) and `renv.lock` (R 4.3.3; generated
 from `installed.packages()` on the host that produced the results — renv itself
 was not used there, so the lockfile carries no Hash fields, which renv restores
-from Package/Version without). `.github/workflows/ci.yml` runs the test suites
-and the cross-language check on push; it does not run the pipeline, whose
-benchmark stages need the two public cohorts.
+from Package/Version without). `.github/workflows/ci.yml` runs the test suites,
+the application checks and the cross-language check on push, the Python suite
+on 3.12 and again on 3.10 (nearest the declared `>=3.9` floor); it does not
+run the pipeline, whose benchmark stages need the two public cohorts.
 
 The generated records and summaries themselves — the five grids' 2,800
 JSON-line records, the benchmark CSVs and the audit outputs under `results/`

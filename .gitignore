@@ -11,6 +11,10 @@ dist/
 # repository root, which stays tracked.
 results/
 
+# Local run logs (build and grid consoles) are machine-specific scratch, not
+# pipeline products; the results/ records are the auditable output.
+logs/
+
 # LaTeX intermediates (the compiled PDF and the .bbl are tracked)
 manuscript/*.aux
 manuscript/*.log

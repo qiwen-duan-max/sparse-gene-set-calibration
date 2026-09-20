@@ -7,7 +7,8 @@
 # running it before the code change would have it measure the old rule.  So it
 # is queued behind the grid rather than beside it.
 set -u
-cd /home/user/ClawsGO/project-20260915-2/naturemethods
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$(dirname "$HERE")" || exit 1
 
 while pgrep -f "experiments/[r]un_grid.py" >/dev/null; do sleep 20; done
 echo "=== grid finished at $(date +%H:%M:%S) ==="
